@@ -24,15 +24,17 @@ type Lang = 'en' | 'zh'
 
 const COPY = {
   en: {
-    title: 'About Sen',
+    title: 'Welcome to the AI Hamster Hole',
     paragraphs: [
-      "I'm Sen — a creative technologist living where code meets art. I spend my days around coding, creativity, playful interaction & design, and CG work. I love studying and combining skills across different fields — to create, and to explore more possibilities.",
+      'A beginner-friendly gateway to learning AI. Follow the hamster guide through ChatGPT, AI art, and AI coding, and discover a learning path that fits you.',
+      'Keep scrolling to explore the learning map. When you are ready, visit ai.alexdbg.com and start learning step by step.',
     ],
   },
   zh: {
-    title: 'About Sen',
+    title: '欢迎来到 AI 仓鼠洞',
     paragraphs: [
-      '我是 Sen——一个游走在代码与艺术之间的创意技术人。我常年和 Coding、创意、有趣的交互 & 设计、CG 创作等打交道，喜欢研究并组合不同领域的技能，来创造并探索更多可能性。',
+      '这里是为 AI 新手准备的学习入口。跟着仓鼠向导，从 ChatGPT、AI 绘画到 AI 编程，找到适合自己的学习路线。',
+      '继续向下滚动，探索完整的学习地图。准备好后，前往 ai.alexdbg.com，开始一步一步学习 AI。',
     ],
   },
 }
