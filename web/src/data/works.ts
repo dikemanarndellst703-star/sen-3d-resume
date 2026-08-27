@@ -1,18 +1,3 @@
-// 作品集数据（双语）。5 大板块 → 点击展开作品详情。
-// 纯数据驱动：增删板块 / 作品只改本文件，Works.jsx 仅负责渲染。
-//
-// 板块字段：
-//   id        唯一标识（用于 framer layoutId 共享元素动画）
-//   no        编号 '01'…'05'
-//   title     板块标题
-//   tagline   索引行右侧一句话
-//   items[]   扁平作品列表：{ name, meta?, tags?, link? }
-//             点击 item 弹出全屏详情，可补充可选媒体/文案字段：
-//             { image?, video?, year?, desc? }（缺省时媒体用占位、简介回退 meta/标签）
-//   groups[]  分组作品（与 items 二选一）：{ heading, items: string[] }
-//   awards[]  奖项 chip（可选）
-//   footer    底部技术/备注一行（可选）
-
 export interface WorkListItem {
   name: string
   meta?: string
@@ -21,203 +6,95 @@ export interface WorkListItem {
   slug?: string
 }
 
-export interface WorkGroup {
-  heading: string
-  items: string[]
-}
-
 export interface WorkSection {
   id: string
   no: string
   title: string
   tagline: string
-  items?: WorkListItem[]
-  groups?: WorkGroup[]
-  awards?: string[]
+  items: WorkListItem[]
   footer?: string
 }
 
 export interface WorksLang {
   title: string
-  closeLabel: string
-  openLabel: string
   hint: string
-  awardsLabel: string
   visitLabel: string
-  detailPlaceholder: string
-  phImageLabel: string
-  phButtonLabel: string
-  countLabel: (n: number) => string
   sections: WorkSection[]
 }
 
+const LINK = 'https://ai.alexdbg.com/'
+
 export const WORKS: Record<'zh' | 'en', WorksLang> = {
   zh: {
-    title: 'Works',
-    closeLabel: '返回',
-    openLabel: '展开作品',
-    hint: '继续下滑',
-    awardsLabel: '获奖',
-    visitLabel: '访问作品',
-    detailPlaceholder: '你的作品介绍',
-    phImageLabel: '图片 / 视频',
-    phButtonLabel: '跳转按钮',
-    countLabel: (n) => `${n} 件作品`,
+    title: 'AI 学习地图',
+    hint: '向右探索 · 继续下滑',
+    visitLabel: '进入学习站',
     sections: [
       {
-        id: 'ad',
+        id: 'start',
         no: '01',
-        title: '广告项目',
-        tagline: '坏打印机工作室',
+        title: 'AI 入门',
+        tagline: '先建立正确认知，再选择工具',
         items: [
-          { name: '谁在弹古琴', meta: '互动项目', slug: 'guqin' },
-          { name: '新加坡联合早报 · 校园时光机', meta: '互动项目', slug: 'time-machine' },
-          { name: '动画合集', meta: '动画', slug: 'animation-collection' },
-          { name: '其他作品', slug: 'other-works' },
+          { name: 'ChatGPT 从零开始', meta: '对话与提问', tags: ['新手'], link: LINK },
+          { name: '找到适合你的 AI 模型', meta: '模型选择', link: LINK },
+          { name: '建立第一套提示词方法', meta: 'Prompt', link: LINK },
+          { name: '避开新手最常见的坑', meta: '认知地图', link: LINK },
         ],
-        awards: ['虎啸奖', 'FWA', 'Awwwards'],
+        footer: '适合：第一次系统接触 AI，或收藏了很多工具却仍不知道从哪开始的人。',
       },
       {
-        id: 'maker',
+        id: 'art',
         no: '02',
-        title: '自媒体',
-        tagline: '23 万关注 ｜ 年更博主',
+        title: 'AI 绘画',
+        tagline: '把脑海里的画面变成作品',
         items: [
-          {
-            name: '我把工作室的玻璃墙改造成了游戏机',
-            meta: '1700 万 播放',
-            tags: ['B站每周必看', 'B站热搜'],
-            slug: 'glass-wall-arcade',
-          },
-          {
-            name: '我把代码写入狗狗的衣服里',
-            meta: '900 万 播放',
-            tags: ['微博 / 抖音 / B站 三平台热搜榜'],
-            slug: 'dog-code-clothes',
-          },
-          {
-            name: '我把 Switch 放大十倍，做成了智能猫窝',
-            meta: '500 万 播放',
-            tags: ['B站每周必看'],
-            slug: 'switch-cat-house',
-          },
-          { name: '我们在80年代的红白机游戏里结婚啦！！', slug: 'retro-game-wedding' },
+          { name: '从描述到高质量画面', meta: '视觉提示词', link: LINK },
+          { name: '风格、构图与角色一致性', meta: '创作方法', link: LINK },
+          { name: '为内容与品牌快速出图', meta: '实战', link: LINK },
+          { name: '让 AI 成为视觉搭档', meta: '工作流', link: LINK },
         ],
-        footer: '3D 建模 · 3D 打印 · PCB 设计 · 嵌入式开发 · 软件开发 · 动画包装',
+        footer: '适合：内容创作者、设计新手，以及想快速表达视觉创意的人。',
       },
       {
-        id: 'product',
+        id: 'code',
         no: '03',
-        title: '产品',
-        tagline: 'ZOOOP',
+        title: 'AI 编程',
+        tagline: '不会写代码，也能把想法做出来',
         items: [
-          { name: 'ZOOOP', meta: 'AI 原生创作平台', link: 'https://zooop.ai/', slug: 'zooop' },
+          { name: '用自然语言完成第一个网页', meta: 'Vibe Coding', link: LINK },
+          { name: '让 AI 帮你理解与修改代码', meta: '协作方式', link: LINK },
+          { name: '从需求到可运行的小工具', meta: '产品实战', link: LINK },
+          { name: '建立自己的 AI 开发流程', meta: '进阶', link: LINK },
         ],
+        footer: '适合：有想法、没技术背景，想亲手做出网站、工具或产品的人。',
       },
       {
-        id: 'graphics',
+        id: 'automate',
         no: '04',
-        title: '个人业余作品',
-        tagline: 'Raymarching · WebGL · Blender',
+        title: 'AI 效率',
+        tagline: '从亲自做每件事，到让 AI 开始工作',
         items: [
-          { name: 'Raymarching', slug: 'raymarching' },
-          { name: 'WebGL', slug: 'webgl' },
-          { name: 'Blender', slug: 'blender' },
-          { name: '其他业余作品', slug: 'other-side-works' },
+          { name: '打造你的 AI 工作助理', meta: '个人系统', link: LINK },
+          { name: '把重复任务交给自动化', meta: '工作流', link: LINK },
+          { name: '办公、内容与知识管理', meta: '效率工具', link: LINK },
+          { name: '重新打开个人能力边界', meta: '长期路线', link: LINK },
         ],
+        footer: '目标：不是使用更多工具，而是用更少时间，稳定完成更高质量的工作。',
       },
     ],
   },
   en: {
-    title: 'Works',
-    closeLabel: 'Back',
-    openLabel: 'Explore',
-    hint: 'Keep scrolling',
-    awardsLabel: 'Awards',
-    visitLabel: 'Visit site',
-    detailPlaceholder: 'Your work description',
-    phImageLabel: 'Image / Video',
-    phButtonLabel: 'Link button',
-    countLabel: (n) => `${n} works`,
+    title: 'AI Learning Map',
+    hint: 'Explore right · Keep scrolling',
+    visitLabel: 'Start learning',
     sections: [
-      {
-        id: 'ad',
-        no: '01',
-        title: 'Advertising',
-        tagline: 'HOTSAR · Bad Printer',
-        items: [
-          { name: 'Who’s Talking About Guqin', meta: 'Interactive', slug: 'guqin' },
-          { name: 'Lianhe Zaobao · Campus Time Machine', meta: 'Interactive', slug: 'time-machine' },
-          { name: 'Animation Reel', meta: 'Animation', slug: 'animation-collection' },
-          { name: 'Other works', slug: 'other-works' },
-        ],
-        awards: ['Tiger Roar', 'FWA', 'Awwwards'],
-      },
-      {
-        id: 'maker',
-        no: '02',
-        title: 'Content Creator',
-        tagline: '230K followers',
-        items: [
-          {
-            name: '“I Turned the Studio’s Glass Wall into a Game Console”',
-            meta: '17M views',
-            tags: ['Bilibili Weekly Picks', 'Bilibili Trending'],
-            slug: 'glass-wall-arcade',
-          },
-          {
-            name: '“I Wrote Code into My Dog’s Clothes”',
-            meta: '9M views',
-            tags: ['Trending on Weibo / Douyin / Bilibili'],
-            slug: 'dog-code-clothes',
-          },
-          {
-            name: '“I Made a 10× Switch into a Smart Cat House”',
-            meta: '5M views',
-            tags: ['Bilibili Weekly Picks'],
-            slug: 'switch-cat-house',
-          },
-          { name: '“We Got Married in an 80s Famicom Game!!”', slug: 'retro-game-wedding' },
-        ],
-        footer: 'Tech: 3D modeling · 3D printing · PCB design · embedded · software · motion graphics',
-      },
-      {
-        id: 'product',
-        no: '03',
-        title: 'Products',
-        tagline: 'ZOOOP',
-        items: [
-          { name: 'ZOOOP', meta: 'AI-native creation platform', link: 'https://zooop.ai/', slug: 'zooop' },
-        ],
-      },
-      {
-        id: 'graphics',
-        no: '04',
-        title: 'Side Projects',
-        tagline: 'Raymarching · WebGL · Blender',
-        items: [
-          { name: 'Raymarching', slug: 'raymarching' },
-          { name: 'WebGL', slug: 'webgl' },
-          { name: 'Blender', slug: 'blender' },
-          { name: 'Other side projects', slug: 'other-side-works' },
-        ],
-      },
+      { id: 'start', no: '01', title: 'AI Basics', tagline: 'Build the right mental model first', items: [{ name: 'ChatGPT from zero', meta: 'Conversation', link: LINK }, { name: 'Choose the right model', meta: 'Models', link: LINK }, { name: 'Build your first prompt method', meta: 'Prompting', link: LINK }, { name: 'Avoid common beginner traps', meta: 'Roadmap', link: LINK }], footer: 'For anyone who wants a clear and practical starting point.' },
+      { id: 'art', no: '02', title: 'AI Art', tagline: 'Turn an idea into an image', items: [{ name: 'From words to images', meta: 'Visual prompts', link: LINK }, { name: 'Style, composition and consistency', meta: 'Method', link: LINK }, { name: 'Create for content and brands', meta: 'Practice', link: LINK }, { name: 'Make AI your visual partner', meta: 'Workflow', link: LINK }], footer: 'For creators and visual thinkers.' },
+      { id: 'code', no: '03', title: 'AI Coding', tagline: 'Build without a traditional coding background', items: [{ name: 'Create your first website', meta: 'Vibe Coding', link: LINK }, { name: 'Understand and edit code with AI', meta: 'Collaboration', link: LINK }, { name: 'From need to working tool', meta: 'Product', link: LINK }, { name: 'Build an AI development workflow', meta: 'Advanced', link: LINK }], footer: 'For people who have an idea and want to ship it.' },
+      { id: 'automate', no: '04', title: 'AI Productivity', tagline: 'Let AI start working for you', items: [{ name: 'Build an AI work assistant', meta: 'System', link: LINK }, { name: 'Automate repetitive tasks', meta: 'Workflow', link: LINK }, { name: 'Work, content and knowledge', meta: 'Tools', link: LINK }, { name: 'Expand your capability boundary', meta: 'Roadmap', link: LINK }], footer: 'Use fewer tools to do better work in less time.' },
     ],
   },
 }
 
-// 板块配图（横向画廊每张卡片左侧的整高封面）。放到 public/works/covers/ 下。
-// 缺图时左栏用大编号渐变占位，放入图片后自动点亮。
-export const SECTION_COVERS: Record<string, string> = {
-  ad: `${import.meta.env.BASE_URL}works/covers/ad.jpg`,
-  maker: `${import.meta.env.BASE_URL}works/covers/maker.jpg`,
-  product: `${import.meta.env.BASE_URL}works/covers/product.jpg`,
-  graphics: `${import.meta.env.BASE_URL}works/covers/graphics.jpg`,
-}
-
-// 统计一个板块的作品数（items 或 groups 求和），用于索引行 hover 显示
-export function sectionCount(section: WorkSection): number {
-  if (section.items) return section.items.length
-  if (section.groups) return section.groups.reduce((n, g) => n + g.items.length, 0)
-  return 0
-}
+export const SECTION_COVERS: Record<string, string> = {}

@@ -1,285 +1,113 @@
 import { motion } from 'framer-motion'
-import { ZooopLogo } from './ZooopLogo'
-import { SOCIAL_ICONS } from './SocialIcons'
 import { FOCUS_POINTS } from '../data/focusPoints'
 
-const SOCIAL_LINKS = [
+const DESTINATION = 'https://ai.alexdbg.com/'
+
+interface StoryEntry {
+  period: string
+  place: string
+  role: string
+  points: string[]
+  accent?: string
+}
+
+const STORY: StoryEntry[] = [
   {
-    id: 'douyin',
-    label: '抖音',
-    href: 'https://www.douyin.com/user/MS4wLjABAAAAlmQDgHf0NlbsjrfWENm8LyrIikxSRRq7mzlzQSIStQJkV7Ju52B6A55zw5TUDU5d',
+    period: '过去三年',
+    place: '持续研究 AI',
+    role: '从工具使用者，到 AI 产品实践者',
+    points: ['深入研究生成式 AI 与效率工具', '独立做出十几款 AI 产品', '验证 AI 如何真正改变工作方式'],
+    accent: '01 / RESEARCH',
   },
   {
-    id: 'bilibili',
-    label: 'B站',
-    href: 'https://space.bilibili.com/275344092?spm_id_from=333.937.0.0',
+    period: '创业实践',
+    place: '万有贝果科技',
+    role: '创始人',
+    points: ['把 AI 方法沉淀成可使用的产品', '用真实业务检验每一套工作流', '关注普通人能立刻获得的效率提升'],
+    accent: '02 / BUILD',
   },
   {
-    id: 'xiaohongshu',
-    label: '小红书',
-    href: 'https://www.xiaohongshu.com/user/profile/5ceba8c8000000000502fd69',
+    period: '内容影响',
+    place: '@Alex 大表哥',
+    role: 'AI 领域 30 万粉丝自媒体博主',
+    points: ['拆解复杂概念，让 AI 新手也能听懂', '从 ChatGPT、AI 绘画到 AI 编程', '不堆工具，先帮你找到适合自己的路径'],
+    accent: '03 / SHARE',
+  },
+  {
+    period: '教学现场',
+    place: '2 万+ 学员 · 30 场+ 全国巡回',
+    role: '趁早职场系列课 100% 好评金牌讲师',
+    points: ['微软 MOS 大师级认证', '把复杂能力拆成可以照着做的步骤', '让学习结果回到真实工作与生活'],
+    accent: '04 / TEACH',
+  },
+  {
+    period: '现在',
+    place: '让 AI 开始替你工作',
+    role: 'AI 仓鼠洞 · 新手学习入口',
+    points: ['从“亲自做每件事”进入人机协作', '用更短时间完成更多，而且做得更好', '重新打开一个人的能力边界'],
+    accent: '05 / AUTOMATE',
   },
 ]
 
-// 履历数据（双语）。英文为译稿，可按需润色。
-interface ResumeGroup {
-  heading?: string
-  logo?: string
-  logoImg?: string
-  sub?: string
-  link?: string
-  items?: string[]
-  links?: { id: string; label: string; href: string }[]
-}
-interface ResumeEntry {
-  period: string
-  place: string
-  role?: string
-  logo?: { src: string; alt: string }
-  points?: string[]
-  groups?: ResumeGroup[]
-}
-const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
-  en: {
-    title: 'Résumé',
-    entries: [
-      {
-        period: '2013 – 2017',
-        place: 'Sun Yat-sen University',
-        role: 'B.S. in Software Engineering',
-      },
-      {
-        period: '2017 – 2020',
-        place: 'HOTSAR Studio · Shanghai',
-        role: 'Co-founder',
-        logo: { src: `${import.meta.env.BASE_URL}images/hotsar.jpg`, alt: 'HOTSAR' },
-        points: [
-          'Co-founder · team of 20+',
-          'Clients: Alibaba brands, Tencent, NetEase, DiDi, China Resources, McDonald’s…',
-          'Work: development / creative direction / animation / team management',
-        ],
-      },
-      {
-        period: '2020 – 2025',
-        place: 'Bad Printer Studio · Shenzhen',
-        role: 'Founder',
-        logo: { src: `${import.meta.env.BASE_URL}images/bp.png`, alt: 'Bad Printer Studio' },
-        points: [
-          'Founder · team of 14',
-          'Clients: Honor of Kings / Trip.com / ByteDance / Kuaishou / VIVO / Tecno / Xiaomi / IM Motors…',
-          'Work: team management / creative direction / animation / development',
-        ],
-      },
-      {
-        period: '2025 – Now',
-        place: 'Content Creator',
-        groups: [
-          {
-            heading: '小郑还挺忙',
-            logoImg: `${import.meta.env.BASE_URL}images/buzyzheng.png`,
-            sub: 'tech-DIY creator',
-            items: ['120K on Douyin · 87K on Bilibili · 23K on Xiaohongshu'],
-            links: SOCIAL_LINKS,
-          },
-        ],
-      },
-      {
-        period: '2026 – Now',
-        place: 'Indie Developer',
-        groups: [{ logo: 'zooop', sub: 'AI creation platform', link: 'https://zooop.ai/' }],
-      },
-    ],
-  },
-  zh: {
-    title: 'Résumé',
-    entries: [
-      {
-        period: '2013 – 2017',
-        place: '中山大学',
-        role: '软件工程 · 本科',
-      },
-      {
-        period: '2017 – 2020',
-        place: 'HOTSAR 工作室 · 上海',
-        role: '联合创始人',
-        logo: { src: `${import.meta.env.BASE_URL}images/hotsar.jpg`, alt: 'HOTSAR' },
-        points: [
-          '联合创始人，团队人数 20+',
-          '服务客户：阿里系品牌、腾讯、网易、滴滴、华润、麦当劳…',
-          '负责：技术开发 / 创意策划 / 动画制作 / 团队管理',
-        ],
-      },
-      {
-        period: '2020 – 2025',
-        place: '坏打印机工作室 · 深圳',
-        role: '创始人',
-        logo: { src: `${import.meta.env.BASE_URL}images/bp.png`, alt: '坏打印机工作室' },
-        points: [
-          '创始人，团队人数 14',
-          '服务客户：王者荣耀 / 携程 / 字节 / 快手 / VIVO / 传音 / 小米…',
-          '负责：团队管理 / 创意策划 / 动画制作 / 技术开发',
-        ],
-      },
-      {
-        period: '2025 – 至今',
-        place: '自媒体博主',
-        groups: [
-          {
-            heading: '小郑还挺忙',
-            logoImg: `${import.meta.env.BASE_URL}images/buzyzheng.png`,
-            sub: '科技 DIY 博主',
-            items: ['抖音 12 万 · B站 8.7 万 · 小红书 2.3 万 关注'],
-            links: SOCIAL_LINKS,
-          },
-        ],
-      },
-      {
-        period: '2026 – 至今',
-        place: '独立开发',
-        groups: [{ logo: 'zooop', sub: 'AI 创作平台', link: 'https://zooop.ai/' }],
-      },
-    ],
-  },
-}
-
-// 履历条目依次对应 glb 里的聚焦锚点（相机停靠点），顺序须与 entries 一致。
-// 名单是唯一真源，见 data/focusPoints.ts（Scene.tsx 也从那里取）。
-const POINT_ORDER = FOCUS_POINTS
-
 const EASE = [0.22, 1, 0.36, 1]
-const containerV = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.09, delayChildren: 0.04 } },
-}
+const containerV = { hidden: {}, show: { transition: { staggerChildren: 0.09, delayChildren: 0.04 } } }
 const itemV = {
   hidden: { opacity: 0, y: 26 },
   show: { opacity: 1, y: 0, transition: { duration: 0.75, ease: EASE } },
 }
 
-function Group({ group }: { group: ResumeGroup }) {
-  const heading =
-    group.logo === 'zooop' ? (
-      <a
-        className="zooop-logo-link"
-        href={group.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="ZOOOP"
-      >
-        <ZooopLogo className="zooop-logo" animated />
-      </a>
-    ) : group.link ? (
-      <a className="about-link" href={group.link} target="_blank" rel="noopener noreferrer">
-        {group.heading}
-      </a>
-    ) : (
-      <span>{group.heading}</span>
-    )
-
+function Entry({ entry, index }: { entry: StoryEntry; index: number }) {
   return (
-    <motion.div className="tl-group" variants={itemV}>
-      <div className="tl-group-head">
-        {group.logoImg && (
-          <span className="tl-group-logo">
-            <img src={group.logoImg} alt={group.heading || ''} loading="lazy" />
-          </span>
-        )}
-        {heading}
-        {group.sub && <span className="tl-group-sub">{group.sub}</span>}
-      </div>
-      {group.items && (
-        <ul className="tl-points">
-          {group.items.map((it, i) => (
-            <li key={i}>{it}</li>
-          ))}
-        </ul>
-      )}
-      {group.links && (
-        <div className="tl-logos">
-          {group.links.map((l) => {
-            const Icon = SOCIAL_ICONS[l.id as keyof typeof SOCIAL_ICONS]
-            return (
-              <a
-                key={l.id}
-                className="tl-logo"
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={l.label}
-                title={l.label}
-              >
-                <Icon />
-              </a>
-            )
-          })}
-        </div>
-      )}
-    </motion.div>
-  )
-}
-
-function Entry({ entry, index }: { entry: ResumeEntry; index: number }) {
-  return (
-    <motion.div
+    <motion.article
       className="tl-entry"
-      data-point={POINT_ORDER[index]}
+      data-point={FOCUS_POINTS[index]}
       variants={containerV}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: '-12% 0px -12% 0px' }}
     >
       <motion.span className="tl-dot" variants={itemV} aria-hidden="true" />
-      {/* tl-body 包住文字内容（点保持在外做时间轴标记）：移动端可给它加卡片衬底，
-          且它紧贴内容高度，不含 tl-entry 用于排布的大 padding。
-          用普通 div（非 motion）：framer 变体经 React context 穿透它，叶子元素仍是
-          tl-entry 的直接 stagger 子级，入场动画与包裹前完全一致。 */}
       <div className="tl-body">
-        <motion.div className="tl-period" variants={itemV}>
-          {entry.period}
-        </motion.div>
-        <motion.div className="tl-head" variants={itemV}>
-          {entry.logo && (
-            <span className="tl-logo-chip">
-              <img src={entry.logo.src} alt={entry.logo.alt} loading="lazy" />
-            </span>
-          )}
-          <h3 className="tl-place">{entry.place}</h3>
-        </motion.div>
-        {entry.role && (
-          <motion.div className="tl-role" variants={itemV}>
-            {entry.role}
-          </motion.div>
+        <motion.div className="tl-accent" variants={itemV}>{entry.accent}</motion.div>
+        <motion.div className="tl-period" variants={itemV}>{entry.period}</motion.div>
+        <motion.h3 className="tl-place" variants={itemV}>{entry.place}</motion.h3>
+        <motion.div className="tl-role" variants={itemV}>{entry.role}</motion.div>
+        <motion.ul className="tl-points" variants={itemV}>
+          {entry.points.map((point) => <li key={point}>{point}</li>)}
+        </motion.ul>
+        {index === STORY.length - 1 && (
+          <motion.a
+            className="timeline-cta" variants={itemV}
+            href={DESTINATION} target="_blank" rel="noopener noreferrer"
+          >
+            开始我的 AI 学习路线 <span aria-hidden="true">↗</span>
+          </motion.a>
         )}
-        {entry.points && (
-          <motion.ul className="tl-points" variants={itemV}>
-            {entry.points.map((p, i) => (
-              <li key={i}>{p}</li>
-            ))}
-          </motion.ul>
-        )}
-        {entry.groups && entry.groups.map((g, i) => <Group key={i} group={g} />)}
       </div>
-    </motion.div>
+    </motion.article>
   )
 }
 
 export default function Resume({ lang }: { lang: 'en' | 'zh' }) {
-  const data = RESUME[lang]
   return (
-    <section className="resume" lang={lang}>
-      <motion.h2
-        className="resume-title"
-        initial={{ opacity: 0, y: 20 }}
+    <section className="resume" id="alex-story" lang={lang}>
+      <motion.header
+        className="resume-intro"
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-10% 0px' }}
-        transition={{ duration: 0.7, ease: EASE }}
+        transition={{ duration: 0.8, ease: EASE }}
       >
-        {data.title}
-      </motion.h2>
+        <p className="section-kicker">ABOUT ALEX · 关于 Alex</p>
+        <h2 className="resume-title">一个人的能力边界，<br /><em>可以被技术重新打开。</em></h2>
+        <p className="resume-lead">
+          Alex 大表哥，万有贝果科技创始人。过去三年持续研究 AI，并做出了十几款 AI 产品。
+          他相信，真正有价值的技术不是制造焦虑，而是让每个人都能把想法更快变成现实。
+        </p>
+      </motion.header>
+
       <div className="timeline">
-        {data.entries.map((e, i) => (
-          <Entry key={i} entry={e} index={i} />
-        ))}
+        {STORY.map((entry, index) => <Entry key={entry.accent} entry={entry} index={index} />)}
       </div>
     </section>
   )
