@@ -1,0 +1,42 @@
+{
+  "baselineCommit": "528ef15d9dbae70084b966643ba4846fc1e18035",
+  "scope": "Pre-loop V4 route artwork; production page, before the additional user request was implemented",
+  "rows": [
+    {
+      "index": 0,
+      "animations": [],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "scrollY": 5700
+    },
+    {
+      "index": 1,
+      "animations": [],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "scrollY": 6567
+    },
+    {
+      "index": 2,
+      "animations": [],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "scrollY": 7433
+    },
+    {
+      "index": 3,
+      "animations": [],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "scrollY": 8300
+    }
+  ]
+}

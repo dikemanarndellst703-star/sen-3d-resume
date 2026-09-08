@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-08T02:47:52.220Z",
+  "date": "2026-09-08T03:15:29.674Z",
   "url": "http://127.0.0.1:5175/",
   "errors": [],
   "screenshots": [
@@ -74,43 +74,43 @@
       "action": "Drag character to inspect angle"
     },
     {
-      "atSeconds": 3.11,
+      "atSeconds": 3.13,
       "action": "Scroll into graphite face macro"
     },
     {
-      "atSeconds": 8.63,
+      "atSeconds": 8.64,
       "action": "Orbit into backpack detail"
     },
     {
-      "atSeconds": 14.14,
+      "atSeconds": 14.16,
       "action": "Return to wide closing composition"
     },
     {
-      "atSeconds": 19.66,
+      "atSeconds": 19.68,
       "action": "Reverse scroll along the same camera path"
     },
     {
-      "atSeconds": 24.78,
+      "atSeconds": 24.79,
       "action": "Continue to learning routes"
     },
     {
-      "atSeconds": 30.49,
+      "atSeconds": 30.51,
       "action": "Native scroll reveals learning scene 2"
     },
     {
-      "atSeconds": 33.51,
+      "atSeconds": 33.53,
       "action": "Native scroll reveals learning scene 3"
     },
     {
-      "atSeconds": 36.53,
+      "atSeconds": 36.54,
       "action": "Native scroll reveals learning scene 4"
     },
     {
-      "atSeconds": 39.54,
+      "atSeconds": 39.56,
       "action": "Read Alex credentials"
     },
     {
-      "atSeconds": 43.56,
+      "atSeconds": 43.58,
       "action": "Reach final learning entry"
     }
   ],
@@ -123,8 +123,8 @@
     "over33ms": 0
   },
   "video": {
-    "sourceFrames": 1170,
-    "nativeDurationSeconds": 47.23986315727234,
+    "sourceFrames": 1283,
+    "nativeDurationSeconds": 47.248486042022705,
     "encodedFps": 30,
     "method": "Chrome CDP screencast with native timestamps, no time compression"
   },

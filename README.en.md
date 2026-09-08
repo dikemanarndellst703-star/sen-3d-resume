@@ -15,6 +15,8 @@ Alex's learning gateway for AI beginners. V4 refines the user's uploaded seated 
 - **Render on demand.** This is a fused sculpture without independent head, eye or arm joints. Scrolling and explicit interaction request frames; the stable scene stops issuing new WebGL draws. Off-screen and hidden-tab rendering pauses. Loading includes a model poster and progress, with failure fallback and live reduced-motion support.
 - **Keep the learning content.** Four routes use full-screen horizontal chapters on desktop and natural vertical flow on phones, short screens and reduced-motion mode. All 16 course links, five experience entries and 15 supporting points remain.
 
+- **Continuous route illustration loops.** A gently rotating lens with breathing light, eight staggered orange layers, opening/closing code brackets with a rhythmic orange bar, and 11 waveform bars keep moving while the page is still. Manual pause retains the current phase and resume continues from it; off-screen timelines stop, and live reduced-motion mode removes the loops. All [10 production-preview checks](docs/redesign-v4-clay-2026-09-08/route-motion-qa.json) passed, including all four loops, 16 course links and no horizontal overflow in 390px touch emulation. Visibility handling was tested by simulating `document.hidden` and `visibilitychange` inside the page, not by switching actual operating-system background state. See the [before/after motion report](docs/redesign-v4-clay-2026-09-08/index.html#route-motion) and original-timing video.
+
 The full GLB and final triangulated Blender model each contain **1,025,000 real triangles**. The GLB is **29,364,716 bytes**; the final Blender has **512,688 vertices**. The editable master has **994,602 polygons / 1,025,000 triangles** and uses mixed topology, not an all-quad mesh. The body contributes 965,700 triangles and the separate backpack 59,300, across five meshes and 11 materials with no bitmap textures. Material-boundary splits produce 518,667 total GLB POSITION vertices; see the [independent binary verification](docs/redesign-v4-clay-2026-09-08/model-asset-verification.json) and [model statistics](docs/redesign-v4-clay-2026-09-08/model-stats.json). More geometry or a larger file does not imply higher frame rates, faster loading or better conversion.
 
 Frozen GLB SHA-256: `e3c5eeb1fa3534707fa45cf74848b2dea20f3997be894bfc787e3a2ceb548c76`.
@@ -83,6 +85,8 @@ SITE_URL=http://127.0.0.1:5175/ node scripts/verify-v4-loading.cjs
 SITE_URL=http://127.0.0.1:5175/ node scripts/verify-v4-rotation.cjs
 SITE_URL=http://127.0.0.1:5175/ node scripts/verify-v4-report.cjs
 SITE_URL=http://127.0.0.1:5175/ node scripts/capture-v4.cjs
+SITE_URL=http://127.0.0.1:5175/ node scripts/verify-route-motion-v4.cjs
+SITE_URL=http://127.0.0.1:5175/ node scripts/capture-route-motion-v4.cjs
 ```
 
 Chrome/Playwright is required, plus ffmpeg for recordings. `CHROME_PATH` and `PLAYWRIGHT_CORE` can override local paths. Checks cover stable-scene draw inactivity, resuming on interaction, chapters and reverse scrolling, dragging, native touch scrolling, reduced motion and failure fallback. Evidence and real screenshots/video live in the [V4 report directory](docs/redesign-v4-clay-2026-09-08/); pending checks are not passes.

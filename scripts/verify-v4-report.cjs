@@ -15,11 +15,11 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
   const imgs=await page.locator('img').evaluateAll(xs=>xs.map(x=>({src:x.getAttribute('src'),loaded:x.complete&&x.naturalWidth>0})));
   assert(imgs.every(x=>x.loaded),JSON.stringify(imgs));
   assert.equal(await page.locator('.is-missing').count(),0);
-  assert(!/待核验|模板|预留|目标百万面/.test(await page.locator('main').textContent()));
+  assert(!/待核验|模板|预留|目标百万面|追加验证中/.test(await page.locator('main').textContent()));
   const range=page.getByRole('slider');await range.focus();await range.press('ArrowRight');
   assert.equal(await range.inputValue(),'51');assert.match(await range.getAttribute('aria-valuetext'),/51%|51％|51%/);
-  const videos=page.locator('video');assert.equal(await videos.count(),2);
-  for(let i=0;i<2;i++){
+  const videos=page.locator('video');assert.equal(await videos.count(),3);
+  for(let i=0;i<3;i++){
    await videos.nth(i).evaluate(v=>v.load());
    await page.waitForFunction(i=>{const v=document.querySelectorAll('video')[i];return v.readyState>=1&&Number.isFinite(v.duration)},i);
    assert(await videos.nth(i).evaluate(v=>v.duration>10));
@@ -29,7 +29,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
   await page.setViewportSize({width:390,height:844});
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   assert.equal(errors.length,0,JSON.stringify(errors));
-  result.checks.push({mode,status:'pass',images:imgs.length,videos:2,checks:'Images, completed delivery language, keyboard comparison, playable media, versioned source links, mobile overflow, no script errors'});
+  result.checks.push({mode,status:'pass',images:imgs.length,videos:3,checks:'Images, completed delivery language, keyboard comparison, playable media, versioned source links, mobile overflow, no script errors'});
   if(mode==='production'){await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'docs/redesign-v4-clay-2026-09-08/report-mobile.png'});await page.setViewportSize({width:1440,height:1000});await page.screenshot({path:'docs/redesign-v4-clay-2026-09-08/report-desktop.png'});}
   await page.close();
  }

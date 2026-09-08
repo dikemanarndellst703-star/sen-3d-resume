@@ -15,6 +15,8 @@ Alex 大表哥的 AI 新手学习入口。本版以用户上传的坐姿仓鼠 G
 - **静止时停止绘制。** 角色是融合雕塑，没有独立头、眼、手关节。本版采用按需渲染，滚动或操作时更新，稳定后停止新的 WebGL 绘制；离屏与隐藏标签页暂停。保留加载海报、真实进度、失败回退及系统减少动态效果支持。
 - **学习内容延续。** 四条路线在桌面整屏横向呈现，手机、短屏和减少动态模式自然纵向展开。16 条课程链接、五段经历与 15 项要点继续保留。
 
+- **路线元素持续循环。** 镜头缓转并伴随呼吸光、8 层橙片错峰分合、代码括号轻开合并配合橙条节奏、11 条波形错峰起伏；停留时持续播放。手动暂停保留当前相位，继续时接着播放；离屏停止、实时减少动态时移除循环。生产预览的 [10 项专项验证](docs/redesign-v4-clay-2026-09-08/route-motion-qa.json) 通过，包含 390px 触屏模拟中四组播放、16 条课程链接及无横向溢出。页面内模拟 `document.hidden`／`visibilitychange` 验证暂停恢复，不作为操作系统真实后台切换测试。更新前后画面与原速视频见 [路线动效报告](docs/redesign-v4-clay-2026-09-08/index.html#route-motion)。
+
 当前完整 GLB 与最终三角化 Blender 均为 **1,025,000 个真实三角面**；GLB 为 **29,364,716 bytes**，最终 Blender 包含 **512,688 个顶点**。编辑母版为 **994,602 个多边形 / 1,025,000 个三角面**，属于混合拓扑，不是纯四边形母版。主体为 965,700 三角面，独立背包为 59,300 三角面；共有 5 个网格、11 个材质，无位图纹理。GLB 按材质边界拆分后的 POSITION 顶点合计为 518,667，见 [独立二进制核验](docs/redesign-v4-clay-2026-09-08/model-asset-verification.json)。数值见 [模型统计](docs/redesign-v4-clay-2026-09-08/model-stats.json)。面数与资源体积不代表帧率、加载速度或转化率改善。
 
 冻结 GLB SHA-256：`e3c5eeb1fa3534707fa45cf74848b2dea20f3997be894bfc787e3a2ceb548c76`。
@@ -83,6 +85,8 @@ SITE_URL=http://127.0.0.1:5175/ node scripts/verify-v4-loading.cjs
 SITE_URL=http://127.0.0.1:5175/ node scripts/verify-v4-rotation.cjs
 SITE_URL=http://127.0.0.1:5175/ node scripts/verify-v4-report.cjs
 SITE_URL=http://127.0.0.1:5175/ node scripts/capture-v4.cjs
+SITE_URL=http://127.0.0.1:5175/ node scripts/verify-route-motion-v4.cjs
+SITE_URL=http://127.0.0.1:5175/ node scripts/capture-route-motion-v4.cjs
 ```
 
 需要 Chrome／Playwright，录屏另需 ffmpeg；支持 `CHROME_PATH`、`PLAYWRIGHT_CORE` 等覆盖。验证静止停绘制、操作恢复、四幕与反向滚动、拖动、原生触摸滚动、减少动态效果和加载失败回退。结果与真实截图、视频保存在 [V4 报告目录](docs/redesign-v4-clay-2026-09-08/)，未完成的检查不视为通过。

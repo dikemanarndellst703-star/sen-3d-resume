@@ -30,6 +30,14 @@ The normal V4 sculpture has no continuous idle animation. Use `invalidate()` onl
 
 Follow live `prefers-reduced-motion`: collapse Cinema into a stable hero, render learning routes in natural flow and stop automated camera/CSS movement. Explicit rotation still works immediately. Model loading uses the actual V4 poster and progress; GLB failure or missing WebGL must not trap visitors in an endless loader or hide learning links.
 
+## Route illustration loops — verified in production preview
+
+The four CSS artworks loop independently of scrolling: slow lens rotation/breathing light, eight orange layers separating/rejoining with staggered timing, opening brackets with a rhythmic orange bar, and 11 staggered waveform bars. Preserve the composition and all 16 learning links. Normal desktop and mobile play automatically. The pause/resume control preserves animation phase; off-screen timelines stop, hidden documents pause, and live reduced-motion mode removes decorative animations. Mobile uses natural vertical layout.
+
+All 10 checks in `docs/redesign-v4-clay-2026-09-08/route-motion-qa.json` passed against the production preview, including all four loops and 390px touch-emulated layout with no horizontal overflow. Visibility handling was checked by simulating `document.hidden` and dispatching `visibilitychange` in the page; this is not an actual operating-system background-switch test. Reproduce with `SITE_URL=http://127.0.0.1:5175/ node scripts/verify-route-motion-v4.cjs`; record with `SITE_URL=http://127.0.0.1:5175/ node scripts/capture-route-motion-v4.cjs`.
+
+Preserve static baseline commit `528ef15d9dbae70084b966643ba4846fc1e18035` in `motion-before/`; keep desktop/mobile after frames, original-timing `loops.mp4` and capture metadata in `motion-after/`. CSS loops must not wake the million-face WebGL scene. The model and its checksums remain frozen. Local validation does not establish online publication.
+
 ## Source provenance and model contract
 
 User file `tripo_convert_bfa920ab-ad7b-44e1-b2ac-2ceb65744036.glb` is byte-identical to preserved `web/public/models/ai-hamster.glb`: 501,070 triangles, 16,039,824 bytes, SHA-256 `f196abdedb71ff60ed22014b88551f9f4c4f244b3b53d0de821f667bae4ec94c`. Read `docs/redesign-v4-clay-2026-09-08/provenance.json` and source inspection before refinement. Work from that geometry; do not substitute the V3 generator or overwrite the uploaded asset.

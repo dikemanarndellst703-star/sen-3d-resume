@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-08T03:14:15.704Z",
+  "url": "http://127.0.0.1:5175/",
+  "checks": [
+    {
+      "name": "Artwork 1 loops without scrolling, with infinite transform/opacity animations",
+      "status": "pass",
+      "detail": {
+        "animations": [
+          "route-lens-drift",
+          "route-lens-reflection",
+          "route-lens-glint",
+          "route-lens-focus",
+          "route-lens-light"
+        ]
+      }
+    },
+    {
+      "name": "Artwork 2 loops without scrolling, with infinite transform/opacity animations",
+      "status": "pass",
+      "detail": {
+        "animations": [
+          "route-slice-breathe",
+          "route-slice-breathe",
+          "route-slice-breathe",
+          "route-slice-breathe",
+          "route-slice-breathe",
+          "route-slice-breathe",
+          "route-slice-breathe",
+          "route-slice-breathe"
+        ]
+      }
+    },
+    {
+      "name": "Artwork 3 loops without scrolling, with infinite transform/opacity animations",
+      "status": "pass",
+      "detail": {
+        "animations": [
+          "route-bracket-left",
+          "route-code-pulse",
+          "route-bracket-right"
+        ]
+      }
+    },
+    {
+      "name": "Artwork 4 loops without scrolling, with infinite transform/opacity animations",
+      "status": "pass",
+      "detail": {
+        "animations": [
+          "route-flow-wave",
+          "route-flow-wave",
+          "route-flow-wave",
+          "route-flow-wave",
+          "route-flow-wave",
+          "route-flow-wave",
+          "route-flow-wave",
+          "route-flow-wave",
+          "route-flow-wave",
+          "route-flow-wave",
+          "route-flow-wave"
+        ]
+      }
+    },
+    {
+      "name": "User pause freezes all route animations without resetting their phase",
+      "status": "pass"
+    },
+    {
+      "name": "User play resumes from the paused phase",
+      "status": "pass"
+    },
+    {
+      "name": "Offscreen artworks stop advancing their timelines",
+      "status": "pass"
+    },
+    {
+      "name": "Visibility-change handler pauses and resumes loops",
+      "status": "pass",
+      "detail": {
+        "scope": "Browser document.hidden and visibilitychange simulated in the page"
+      }
+    },
+    {
+      "name": "Live reduced-motion preference removes all four decorative loops",
+      "status": "pass"
+    },
+    {
+      "name": "All four mobile artworks loop in natural vertical layout; 16 course links and width remain intact",
+      "status": "pass"
+    }
+  ],
+  "errors": [],
+  "status": "pass",
+  "browser": "152.0.7977.76"
+}

@@ -1,0 +1,70 @@
+{
+  "status": "pass",
+  "date": "2026-09-08T03:23:40.668253+00:00",
+  "url": "http://127.0.0.1:5175/update-report-v4/",
+  "scope": "Read-only headless Chrome review of final production report. Desktop and 390px touch-emulated viewport; not a physical handset test.",
+  "method": "Loaded actual third HTML video, called muted play(), waited for currentTime > 0.15, then waited 1.8 seconds and checked currentTime advanced by > 1.2 seconds. Reviewed screenshots of route section and actual decoded video frames.",
+  "video": "motion-after/loops.mp4",
+  "video_sha256": "f1f6b02e5e3d718fc6facf3ace04964437b1dde5d33b37a6e929bba7f1b6ebd5",
+  "capture_metadata_video": {
+    "sourceFrames": 1162,
+    "nativeDurationSeconds": 39.4880530834198,
+    "encodedFps": 30,
+    "method": "Actual Chrome frames with original timestamps. Four still-page holds; no speed-up or synthetic animation."
+  },
+  "checks": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "touch_emulated": false,
+      "route_images_loaded": 4,
+      "report_video_count": 3,
+      "playback_start_seconds": 0.158841,
+      "playback_end_seconds": 1.965239,
+      "playback_advanced_seconds": 1.806398,
+      "video_paused": false,
+      "video_ready_state": 4,
+      "video_duration_seconds": 39.5,
+      "video_dimensions": [
+        1440,
+        1000
+      ],
+      "video_error": null,
+      "horizontal_overflow": false,
+      "page_errors": [],
+      "visual_review": "Four static baseline thumbnails are aligned in one row. Heading, description and loop status are readable. The third video shows the decoded lens scene at the correct aspect ratio; no clipping or overlapping copy."
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touch_emulated": true,
+      "route_images_loaded": 4,
+      "report_video_count": 3,
+      "playback_start_seconds": 0.157403,
+      "playback_end_seconds": 1.967602,
+      "playback_advanced_seconds": 1.810199,
+      "video_paused": false,
+      "video_ready_state": 4,
+      "video_duration_seconds": 39.5,
+      "video_dimensions": [
+        1440,
+        1000
+      ],
+      "video_error": null,
+      "horizontal_overflow": false,
+      "page_errors": [],
+      "visual_review": "Two-column baseline thumbnails fit the narrow viewport. Heading and copy wrap cleanly. The third video stays within the content width and visibly decodes/plays; vertical reading flow is intact."
+    }
+  ],
+  "temporary_review_screenshots": [
+    "/tmp/v4-final-route-report-desktop.png",
+    "/tmp/v4-final-route-report-mobile.png",
+    "/tmp/v4-final-route-video-desktop.png",
+    "/tmp/v4-final-route-video-mobile.png"
+  ],
+  "publication_status": "Not tested; local production-preview pass only."
+}

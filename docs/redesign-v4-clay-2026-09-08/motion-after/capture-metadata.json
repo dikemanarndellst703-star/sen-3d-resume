@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-08T03:14:32.839Z",
+  "url": "http://127.0.0.1:5175/",
+  "errors": [],
+  "scenes": [
+    {
+      "index": 0,
+      "startsAtSeconds": 0,
+      "holdSeconds": 9.5
+    },
+    {
+      "index": 1,
+      "startsAtSeconds": 9.995,
+      "holdSeconds": 9.5
+    },
+    {
+      "index": 2,
+      "startsAtSeconds": 19.984,
+      "holdSeconds": 9.5
+    },
+    {
+      "index": 3,
+      "startsAtSeconds": 29.961,
+      "holdSeconds": 9.5
+    }
+  ],
+  "video": {
+    "sourceFrames": 1162,
+    "nativeDurationSeconds": 39.4880530834198,
+    "encodedFps": 30,
+    "method": "Actual Chrome frames with original timestamps. Four still-page holds; no speed-up or synthetic animation."
+  },
+  "status": "pass"
+}

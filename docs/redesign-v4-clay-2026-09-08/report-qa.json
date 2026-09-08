@@ -1,18 +1,18 @@
 {
-  "date": "2026-09-08T02:54:23.629Z",
+  "date": "2026-09-08T03:17:14.248Z",
   "checks": [
     {
       "mode": "production",
       "status": "pass",
-      "images": 7,
-      "videos": 2,
+      "images": 11,
+      "videos": 3,
       "checks": "Images, completed delivery language, keyboard comparison, playable media, versioned source links, mobile overflow, no script errors"
     },
     {
       "mode": "offline",
       "status": "pass",
-      "images": 7,
-      "videos": 2,
+      "images": 11,
+      "videos": 3,
       "checks": "Images, completed delivery language, keyboard comparison, playable media, versioned source links, mobile overflow, no script errors"
     }
   ],
