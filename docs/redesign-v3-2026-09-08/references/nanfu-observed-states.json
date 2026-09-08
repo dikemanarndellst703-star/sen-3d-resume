@@ -1,0 +1,350 @@
+{
+  "capturedAt": "2026-09-08T01:23:25.782Z",
+  "viewport": {
+    "width": 1440,
+    "height": 960
+  },
+  "browser": "152.0.7977.76",
+  "states": [
+    {
+      "url": "https://www.nanfu.global/",
+      "title": "NANFU Group | Leading Battery Manufacturer & Power Solutions Provider",
+      "scrollY": 0,
+      "pageHeight": 20441,
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "row banner",
+          "id": "",
+          "top": 0,
+          "height": 2880,
+          "position": "relative",
+          "transform": "none",
+          "text": "No. 1\nLongest Lasting\nAlkaline Battery*\n\nKnow More\n\n\n*Based on MPEI (Moscow Pow"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "bannerCv active",
+          "id": "",
+          "top": 0,
+          "height": 960,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "banner-tip fn1_alan",
+          "id": "",
+          "top": 849,
+          "height": 26,
+          "position": "absolute",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "text": "*Based on MPEI (Moscow Power Engineering Institute) report testing 10 types of a"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "batteryCv",
+          "id": "",
+          "top": 4977,
+          "height": 112,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "url": "https://www.nanfu.global/",
+      "title": "NANFU Group | Leading Battery Manufacturer & Power Solutions Provider",
+      "scrollY": 48,
+      "pageHeight": 20441,
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "row banner",
+          "id": "",
+          "top": 0,
+          "height": 2880,
+          "position": "relative",
+          "transform": "none",
+          "text": "No. 1\nLongest Lasting\nAlkaline Battery*\n\nKnow More\n\n\n*Based on MPEI (Moscow Pow"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "bannerCv active",
+          "id": "",
+          "top": 48,
+          "height": 960,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "banner-tip fn1_alan",
+          "id": "",
+          "top": 897,
+          "height": 26,
+          "position": "absolute",
+          "transform": "matrix(1, 0, 0, 1, 8.3325, 0)",
+          "text": "*Based on MPEI (Moscow Power Engineering Institute) report testing 10 types of a"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "batteryCv",
+          "id": "",
+          "top": 4977,
+          "height": 112,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "url": "https://www.nanfu.global/",
+      "title": "NANFU Group | Leading Battery Manufacturer & Power Solutions Provider",
+      "scrollY": 96,
+      "pageHeight": 20441,
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "row banner",
+          "id": "",
+          "top": 0,
+          "height": 2880,
+          "position": "relative",
+          "transform": "none",
+          "text": "No. 1\nLongest Lasting\nAlkaline Battery*\n\nKnow More\n\n\n*Based on MPEI (Moscow Pow"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "bannerCv active",
+          "id": "",
+          "top": 96,
+          "height": 960,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "banner-tip fn1_alan",
+          "id": "",
+          "top": 945,
+          "height": 26,
+          "position": "absolute",
+          "transform": "matrix(1, 0, 0, 1, 16.6659, 0)",
+          "text": "*Based on MPEI (Moscow Power Engineering Institute) report testing 10 types of a"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "batteryCv",
+          "id": "",
+          "top": 4977,
+          "height": 112,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "url": "https://www.nanfu.global/",
+      "title": "NANFU Group | Leading Battery Manufacturer & Power Solutions Provider",
+      "scrollY": 144,
+      "pageHeight": 20441,
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "row banner",
+          "id": "",
+          "top": 0,
+          "height": 2880,
+          "position": "relative",
+          "transform": "none",
+          "text": "No. 1\nLongest Lasting\nAlkaline Battery*\n\nKnow More\n\n\n*Based on MPEI (Moscow Pow"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "bannerCv active",
+          "id": "",
+          "top": 144,
+          "height": 960,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "banner-tip fn1_alan",
+          "id": "",
+          "top": 993,
+          "height": 26,
+          "position": "absolute",
+          "transform": "matrix(1, 0, 0, 1, 25, 0)",
+          "text": "*Based on MPEI (Moscow Power Engineering Institute) report testing 10 types of a"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "batteryCv",
+          "id": "",
+          "top": 4977,
+          "height": 112,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "url": "https://www.nanfu.global/",
+      "title": "NANFU Group | Leading Battery Manufacturer & Power Solutions Provider",
+      "scrollY": 192,
+      "pageHeight": 20441,
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "row banner",
+          "id": "",
+          "top": 0,
+          "height": 2880,
+          "position": "relative",
+          "transform": "none",
+          "text": "No. 1\nLongest Lasting\nAlkaline Battery*\n\nKnow More\n\n\n*Based on MPEI (Moscow Pow"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "bannerCv active",
+          "id": "",
+          "top": 192,
+          "height": 960,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "banner-tip fn1_alan",
+          "id": "",
+          "top": 1041,
+          "height": 26,
+          "position": "absolute",
+          "transform": "matrix(1, 0, 0, 1, 33.3325, 0)",
+          "text": "*Based on MPEI (Moscow Power Engineering Institute) report testing 10 types of a"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "batteryCv",
+          "id": "",
+          "top": 4977,
+          "height": 112,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "url": "https://www.nanfu.global/",
+      "title": "NANFU Group | Leading Battery Manufacturer & Power Solutions Provider",
+      "scrollY": 240,
+      "pageHeight": 20441,
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "row banner",
+          "id": "",
+          "top": 0,
+          "height": 2880,
+          "position": "relative",
+          "transform": "none",
+          "text": "No. 1\nLongest Lasting\nAlkaline Battery*\n\nKnow More\n\n\n*Based on MPEI (Moscow Pow"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "bannerCv active",
+          "id": "",
+          "top": 240,
+          "height": 960,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "banner-tip fn1_alan",
+          "id": "",
+          "top": 1089,
+          "height": 26,
+          "position": "absolute",
+          "transform": "matrix(1, 0, 0, 1, 41.6659, 0)",
+          "text": "*Based on MPEI (Moscow Power Engineering Institute) report testing 10 types of a"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "batteryCv",
+          "id": "",
+          "top": 4977,
+          "height": 112,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "url": "https://www.nanfu.global/",
+      "title": "NANFU Group | Leading Battery Manufacturer & Power Solutions Provider",
+      "scrollY": 288,
+      "pageHeight": 20441,
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "row banner",
+          "id": "",
+          "top": 0,
+          "height": 2880,
+          "position": "relative",
+          "transform": "none",
+          "text": "No. 1\nLongest Lasting\nAlkaline Battery*\n\nKnow More\n\n\n*Based on MPEI (Moscow Pow"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "bannerCv active",
+          "id": "",
+          "top": 288,
+          "height": 960,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "banner-tip fn1_alan",
+          "id": "",
+          "top": 1137,
+          "height": 26,
+          "position": "absolute",
+          "transform": "matrix(1, 0, 0, 1, 49.9992, 0)",
+          "text": "*Based on MPEI (Moscow Power Engineering Institute) report testing 10 types of a"
+        },
+        {
+          "tag": "CANVAS",
+          "class": "batteryCv",
+          "id": "",
+          "top": 4977,
+          "height": 112,
+          "position": "static",
+          "transform": "none",
+          "text": ""
+        }
+      ]
+    }
+  ],
+  "errors": [
+    "Failed to execute 'drawImage' on 'CanvasRenderingContext2D': The HTMLImageElement provided is in the 'broken' state."
+  ],
+  "errorsCount": 1
+}

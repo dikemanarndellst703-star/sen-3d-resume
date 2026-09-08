@@ -1,0 +1,72 @@
+{
+  "date": "2026-09-08T01:45:40.594Z",
+  "errors": [],
+  "images": [
+    {
+      "src": "after/hero-desktop.png",
+      "loaded": true
+    },
+    {
+      "src": "before/hero-desktop.png",
+      "loaded": true
+    },
+    {
+      "src": "after/hero-desktop.png",
+      "loaded": true
+    },
+    {
+      "src": "after/face-desktop.png",
+      "loaded": true
+    },
+    {
+      "src": "after/back-desktop.png",
+      "loaded": true
+    },
+    {
+      "src": "after/final-desktop.png",
+      "loaded": true
+    },
+    {
+      "src": "model-renders/v3-final-portrait.png",
+      "loaded": true
+    },
+    {
+      "src": "model-renders/v3-face-detail.png",
+      "loaded": true
+    },
+    {
+      "src": "model-renders/v3-backpack-detail.png",
+      "loaded": true
+    },
+    {
+      "src": "after/routes-desktop.png",
+      "loaded": true
+    },
+    {
+      "src": "before/hero-mobile.png",
+      "loaded": true
+    },
+    {
+      "src": "after/hero-mobile.png",
+      "loaded": true
+    }
+  ],
+  "ranges": 1,
+  "videos": [
+    {
+      "src": "http://127.0.0.1:5175/update-report-v3/before/walkthrough.mp4",
+      "duration": 25.633008,
+      "time": 0.412004
+    },
+    {
+      "src": "http://127.0.0.1:5175/update-report-v3/after/walkthrough.mp4",
+      "duration": 47.233333,
+      "time": 0.484638
+    }
+  ],
+  "mobile": {
+    "width": 390,
+    "scrollWidth": 390
+  },
+  "status": "pass"
+}

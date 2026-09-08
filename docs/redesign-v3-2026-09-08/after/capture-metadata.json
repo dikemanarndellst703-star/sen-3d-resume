@@ -1,0 +1,136 @@
+{
+  "date": "2026-09-08T01:37:34.223Z",
+  "url": "http://127.0.0.1:5175/",
+  "errors": [],
+  "screenshots": [
+    {
+      "name": "hero-desktop.png",
+      "note": "Real full-precision WebGL viewport",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "scrollY": 0,
+      "chapter": "第1幕：初见"
+    },
+    {
+      "name": "face-desktop.png",
+      "note": "Real full-precision WebGL viewport",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "scrollY": 1410,
+      "chapter": "第2幕：看见"
+    },
+    {
+      "name": "back-desktop.png",
+      "note": "Real full-precision WebGL viewport",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "scrollY": 2679,
+      "chapter": "第3幕：探索"
+    },
+    {
+      "name": "final-desktop.png",
+      "note": "Real full-precision WebGL viewport",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "scrollY": 3995,
+      "chapter": "第4幕：出发"
+    },
+    {
+      "name": "hero-mobile.png",
+      "note": "Real 390 × 844 touch viewport",
+      "viewport": [
+        390,
+        844
+      ],
+      "scrollY": 0,
+      "chapter": "第1幕：初见"
+    },
+    {
+      "name": "face-mobile.png",
+      "note": "Mobile macro composition",
+      "viewport": [
+        390,
+        844
+      ],
+      "scrollY": 911,
+      "chapter": "第2幕：看见"
+    }
+  ],
+  "actions": [
+    {
+      "atSeconds": 0,
+      "action": "Silver hero, actual idle"
+    },
+    {
+      "atSeconds": 1.3,
+      "action": "Drag character to inspect angle"
+    },
+    {
+      "atSeconds": 3.12,
+      "action": "Scroll into graphite face macro"
+    },
+    {
+      "atSeconds": 8.63,
+      "action": "Orbit into backpack detail"
+    },
+    {
+      "atSeconds": 14.14,
+      "action": "Return to wide closing composition"
+    },
+    {
+      "atSeconds": 19.66,
+      "action": "Reverse scroll along the same camera path"
+    },
+    {
+      "atSeconds": 24.78,
+      "action": "Continue to learning routes"
+    },
+    {
+      "atSeconds": 30.49,
+      "action": "Native scroll reveals learning scene 2"
+    },
+    {
+      "atSeconds": 33.51,
+      "action": "Native scroll reveals learning scene 3"
+    },
+    {
+      "atSeconds": 36.53,
+      "action": "Native scroll reveals learning scene 4"
+    },
+    {
+      "atSeconds": 39.54,
+      "action": "Read Alex credentials"
+    },
+    {
+      "atSeconds": 43.56,
+      "action": "Reach final learning entry"
+    }
+  ],
+  "browser": "152.0.7977.76",
+  "frameCadence": {
+    "scope": "Browser requestAnimationFrame cadence in an idle full-model scene; not a GPU benchmark or real-phone measurement.",
+    "samples": 180,
+    "medianMs": 16.699999999999818,
+    "p95Ms": 16.700000000000728,
+    "over33ms": 0
+  },
+  "video": {
+    "sourceFrames": 1220,
+    "nativeDurationSeconds": 47.247211933135986,
+    "encodedFps": 30,
+    "method": "Chrome CDP screencast with native timestamps, no time compression"
+  },
+  "model": {
+    "file": "web/public/models/hamster-v3.glb",
+    "bytes": 26347280,
+    "sha256": "1a1a2eb1bf9a1f82bcbe03ec3c05ca3615c46c457388ed63180e6abd725074af"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "date": "2026-09-08T01:40:07.749Z",
+  "checks": [
+    "Delayed GLB shows poster and progress, then full WebGL appears and loader clears",
+    "WebGL disabled: real poster, no endless loading state, learning link remains available"
+  ],
+  "status": "pass"
+}

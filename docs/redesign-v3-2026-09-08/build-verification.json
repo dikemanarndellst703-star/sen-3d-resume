@@ -1,0 +1,35 @@
+{
+  "verified_at": "2026-09-08T01:45:55.664160+00:00",
+  "version": "3.0.0",
+  "application_commit": "e483e401257314c312884445d7670ad92737a6ee",
+  "commands": {
+    "npm run typecheck": "pass",
+    "npm run lint": "pass",
+    "npm run build": "pass"
+  },
+  "vite": "5.4.21",
+  "typescript_build": "pass",
+  "reports": {
+    "update-report": true,
+    "update-report-v3": true
+  },
+  "artifacts": [
+    {
+      "file": "assets/Cinema-C56BZb5T.js",
+      "bytes": 963888,
+      "sha256": "63f7566d9d81ef4b1b76e241c011265130d7a0a539733e5a32f31ad6feaf9c9b"
+    },
+    {
+      "file": "assets/index-WXP6z_Fq.css",
+      "bytes": 28505,
+      "sha256": "44ce326147fd1cb0fd5b640fc92e2ed06f1bbe5b5f4b3e689d289e800fde05e9"
+    },
+    {
+      "file": "assets/index-lC0LwaRM.js",
+      "bytes": 276084,
+      "sha256": "dd925a63978acafae34d842c885095cc55bbf33a03917cf2c13c4a4fbd5c6f1c"
+    }
+  ],
+  "warning": "Vite warns that the lazy 3D chunk exceeds 500 kB; 963.08 kB minified / 266.90 kB gzip. No build errors.",
+  "model_matches_source": true
+}

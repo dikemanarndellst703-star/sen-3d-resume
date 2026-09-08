@@ -1,91 +1,45 @@
-# Project conventions · AI Hamster Hole V2
+# Project conventions · AI Hamster Hole V3
 
-Read this file before changing the project. `AGENTS.md` points here. This repository is now Alex's AI learning gateway with an interactive 3D exploration pod. The original Sen résumé source, notices and selected assets remain as project history.
+Read this file before changing the project. AGENTS.md points here. This repository is Alex's AI learning gateway with a million-triangle character and a flagship promotional scroll experience. Preserve original and V2 assets and their independent reports.
 
-## Repository and commands
+## Commands and layout
 
-- `web/`: React 18, TypeScript, React Three Fiber, Three.js, Framer Motion, Zustand and Vite application.
-- `blender/`: editable V2 model and reproducible scripts; preserved original `sen.blend`.
-- `docs/redesign-2026-09-08/`: baseline, research, design, model evidence and the before/after report `index.html`.
-- `tutor/`: retained original tutorials; their old camera-animation contract does not describe V2.
+`web/` contains React 18, TypeScript, React Three Fiber, Three.js, Framer Motion and Vite. Run `npm ci`, `npm run dev`, `npm run typecheck`, `npm run lint`, `npm run build` and `npm run preview` there. Node must satisfy `^20.19.0 || ^22.13.0 || >=24`; CI uses Node 20. Build runs `tsc -b && vite build && node scripts/copy-report.mjs` into `web/dist/`.
 
-Run npm commands from `web/`:
-
-```sh
-npm ci
-npm run dev
-npm run typecheck
-npm run lint
-npm run build
-npm run preview
-```
-
-The installed ESLint requires Node `^20.19.0 || ^22.13.0 || >=24`; the Pages workflow uses Node 20. TypeScript is strict. Build runs `tsc -b && vite build && node scripts/copy-report.mjs`; output is `web/dist/`. There is no separate automated test command. Run typecheck, lint and build, then verify the affected visual or interactive behavior in the browser.
+`blender/` contains editable source and reproducible generators. `docs/redesign-v3-2026-09-08/` contains V3 research, model evidence, browser acceptance, screenshots, real recordings and index.html. `docs/redesign-2026-09-08/` is the preserved V2 report.
 
 ## Current architecture
 
-Paths in this section are relative to `web/`.
+- App.tsx: header, lazy Cinema, FlagshipRoutes, FlagshipAbout, footer; main destination https://ai.alexdbg.com/.
+- scene/Cinema.tsx: sticky four-chapter viewport, scroll progress spring, changing copy/background, chapter jumps, rotate button, poster/progress, error boundary and rendering visibility. Text loads before GLB.
+- scene/cinematicTimeline.ts: normalized keyframes shared by camera and chapter navigation. Camera and copy consume the same damped progress; no wheel interception.
+- scene/CinematicWorld.tsx: loads hamster-v3.glb at full precision; authored camera/light transitions, mouse rotation, subtle blink/head movement. Pointer picking uses simple invisible volumes while the full mesh remains displayed. No million-triangle raycasting on mouse moves. No per-frame high-poly shadow passes; contact shadow renders once.
+- ui/FlagshipRoutes.tsx and flagship-sections.css: four full-width horizontal scenes in a sticky desktop region, tabs/arrow/Home/End navigation. Natural vertical flow on mobile, short screens and reduced-motion preference. All 16 original course links remain.
+- ui/FlagshipAbout.tsx: three factual statistics, five expanded experience entries and 15 points, closing learning CTA.
+- hooks/useMotionPreference.ts: live media-query subscription for both DOM and WebGL.
 
-- `src/main.tsx` → `src/App.tsx`: static SPA entry, header, hero, stage shell, Alex story, route section and footer. Main learning destination is `https://ai.alexdbg.com/`.
-- `App.tsx` loads `src/scene/Stage.tsx` via `React.lazy` and `Suspense`; text and links do not wait for the 3D module.
-- `Stage.tsx`: Canvas, model loading progress, scene error boundary and poster fallback; pet, spin and day/night buttons with accessible status feedback. IntersectionObserver and document visibility pause rendering when the stage is not visible. Mobile DPR is capped below desktop DPR.
-- `Scene.tsx`: loads `public/models/hamster-v2.glb`; owns the hamster's procedural animation, ring-shaped pod, pedestal, three satellite icons, lights and camera. Scrolling changes the desktop camera gently; the browser retains native scrolling. Character nodes supply eye tracking, blinking, pet/wave and spin actions.
-- `src/ui/Resume.tsx`: five `STORY` entries rendered as an accordion with button/region relationships. Store `chapter` chooses the expanded entry and subtly changes character orientation.
-- `src/ui/Works.tsx`: four accessible tabs, one route panel, CSS illustrations and final learning CTA. Arrow keys, Home and End update both selection and focus.
-- `src/data/works.ts`: learning route titles, descriptions, course names and external links. The current UI is Chinese; some data retains an English variant.
-- `src/store.ts`: active runtime fields are `night`, `pet`, `spin`, `chapter`, and `route`; action counts trigger character responses. Older fields remain for compatibility.
-- `src/styles.css`: palette, layout, typography, responsive rules and CSS transitions. Desktop uses a sticky exploration stage; mobile uses a single-column flow.
+Old Stage.tsx, Scene.tsx, Resume.tsx, Works.tsx, store and tutor material remain for historical reference; the current App does not import them. Do not apply the old pod/pet/night/accordion contract to V3.
 
-### Motion and accessibility
+## Motion and accessibility
 
-`MotionConfig reducedMotion="user"`, `useReducedMotion`, and CSS media rules follow system `prefers-reduced-motion`. In reduced mode the scene uses demand rendering, continuous character/decoration animation stops, and spin becomes an immediate half-turn. Pet buttons still provide text feedback. Theme changes invalidate the scene. Preserve pause/resume behavior for off-screen and hidden-tab states.
+Native vertical scrolling drives Cinema and desktop route translation. Mouse drag affects character yaw; touch drag must continue to scroll vertically. Rotation button is the keyboard/touch alternative. Hidden chapter copies are inert and aria-hidden. Keep visible focus, skip links, semantic headings, tab relationships and safe target/rel on external links.
 
-Maintain visible keyboard focus, skip navigation, semantic links/buttons, tab keyboard support, accordion `aria-expanded`/panel IDs and polite status messages. Main learning links use `target="_blank"` and `rel="noopener noreferrer"`. Touch interactions must work without hover.
+Follow live prefers-reduced-motion: Cinema collapses to a static hero, routes become natural flow, camera/idle/CSS animation stops, explicit turn still works immediately. Use demand rendering in reduced mode, never rendering while off-screen or document-hidden, and resume on return. Mobile DPR is 1; desktop capped at 1.5. Keep delta-based damping and local monotonic time because R3F clock restarts across frameloop changes.
 
-### Removed architectural assumptions
+## Model contract
 
-V2 does not read `CameraAction`, a GLB camera, or `focus-*` empties. There is no active autofocus/DepthOfField/Bloom pipeline and no markdown work-detail modal. `FOCUS_POINTS` is currently used by the story's `data-point` attributes, not by the camera. Some original utility files or dependencies remain; inspect imports before treating them as active features.
+Blender Z-up facing -Y exports to glTF Y-up facing +Z. Floor origin, height 3.6. Stable nodes: HamsterRoot, Head (neck pivot), Eye_L/R (scale.y blink), Arm_L/R (shoulder pivots). Current shoulder x is ±0.64. Vertex colors and PBR, no external textures.
 
-## Model contract and authoring
+Final GLB: 1,018,268 triangles, 28 meshes, 14 materials, 26,347,280 bytes. Full mesh is loaded by default on desktop and mobile. This explicit user precision requirement must not silently become a low-poly runtime replacement.
 
-Repository-relative assets:
+hamster-v3.blend is triangulated: actual Blender polygon count 1,018,268. hamster-v3-authoring.blend preserves the editable pre-triangulation source: 503,769 polygons, 1,018,268 evaluated triangles. Report both metrics clearly. Face count and asset size are not FPS measurements.
 
-| File | Purpose |
-| --- | --- |
-| `blender/hamster-v2.blend` | Editable model, PBR materials and studio setup |
-| `blender/build_hamster_v2.py` | Original mesh construction, GLB export, poster and stats |
-| `blender/render_model_comparison.py` | Same-studio V1/V2 comparison renders |
-| `web/public/models/hamster-v2.glb` | Runtime character |
-| `web/public/brand/hamster-v2-poster.png` | Static fallback and model preview |
-| `docs/redesign-2026-09-08/model-delivery.md` | Detailed model and coordinate notes |
+Run build_hamster_v3.py and render_hamster_v3_details.py with Blender's bundled Python; verify_hamster_v3_blender.py opens the final source and independently reimports GLB. verify_hamster_v3.py uses standard Python to inspect the binary. Regeneration should refresh source, GLB, poster, stats and all model comparison images together. Original sen.blend / ai-hamster.glb and V2 assets are never overwritten.
 
-Blender is Z-up and faces -Y. Exported glTF is Y-up and faces +Z. Its origin is on the floor; height is approximately 3.59 units. Keep `HamsterRoot`, `Head`, `Eye_L`, `Eye_R`, `Arm_L` and `Arm_R` names stable. `Head` is the neck pivot; eyes are child meshes with child catchlights; arms use shoulder pivots. Eye `scale.y` controls blinking. Positive `Arm_L.rotation.z` and negative `Arm_R.rotation.z` raise the arms outwards. Runtime movement is implemented in `Scene.tsx`, without mandatory animation clips.
+## Verification and publishing
 
-The model uses vertex colors and PBR materials, with no external texture dependency. Static parts are merged per material and parent pivot. Current measurement: 93,696 triangles, 20 meshes, 11 materials, 1,895,128 bytes. The build script checks a budget below 120,000 triangles and 8 MB. Do not interpret file-size savings as measured frame-rate improvements.
+After source/asset edits run typecheck, lint and build; inspect actual desktop/mobile compositions and test changed interactions. scripts/verify-v3.cjs tests chapters, reverse scrolling, drag, native touch scrolling, reduced mode and failure fallback. scripts/capture-v3.cjs produces real browser screenshots and native-time video. Lower-section content/keyboard verification is recorded separately. No unmeasured real-device FPS promises.
 
-From the repository root:
+GitHub Pages workflow builds main and deploys web/dist. copy-report.mjs publishes V2 at /update-report/ and V3 at /update-report-v3/; preserve both. Local report source links remain relative; copied online source links target the corresponding version tag. Asset URLs use import.meta.env.BASE_URL with base './'. Confirm deployment success and the actual online artifacts before saying published.
 
-```sh
-/Applications/Blender.app/Contents/MacOS/Blender --background --python blender/build_hamster_v2.py
-/Applications/Blender.app/Contents/MacOS/Blender --background --python blender/render_model_comparison.py
-```
-
-Replace the executable path with the user's local Blender binary as needed. Use Blender's bundled Python, not plain system Python, to run scripts requiring `bpy`. The generator writes the V2 `.blend`, GLB, poster and model statistics; rerun the comparison script when the final model changes. Visually inspect exports and retain interactive node names.
-
-## Validation and history
-
-After relevant changes, verify desktop and mobile layouts; pet/wave/spin, night/day, all five accordion entries, all four route panels, keyboard navigation, reduced motion and fallback behavior. Check console errors and asset loading through the app's actual base URL. Code or asset changes require the standard npm checks above; documentation-only changes require checking paths and claims against source.
-
-Preserve the baseline under `docs/redesign-2026-09-08/before/` and original `web/public/models/ai-hamster.glb` / `blender/sen.blend`. Add evidence for new work rather than overwriting those assets. `model-asset-verification.json` records exact Git blob preservation and the V2 GLB checksum. The report entry point is `docs/redesign-2026-09-08/index.html`; keep screenshots, recordings, source changes and actual deployment evidence traceable.
-
-## Hosting
-
-`.github/workflows/deploy.yml` runs on pushes to `main` or manual dispatch, builds inside `web/`, uploads `web/dist/` and deploys with GitHub Pages. Its success and the live result establish publication status. The report-copy build step publishes `docs/redesign-2026-09-08/` at `web/dist/update-report/`. Local report links stay relative; published source links target the GitHub version tag.
-
-`web/vite.config.ts` uses `base: './'`. Construct public asset URLs with `import.meta.env.BASE_URL` so deployments under a repository subpath work. Preview with an HTTP server or `npm run preview`; do not rely on opening built files through `file://`.
-
-## Attribution and content boundaries
-
-Preserve `LICENSE` and `NOTICE`, including Sen Zheng (SEN)'s original copyright and MIT code attribution. Original personal content and assets are excluded from MIT. Alex / AI Hamster Hole branding, content and character assets are project-specific and are not automatically licensed for redistribution by the source-code license. Third-party assets retain their own licenses. Do not overwrite these boundaries when updating documentation.
-
-Browser regression and artifact capture scripts live under `scripts/`: `verify-upgrade.cjs`, `capture-baseline.cjs`, and `capture-upgrade.cjs`. Run them from the repo root against a production preview. They support `PLAYWRIGHT_CORE` and `CHROME_PATH` overrides.
+Preserve LICENSE / NOTICE and Sen's MIT code attribution. Original personal assets and Alex/AI Hamster Hole brand/content are outside blanket MIT reuse. Never add credentials or local archives to Git. Keep version tags, model checksums and before/after evidence traceable.

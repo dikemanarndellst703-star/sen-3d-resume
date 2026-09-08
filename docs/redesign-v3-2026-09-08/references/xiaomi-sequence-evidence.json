@@ -1,0 +1,116 @@
+{
+  "date": "2026-09-08T01:24:33.758Z",
+  "url": "https://www.mi.com/global/product/xiaomi-15-ultra/",
+  "browser": "152.0.7977.76",
+  "viewport": {
+    "width": 1440,
+    "height": 960
+  },
+  "actions": [
+    {
+      "action": "initial",
+      "state": {
+        "scrollY": 0,
+        "pageHeight": 53114,
+        "visible": [
+          {
+            "tag": "H1",
+            "class": "",
+            "top": 48,
+            "height": 60,
+            "text": "Xiaomi 15 Ultra",
+            "position": "static",
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      }
+    },
+    {
+      "action": "native wheel forward",
+      "target": 2300,
+      "from": 0,
+      "file": "xiaomi-02-pinned-scroll.png",
+      "state": {
+        "scrollY": 2300,
+        "pageHeight": 53114,
+        "visible": [
+          {
+            "tag": "DIV",
+            "class": "kvs_container lazy pin-spacer",
+            "top": -777,
+            "height": 3074,
+            "text": "Leica 1-inch main, 200MP telephoto\nNext-gen Leica quad camera system\nLeica Summi",
+            "position": "static",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "tag": "DIV",
+            "class": "section kvs-slide lazy",
+            "top": 85,
+            "height": 567,
+            "text": "Leica 1-inch main, 200MP telephoto\nNext-gen Leica quad camera system\nLeica Summi",
+            "position": "relative",
+            "transform": "matrix(1, 0, 0, 1, 82.4436, 0)",
+            "opacity": "1"
+          }
+        ]
+      }
+    },
+    {
+      "action": "native wheel forward",
+      "target": 3200,
+      "from": 2300,
+      "state": {
+        "scrollY": 3200,
+        "pageHeight": 53114,
+        "visible": [
+          {
+            "tag": "DIV",
+            "class": "kvs_container lazy pin-spacer",
+            "top": -1677,
+            "height": 3074,
+            "text": "Leica 1-inch main, 200MP telephoto\nNext-gen Leica quad camera system\nLeica Summi",
+            "position": "static",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "tag": "DIV",
+            "class": "section kvs-slide lazy",
+            "top": 85,
+            "height": 567,
+            "text": "Leica 1-inch main, 200MP telephoto\nNext-gen Leica quad camera system\nLeica Summi",
+            "position": "relative",
+            "transform": "matrix(1, 0, 0, 1, -514.582, 0)",
+            "opacity": "1"
+          }
+        ]
+      }
+    },
+    {
+      "action": "native wheel forward",
+      "target": 5320,
+      "from": 3200,
+      "state": {
+        "scrollY": 5320,
+        "pageHeight": 53114,
+        "visible": []
+      }
+    },
+    {
+      "action": "native wheel forward",
+      "target": 7460,
+      "from": 5320,
+      "file": "xiaomi-03-material-details.png",
+      "state": {
+        "scrollY": 7460,
+        "pageHeight": 53114,
+        "visible": []
+      }
+    }
+  ],
+  "errors": [],
+  "errorsCount": 0
+}

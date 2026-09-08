@@ -1,0 +1,140 @@
+{
+  "date": "2026-09-08T01:37:08.227Z",
+  "url": "http://127.0.0.1:5175/",
+  "checks": [
+    {
+      "name": "Full WebGL model loads, one semantic hero, no fallback",
+      "status": "pass"
+    },
+    {
+      "name": "Four chapter jumps and reverse scroll retain pinned scene and one interactive copy",
+      "status": "pass"
+    },
+    {
+      "name": "Mouse drag rotates through lightweight picking volumes and releases capture",
+      "status": "pass"
+    },
+    {
+      "name": "Native pointer cancellation clears dragging state and cursor",
+      "status": "pass"
+    },
+    {
+      "name": "Live reduced-motion stops idle drawing, collapses pinned story and retains explicit turn",
+      "status": "pass"
+    },
+    {
+      "name": "Scene resumes after leaving and returning to viewport",
+      "status": "pass"
+    },
+    {
+      "name": "Five desktop, tablet and mobile widths have no horizontal overflow",
+      "status": "pass",
+      "detail": [
+        {
+          "width": 1440,
+          "height": 1000,
+          "scrollWidth": 1440,
+          "h1": {
+            "left": 100.796875,
+            "right": 719.984375
+          }
+        },
+        {
+          "width": 1365,
+          "height": 768,
+          "scrollWidth": 1365,
+          "h1": {
+            "left": 95.546875,
+            "right": 682.484375
+          }
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "scrollWidth": 1024,
+          "h1": {
+            "left": 61.4375,
+            "right": 511.984375
+          }
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "scrollWidth": 390,
+          "h1": {
+            "left": 27.296875,
+            "right": 362.6875
+          }
+        },
+        {
+          "width": 320,
+          "height": 740,
+          "scrollWidth": 320,
+          "h1": {
+            "left": 22.390625,
+            "right": 297.578125
+          }
+        }
+      ]
+    },
+    {
+      "name": "Actual touch swipe over the 3D canvas preserves native vertical scrolling",
+      "status": "pass"
+    },
+    {
+      "name": "Model download failure displays actual poster and retains working learning entry",
+      "status": "pass"
+    }
+  ],
+  "errors": [],
+  "layouts": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "scrollWidth": 1440,
+      "h1": {
+        "left": 100.796875,
+        "right": 719.984375
+      }
+    },
+    {
+      "width": 1365,
+      "height": 768,
+      "scrollWidth": 1365,
+      "h1": {
+        "left": 95.546875,
+        "right": 682.484375
+      }
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "h1": {
+        "left": 61.4375,
+        "right": 511.984375
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "h1": {
+        "left": 27.296875,
+        "right": 362.6875
+      }
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "scrollWidth": 320,
+      "h1": {
+        "left": 22.390625,
+        "right": 297.578125
+      }
+    }
+  ],
+  "browser": "152.0.7977.76",
+  "status": "pass",
+  "scope": "Headless desktop Chrome, touch emulation, actual canvas screenshots, production build. No real-device FPS claim. Lower-section keyboard/content QA is recorded separately."
+}

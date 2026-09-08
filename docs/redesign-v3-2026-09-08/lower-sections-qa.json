@@ -1,0 +1,500 @@
+{
+  "url": "http://127.0.0.1:5175/",
+  "mode": "production preview",
+  "timestamp": "2026-09-08T01:31:44.824Z",
+  "desktop": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "index": 0,
+      "title": "AI 入门",
+      "active": true,
+      "x": 0,
+      "width": 1440,
+      "copyTop": 209.53125,
+      "copyBottom": 719.453125,
+      "navTop": 811,
+      "overflow": false,
+      "links": [
+        {
+          "title": "ChatGPT 从零开始对话与提问↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "找到适合你的 AI 模型模型选择↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "建立第一套提示词方法Prompt↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "避开新手最常见的坑认知地图↗",
+          "tabIndex": 0
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "index": 1,
+      "title": "AI 绘画",
+      "active": true,
+      "x": 0,
+      "width": 1440,
+      "copyTop": 209.53125,
+      "copyBottom": 719.453125,
+      "navTop": 811,
+      "overflow": false,
+      "links": [
+        {
+          "title": "从描述到高质量画面视觉提示词↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "风格、构图与角色一致性创作方法↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "为内容与品牌快速出图实战↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "让 AI 成为视觉搭档工作流↗",
+          "tabIndex": 0
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "index": 2,
+      "title": "AI 编程",
+      "active": true,
+      "x": 0,
+      "width": 1440,
+      "copyTop": 209.53125,
+      "copyBottom": 719.453125,
+      "navTop": 811,
+      "overflow": false,
+      "links": [
+        {
+          "title": "用自然语言完成第一个网页Vibe Coding↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "让 AI 帮你理解与修改代码协作方式↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "从需求到可运行的小工具产品实战↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "建立自己的 AI 开发流程进阶↗",
+          "tabIndex": 0
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "index": 3,
+      "title": "AI 效率",
+      "active": true,
+      "x": 0,
+      "width": 1440,
+      "copyTop": 209.53125,
+      "copyBottom": 719.453125,
+      "navTop": 811,
+      "overflow": false,
+      "links": [
+        {
+          "title": "打造你的 AI 工作助理个人系统↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "把重复任务交给自动化工作流↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "办公、内容与知识管理效率工具↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "重新打开个人能力边界长期路线↗",
+          "tabIndex": 0
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "index": 0,
+      "title": "AI 入门",
+      "active": true,
+      "x": 0,
+      "width": 1365,
+      "copyTop": 186.625,
+      "copyBottom": 601.375,
+      "navTop": 692,
+      "overflow": false,
+      "links": [
+        {
+          "title": "ChatGPT 从零开始对话与提问↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "找到适合你的 AI 模型模型选择↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "建立第一套提示词方法Prompt↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "避开新手最常见的坑认知地图↗",
+          "tabIndex": 0
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "index": 1,
+      "title": "AI 绘画",
+      "active": true,
+      "x": 1.3671875,
+      "width": 1365,
+      "copyTop": 186.625,
+      "copyBottom": 601.375,
+      "navTop": 692,
+      "overflow": false,
+      "links": [
+        {
+          "title": "从描述到高质量画面视觉提示词↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "风格、构图与角色一致性创作方法↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "为内容与品牌快速出图实战↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "让 AI 成为视觉搭档工作流↗",
+          "tabIndex": 0
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "index": 2,
+      "title": "AI 编程",
+      "active": true,
+      "x": 0.683349609375,
+      "width": 1365,
+      "copyTop": 186.625,
+      "copyBottom": 601.375,
+      "navTop": 692,
+      "overflow": false,
+      "links": [
+        {
+          "title": "用自然语言完成第一个网页Vibe Coding↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "让 AI 帮你理解与修改代码协作方式↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "从需求到可运行的小工具产品实战↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "建立自己的 AI 开发流程进阶↗",
+          "tabIndex": 0
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "index": 3,
+      "title": "AI 效率",
+      "active": true,
+      "x": 0,
+      "width": 1365,
+      "copyTop": 186.015625,
+      "copyBottom": 600.765625,
+      "navTop": 691.390625,
+      "overflow": false,
+      "links": [
+        {
+          "title": "打造你的 AI 工作助理个人系统↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "把重复任务交给自动化工作流↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "办公、内容与知识管理效率工具↗",
+          "tabIndex": 0
+        },
+        {
+          "title": "重新打开个人能力边界长期路线↗",
+          "tabIndex": 0
+        }
+      ]
+    }
+  ],
+  "keyboard": [
+    {
+      "key": "ArrowRight",
+      "selected": "route-tab-art",
+      "focused": "route-tab-art",
+      "scroll": 5910
+    },
+    {
+      "key": "End",
+      "selected": "route-tab-automate",
+      "focused": "route-tab-automate",
+      "scroll": 7470
+    },
+    {
+      "key": "Home",
+      "selected": "route-tab-start",
+      "focused": "route-tab-start",
+      "scroll": 5130
+    },
+    {
+      "key": "ArrowLeft",
+      "selected": "route-tab-automate",
+      "focused": "route-tab-automate",
+      "scroll": 7470
+    },
+    {
+      "key": "ArrowUp",
+      "selected": "route-tab-code",
+      "focused": "route-tab-code",
+      "scroll": 6690
+    },
+    {
+      "key": "ArrowDown",
+      "selected": "route-tab-automate",
+      "focused": "route-tab-automate",
+      "scroll": 7470
+    },
+    {
+      "tabOrder": "Visible course links progress normally; off-screen course links skipped; last link reaches active route tab.",
+      "passed": true
+    }
+  ],
+  "mobile": {
+    "natural": true,
+    "overflow": false,
+    "routeRects": [
+      {
+        "title": "AI 入门",
+        "x": 0,
+        "width": 390,
+        "top": -4507.609375,
+        "height": 953.578125
+      },
+      {
+        "title": "AI 绘画",
+        "x": 0,
+        "width": 390,
+        "top": -3554.03125,
+        "height": 889.78125
+      },
+      {
+        "title": "AI 编程",
+        "x": 0,
+        "width": 390,
+        "top": -2664.25,
+        "height": 889.78125
+      },
+      {
+        "title": "AI 效率",
+        "x": 0,
+        "width": 390,
+        "top": -1774.46875,
+        "height": 909.578125
+      }
+    ],
+    "hiddenPanels": 0,
+    "tabNavigation": true,
+    "wideElements": []
+  },
+  "reducedMotion": {
+    "natural": true,
+    "trackTransform": "none",
+    "visiblePanels": 4,
+    "accessibleLinks": 16,
+    "restoredAnimatedMode": true
+  },
+  "content": {
+    "routeLinks": [
+      {
+        "text": "ChatGPT 从零开始对话与提问↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "找到适合你的 AI 模型模型选择↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "建立第一套提示词方法Prompt↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "避开新手最常见的坑认知地图↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "从描述到高质量画面视觉提示词↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "风格、构图与角色一致性创作方法↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "为内容与品牌快速出图实战↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "让 AI 成为视觉搭档工作流↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "用自然语言完成第一个网页Vibe Coding↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "让 AI 帮你理解与修改代码协作方式↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "从需求到可运行的小工具产品实战↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "建立自己的 AI 开发流程进阶↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "打造你的 AI 工作助理个人系统↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "把重复任务交给自动化工作流↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "办公、内容与知识管理效率工具↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      },
+      {
+        "text": "重新打开个人能力边界长期路线↗",
+        "href": "https://ai.alexdbg.com/",
+        "target": "_blank",
+        "rel": "noopener noreferrer"
+      }
+    ],
+    "storyEntries": 5,
+    "storyPoints": 15,
+    "numbers": "AI 内容同路人30万培训学员2万+全国巡回教学30场+",
+    "cta": {
+      "href": "https://ai.alexdbg.com/",
+      "target": "_blank",
+      "rel": "noopener noreferrer"
+    }
+  },
+  "consoleErrors": [],
+  "pageErrors": [],
+  "repairs": [
+    "Explicitly reset route tab button border, inherited color and font after integration with V3 global CSS.",
+    "Removed stale current-route marker in sequential mobile/reduced mode; navigation remains fully available."
+  ],
+  "pass": true,
+  "finalMobileRetest": {
+    "mode": "flagship-routes is-natural",
+    "currentMarkers": 0,
+    "links": 16,
+    "overflow": false,
+    "targetTop": 87.75,
+    "reducedAccessibleLinks": 16
+  },
+  "visualInspection": {
+    "desktop": [
+      "AI入门：镜面透镜、完整课程与导航，无碰撞",
+      "AI绘画：橙色切片、完整课程与导航，无碰撞",
+      "AI编程：金属括号、完整课程与导航，无碰撞",
+      "AI效率：金属流线、完整课程与导航，无碰撞"
+    ],
+    "about": "大标题、创始人说明与三个数据完整清晰；五段经历与15要点全部存在且默认展开",
+    "mobile": "顺序展示，文本优先、几何图随后，课程和导航可触达；截图中的测试焦点已移开"
+  },
+  "evidence": [
+    "after/routes-desktop.png",
+    "after/routes-desktop-1.png",
+    "after/routes-desktop-2.png",
+    "after/routes-desktop-3.png",
+    "after/routes-mobile.png",
+    "after/routes-mobile-full-panel.png",
+    "after/about-desktop.png",
+    "after/about-mobile.png"
+  ]
+}

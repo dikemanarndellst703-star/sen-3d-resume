@@ -1,0 +1,281 @@
+{
+  "date": "2026-09-08T01:24:53.251Z",
+  "url": "https://www.nanfu.global/",
+  "browser": "152.0.7977.76",
+  "viewport": {
+    "width": 1440,
+    "height": 960
+  },
+  "actions": [
+    {
+      "action": "initial",
+      "state": {
+        "scrollY": 0,
+        "pageHeight": 20441,
+        "visible": [
+          {
+            "tag": "DIV",
+            "class": "row banner",
+            "top": 0,
+            "height": 2880,
+            "text": "No. 1\nLongest Lasting\nAlkaline Battery*\n\nKnow More\n\n\n*Based on MPEI (Moscow Pow",
+            "position": "relative",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "tag": "CANVAS",
+            "class": "bannerCv active",
+            "top": 0,
+            "height": 960,
+            "text": "",
+            "position": "static",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "tag": "H1",
+            "class": "f-60 wc word_b fn1_alan",
+            "top": 289,
+            "height": 162,
+            "text": "No. 1\nLongest Lasting\nAlkaline Battery*",
+            "position": "static",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          },
+          {
+            "tag": "H2",
+            "class": "f-34 word_b fn2_alan",
+            "top": 268,
+            "height": 108,
+            "text": "",
+            "position": "static",
+            "transform": "matrix(1, 0, 0, 1, 0, 30)",
+            "opacity": "0"
+          }
+        ]
+      }
+    },
+    {
+      "action": "native wheel forward",
+      "target": 624,
+      "from": 0,
+      "state": {
+        "scrollY": 672,
+        "pageHeight": 20441,
+        "visible": [
+          {
+            "tag": "DIV",
+            "class": "row banner",
+            "top": -672,
+            "height": 2880,
+            "text": "No. 1\nLongest Lasting\nAlkaline Battery*\n\nKnow More\n\n\n*Based on MPEI (Moscow Pow",
+            "position": "relative",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "tag": "CANVAS",
+            "class": "bannerCv active",
+            "top": 0,
+            "height": 960,
+            "text": "",
+            "position": "static",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "tag": "H1",
+            "class": "f-60 wc word_b fn1_alan",
+            "top": 289,
+            "height": 162,
+            "text": "No. 1\nLongest Lasting\nAlkaline Battery*",
+            "position": "static",
+            "transform": "matrix(1, 0, 0, 1, 50, 0)",
+            "opacity": "0"
+          },
+          {
+            "tag": "H2",
+            "class": "f-34 word_b fn2_alan",
+            "top": 268,
+            "height": 108,
+            "text": "",
+            "position": "static",
+            "transform": "matrix(1, 0, 0, 1, 0, 30)",
+            "opacity": "0"
+          }
+        ]
+      }
+    },
+    {
+      "action": "native wheel forward",
+      "target": 1296,
+      "from": 672,
+      "file": "nanfu-02-product-pullback.png",
+      "state": {
+        "scrollY": 1392,
+        "pageHeight": 20441,
+        "visible": [
+          {
+            "tag": "DIV",
+            "class": "row banner",
+            "top": -1392,
+            "height": 2880,
+            "text": "No. 1\nLongest Lasting\nAlkaline Battery*\n\nKnow More\n\n\n*Based on MPEI (Moscow Pow",
+            "position": "relative",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "tag": "CANVAS",
+            "class": "bannerCv active",
+            "top": 0,
+            "height": 960,
+            "text": "",
+            "position": "static",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "tag": "H1",
+            "class": "f-60 wc word_b fn1_alan",
+            "top": 289,
+            "height": 162,
+            "text": "No. 1\nLongest Lasting\nAlkaline Battery*",
+            "position": "static",
+            "transform": "matrix(1, 0, 0, 1, 50, 0)",
+            "opacity": "0"
+          },
+          {
+            "tag": "H2",
+            "class": "f-34 word_b fn2_alan",
+            "top": 238,
+            "height": 108,
+            "text": "NANFU Group\nEngineering the World's Longest Lasting Power",
+            "position": "static",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          }
+        ]
+      }
+    },
+    {
+      "action": "native wheel forward",
+      "target": 1920,
+      "from": 1392,
+      "state": {
+        "scrollY": 2016,
+        "pageHeight": 20441,
+        "visible": [
+          {
+            "tag": "DIV",
+            "class": "row banner",
+            "top": -2016,
+            "height": 2880,
+            "text": "No. 1\nLongest Lasting\nAlkaline Battery*\n\nKnow More\n\n\n*Based on MPEI (Moscow Pow",
+            "position": "relative",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "tag": "CANVAS",
+            "class": "bannerCv active",
+            "top": -96,
+            "height": 960,
+            "text": "",
+            "position": "static",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "tag": "H1",
+            "class": "f-60 wc word_b fn1_alan",
+            "top": 193,
+            "height": 162,
+            "text": "No. 1\nLongest Lasting\nAlkaline Battery*",
+            "position": "static",
+            "transform": "matrix(1, 0, 0, 1, 50, 0)",
+            "opacity": "0"
+          },
+          {
+            "tag": "H2",
+            "class": "f-34 word_b fn2_alan",
+            "top": 142,
+            "height": 108,
+            "text": "NANFU Group\nEngineering the World's Longest Lasting Power",
+            "position": "static",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          }
+        ]
+      }
+    },
+    {
+      "action": "native wheel forward",
+      "target": 2400,
+      "from": 2016,
+      "state": {
+        "scrollY": 2496,
+        "pageHeight": 20441,
+        "visible": [
+          {
+            "tag": "DIV",
+            "class": "row banner",
+            "top": -2496,
+            "height": 2880,
+            "text": "No. 1\nLongest Lasting\nAlkaline Battery*\n\nKnow More\n\n\n*Based on MPEI (Moscow Pow",
+            "position": "relative",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "tag": "CANVAS",
+            "class": "bannerCv active",
+            "top": -576,
+            "height": 960,
+            "text": "",
+            "position": "static",
+            "transform": "none",
+            "opacity": "1"
+          },
+          {
+            "tag": "H2",
+            "class": "f-120 word_h alanFn",
+            "top": 459,
+            "height": 104,
+            "text": "GloballyTrusted",
+            "position": "static",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          }
+        ]
+      }
+    },
+    {
+      "action": "native wheel forward",
+      "target": 3408,
+      "from": 2496,
+      "file": "nanfu-03-brand-scale.png",
+      "state": {
+        "scrollY": 3504,
+        "pageHeight": 20441,
+        "visible": [
+          {
+            "tag": "H2",
+            "class": "f-96 word_h alanFn",
+            "top": 371,
+            "height": 100,
+            "text": "No.1BatteryBrandinChina",
+            "position": "static",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    "Failed to execute 'drawImage' on 'CanvasRenderingContext2D': The HTMLImageElement provided is in the 'broken' state."
+  ],
+  "errorsCount": 53
+}

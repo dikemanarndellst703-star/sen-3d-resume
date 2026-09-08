@@ -1,0 +1,41 @@
+{
+  "baseline_tag": "v2.0.0",
+  "baseline_commit": "4c8c4f9974d18fc8ab5e9f9d7e12e35ac7d3c16c",
+  "files": [
+    {
+      "file": "docs/redesign-v3-2026-09-08/before/hero-desktop.png",
+      "source": "docs/redesign-2026-09-08/after/hero-desktop.png",
+      "bytes": 440477,
+      "sha256": "3b0aebbe4638c479d721c7d39df0055c59eea7f836905eaf415567a7a4f48085",
+      "identical_to_v2": true
+    },
+    {
+      "file": "docs/redesign-v3-2026-09-08/before/hero-mobile.png",
+      "source": "docs/redesign-2026-09-08/after/hero-mobile.png",
+      "bytes": 128236,
+      "sha256": "3a0281e5f492217d9c320fc90a7ef169d9cc3208a1229bb4bb72416c4906d2af",
+      "identical_to_v2": true
+    },
+    {
+      "file": "docs/redesign-v3-2026-09-08/before/routes-desktop.png",
+      "source": "docs/redesign-2026-09-08/after/routes-desktop.png",
+      "bytes": 123276,
+      "sha256": "80005334b0c7c43c900795c5b168373d14a767e482b5776b562fb9a9fb3951b9",
+      "identical_to_v2": true
+    },
+    {
+      "file": "docs/redesign-v3-2026-09-08/before/story-desktop.png",
+      "source": "docs/redesign-2026-09-08/after/story-desktop.png",
+      "bytes": 438401,
+      "sha256": "55a574129377e01428388f6b960cc09c42809382850d178341131149d0a357b7",
+      "identical_to_v2": true
+    },
+    {
+      "file": "docs/redesign-v3-2026-09-08/before/walkthrough.mp4",
+      "source": "docs/redesign-2026-09-08/after/walkthrough.mp4",
+      "bytes": 3816179,
+      "sha256": "85cc4a30c8ad986ab0c7b2cd4a895849059dbd173a5b0085556a058285f2b356",
+      "identical_to_v2": true
+    }
+  ]
+}

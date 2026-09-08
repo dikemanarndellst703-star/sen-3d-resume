@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-08T01:45:38.862Z",
+  "mode": "offline file URL",
+  "split": "51%",
+  "playing": [
+    {
+      "paused": false,
+      "currentTime": 0.867609,
+      "ready": 4
+    },
+    {
+      "paused": false,
+      "currentTime": 0.871008,
+      "ready": 4
+    }
+  ],
+  "paused": true,
+  "mobile": {
+    "width": 390,
+    "scrollWidth": 390,
+    "missing": 0
+  },
+  "missingLocalLinkTargets": [],
+  "errors": []
+}
