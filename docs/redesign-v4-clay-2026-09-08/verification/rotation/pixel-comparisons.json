@@ -1,0 +1,92 @@
+[
+  {
+    "name": "race-preserves-turn",
+    "a": "second-baseline.png",
+    "b": "second-race-rotated.png",
+    "expectation": "turned",
+    "region": {
+      "x": 0,
+      "y": 100,
+      "width": 700,
+      "height": 800
+    },
+    "meanAbsoluteChannelDifference": 75.65265297619048,
+    "changedPixelFractionAboveThreshold": 0.9523375,
+    "exactlyEqual": false
+  },
+  {
+    "name": "race-four-returns",
+    "a": "second-baseline.png",
+    "b": "second-race-four-turns.png",
+    "expectation": "returned",
+    "region": {
+      "x": 0,
+      "y": 100,
+      "width": 700,
+      "height": 800
+    },
+    "meanAbsoluteChannelDifference": 0.0386875,
+    "changedPixelFractionAboveThreshold": 0.0005303571428571429,
+    "exactlyEqual": false
+  },
+  {
+    "name": "stationary-turns",
+    "a": "second-stationary-baseline.png",
+    "b": "second-stationary-one-turn.png",
+    "expectation": "turned",
+    "region": {
+      "x": 0,
+      "y": 100,
+      "width": 700,
+      "height": 800
+    },
+    "meanAbsoluteChannelDifference": 75.65237321428572,
+    "changedPixelFractionAboveThreshold": 0.9523339285714286,
+    "exactlyEqual": false
+  },
+  {
+    "name": "stationary-four-returns",
+    "a": "second-stationary-baseline.png",
+    "b": "second-stationary-four-turns.png",
+    "expectation": "returned",
+    "region": {
+      "x": 0,
+      "y": 100,
+      "width": 700,
+      "height": 800
+    },
+    "meanAbsoluteChannelDifference": 0.038670833333333335,
+    "changedPixelFractionAboveThreshold": 0.0005303571428571429,
+    "exactlyEqual": false
+  },
+  {
+    "name": "scroll-restores",
+    "a": "second-stationary-baseline.png",
+    "b": "second-scroll-restored.png",
+    "expectation": "returned",
+    "region": {
+      "x": 0,
+      "y": 100,
+      "width": 700,
+      "height": 800
+    },
+    "meanAbsoluteChannelDifference": 0,
+    "changedPixelFractionAboveThreshold": 0,
+    "exactlyEqual": true
+  },
+  {
+    "name": "baseline-repeatability",
+    "a": "second-baseline.png",
+    "b": "second-stationary-baseline.png",
+    "expectation": "repeatable",
+    "region": {
+      "x": 0,
+      "y": 100,
+      "width": 700,
+      "height": 800
+    },
+    "meanAbsoluteChannelDifference": 0,
+    "changedPixelFractionAboveThreshold": 0,
+    "exactlyEqual": true
+  }
+]

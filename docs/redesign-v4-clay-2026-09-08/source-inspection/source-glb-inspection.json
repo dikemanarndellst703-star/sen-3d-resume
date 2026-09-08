@@ -1,0 +1,87 @@
+{
+  "source_file": "/Users/lingze/Desktop/文件夹合集/大表哥站外引流/tripo_convert_bfa920ab-ad7b-44e1-b2ac-2ceb65744036.glb",
+  "source_bytes": 16039824,
+  "source_sha256": "f196abdedb71ff60ed22014b88551f9f4c4f244b3b53d0de821f667bae4ec94c",
+  "asset": {
+    "generator": "Tripo",
+    "version": "2.0"
+  },
+  "extensionsUsed": [],
+  "meshes": [
+    {
+      "name": "tripo_mesh_bfa920ab-ad7b-44e1-b2ac-2ceb65744036",
+      "primitives": [
+        {
+          "triangles": 501070,
+          "vertices": 290841,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "material": 0,
+          "position_bounds": {
+            "min": [
+              -0.40472412109375,
+              0,
+              -0.2890167236328125
+            ],
+            "max": [
+              0.40472412109375,
+              1,
+              0.2890167236328125
+            ]
+          },
+          "mode": 4,
+          "extensions": {}
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "tripo_mat_bfa920ab-ad7b-44e1-b2ac-2ceb65744036",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8999999761581421
+      }
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ],
+  "images": [
+    {
+      "bufferView": 4,
+      "mimeType": "image/jpeg",
+      "name": "卡通仓鼠3d模型_basecolor",
+      "extracted_file": "embedded-texture-0.jpg",
+      "bytes": 718518
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "tripo_node_bfa920ab-ad7b-44e1-b2ac-2ceb65744036",
+      "translation": [
+        0,
+        0,
+        -1.52587890625e-05
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

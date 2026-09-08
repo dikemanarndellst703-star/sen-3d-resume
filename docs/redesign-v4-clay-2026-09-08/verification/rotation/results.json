@@ -1,0 +1,488 @@
+{
+  "startedAt": "2026-09-08T02:54:29.150Z",
+  "url": "http://127.0.0.1:5175/",
+  "scope": "Independent rotation-control regression against the actual loaded model. This test does not establish model-design acceptance.",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "modelRegion": {
+    "x": 0,
+    "y": 100,
+    "width": 700,
+    "height": 800
+  },
+  "thresholds": {
+    "visiblyTurned": {
+      "minimumMeanDifference": 1,
+      "minimumChangedPixelFraction": 0.02
+    },
+    "returned": {
+      "maximumMeanDifference": 0.75,
+      "maximumChangedPixelFraction": 0.01
+    },
+    "repeatable": {
+      "maximumMeanDifference": 0.1,
+      "maximumChangedPixelFraction": 0.002
+    },
+    "changedPixelChannelThreshold": 5
+  },
+  "checks": [
+    {
+      "name": "One canvas, four chapters and no visible static fallback",
+      "status": "pass"
+    },
+    {
+      "name": "Actual GLB response fingerprint recorded",
+      "status": "pass",
+      "detail": [
+        {
+          "url": "http://127.0.0.1:5175/models/hamster-v4-clay.glb",
+          "status": 200,
+          "bytes": 29364716,
+          "sha256": "e3c5eeb1fa3534707fa45cf74848b2dea20f3997be894bfc787e3a2ceb548c76",
+          "fingerprintMethod": "independent full HTTP GET to the exact browser-observed model URL after inspector response eviction",
+          "inspectorCacheError": "response.body: Protocol error (Network.getResponseBody): Request content was evicted from inspector cache\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation."
+        }
+      ]
+    },
+    {
+      "name": "Observed model matches the specified release URL, byte size and SHA256",
+      "status": "pass",
+      "detail": {
+        "expected": {
+          "url": "http://127.0.0.1:5175/models/hamster-v4-clay.glb",
+          "bytes": 29364716,
+          "sha256": "e3c5eeb1fa3534707fa45cf74848b2dea20f3997be894bfc787e3a2ceb548c76"
+        },
+        "actual": [
+          {
+            "url": "http://127.0.0.1:5175/models/hamster-v4-clay.glb",
+            "status": 200,
+            "bytes": 29364716,
+            "sha256": "e3c5eeb1fa3534707fa45cf74848b2dea20f3997be894bfc787e3a2ceb548c76",
+            "fingerprintMethod": "independent full HTTP GET to the exact browser-observed model URL after inspector response eviction",
+            "inspectorCacheError": "response.body: Protocol error (Network.getResponseBody): Request content was evicted from inspector cache\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation."
+          }
+        ]
+      }
+    },
+    {
+      "name": "second-baseline: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 2510
+      }
+    },
+    {
+      "name": "second-race-rotated: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 7412
+      }
+    },
+    {
+      "name": "second-race-four-turns: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 8831
+      }
+    },
+    {
+      "name": "second-stationary-baseline: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 13668
+      }
+    },
+    {
+      "name": "second-stationary-one-turn: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 14780
+      }
+    },
+    {
+      "name": "second-stationary-four-turns: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 16199
+      }
+    },
+    {
+      "name": "second-before-scroll-reset: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 17311
+      }
+    },
+    {
+      "name": "second-scroll-restored: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 20753
+      }
+    },
+    {
+      "name": "Settled scene performs zero additional draw calls over 700ms",
+      "status": "pass",
+      "detail": {
+        "before": 20753,
+        "after": 20753
+      }
+    },
+    {
+      "name": "race-preserves-turn: model-region pixel comparison",
+      "status": "pass",
+      "detail": {
+        "name": "race-preserves-turn",
+        "a": "second-baseline.png",
+        "b": "second-race-rotated.png",
+        "expectation": "turned",
+        "region": {
+          "x": 0,
+          "y": 100,
+          "width": 700,
+          "height": 800
+        },
+        "meanAbsoluteChannelDifference": 75.65265297619048,
+        "changedPixelFractionAboveThreshold": 0.9523375,
+        "exactlyEqual": false
+      }
+    },
+    {
+      "name": "race-four-returns: model-region pixel comparison",
+      "status": "pass",
+      "detail": {
+        "name": "race-four-returns",
+        "a": "second-baseline.png",
+        "b": "second-race-four-turns.png",
+        "expectation": "returned",
+        "region": {
+          "x": 0,
+          "y": 100,
+          "width": 700,
+          "height": 800
+        },
+        "meanAbsoluteChannelDifference": 0.0386875,
+        "changedPixelFractionAboveThreshold": 0.0005303571428571429,
+        "exactlyEqual": false
+      }
+    },
+    {
+      "name": "stationary-turns: model-region pixel comparison",
+      "status": "pass",
+      "detail": {
+        "name": "stationary-turns",
+        "a": "second-stationary-baseline.png",
+        "b": "second-stationary-one-turn.png",
+        "expectation": "turned",
+        "region": {
+          "x": 0,
+          "y": 100,
+          "width": 700,
+          "height": 800
+        },
+        "meanAbsoluteChannelDifference": 75.65237321428572,
+        "changedPixelFractionAboveThreshold": 0.9523339285714286,
+        "exactlyEqual": false
+      }
+    },
+    {
+      "name": "stationary-four-returns: model-region pixel comparison",
+      "status": "pass",
+      "detail": {
+        "name": "stationary-four-returns",
+        "a": "second-stationary-baseline.png",
+        "b": "second-stationary-four-turns.png",
+        "expectation": "returned",
+        "region": {
+          "x": 0,
+          "y": 100,
+          "width": 700,
+          "height": 800
+        },
+        "meanAbsoluteChannelDifference": 0.038670833333333335,
+        "changedPixelFractionAboveThreshold": 0.0005303571428571429,
+        "exactlyEqual": false
+      }
+    },
+    {
+      "name": "scroll-restores: model-region pixel comparison",
+      "status": "pass",
+      "detail": {
+        "name": "scroll-restores",
+        "a": "second-stationary-baseline.png",
+        "b": "second-scroll-restored.png",
+        "expectation": "returned",
+        "region": {
+          "x": 0,
+          "y": 100,
+          "width": 700,
+          "height": 800
+        },
+        "meanAbsoluteChannelDifference": 0,
+        "changedPixelFractionAboveThreshold": 0,
+        "exactlyEqual": true
+      }
+    },
+    {
+      "name": "baseline-repeatability: model-region pixel comparison",
+      "status": "pass",
+      "detail": {
+        "name": "baseline-repeatability",
+        "a": "second-baseline.png",
+        "b": "second-stationary-baseline.png",
+        "expectation": "repeatable",
+        "region": {
+          "x": 0,
+          "y": 100,
+          "width": 700,
+          "height": 800
+        },
+        "meanAbsoluteChannelDifference": 0,
+        "changedPixelFractionAboveThreshold": 0,
+        "exactlyEqual": true
+      }
+    },
+    {
+      "name": "No browser or HTTP errors",
+      "status": "pass",
+      "detail": []
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "second-baseline.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 2510
+      },
+      "settled": {
+        "draws": 2510,
+        "waitedMs": 3536
+      }
+    },
+    {
+      "file": "second-race-rotated.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 7412
+      },
+      "settled": {
+        "draws": 7412,
+        "waitedMs": 3538
+      }
+    },
+    {
+      "file": "second-race-four-turns.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 8831
+      },
+      "settled": {
+        "draws": 8831,
+        "waitedMs": 2019
+      }
+    },
+    {
+      "file": "second-stationary-baseline.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 13668
+      },
+      "settled": {
+        "draws": 13668,
+        "waitedMs": 3540
+      }
+    },
+    {
+      "file": "second-stationary-one-turn.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 14780
+      },
+      "settled": {
+        "draws": 14780,
+        "waitedMs": 1768
+      }
+    },
+    {
+      "file": "second-stationary-four-turns.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 16199
+      },
+      "settled": {
+        "draws": 16199,
+        "waitedMs": 2026
+      }
+    },
+    {
+      "file": "second-before-scroll-reset.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 17311
+      },
+      "settled": {
+        "draws": 17311,
+        "waitedMs": 1772
+      }
+    },
+    {
+      "file": "second-scroll-restored.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 20753
+      },
+      "settled": {
+        "draws": 20753,
+        "waitedMs": 2780
+      }
+    }
+  ],
+  "modelAssets": [
+    {
+      "url": "http://127.0.0.1:5175/models/hamster-v4-clay.glb",
+      "status": 200,
+      "bytes": 29364716,
+      "sha256": "e3c5eeb1fa3534707fa45cf74848b2dea20f3997be894bfc787e3a2ceb548c76",
+      "fingerprintMethod": "independent full HTTP GET to the exact browser-observed model URL after inspector response eviction",
+      "inspectorCacheError": "response.body: Protocol error (Network.getResponseBody): Request content was evicted from inspector cache\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation."
+    }
+  ],
+  "errors": [],
+  "expectedModel": {
+    "url": "http://127.0.0.1:5175/models/hamster-v4-clay.glb",
+    "bytes": 29364716,
+    "sha256": "e3c5eeb1fa3534707fa45cf74848b2dea20f3997be894bfc787e3a2ceb548c76"
+  },
+  "python": "/Users/lingze/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+  "browser": "152.0.7977.76",
+  "documentStatus": 200,
+  "rotationDuringScroll": {
+    "origin": 0,
+    "target": 1410,
+    "scrollYAtRotation": 2,
+    "elapsedMs": 26.399999976158142
+  },
+  "pixelComparisons": [
+    {
+      "name": "race-preserves-turn",
+      "a": "second-baseline.png",
+      "b": "second-race-rotated.png",
+      "expectation": "turned",
+      "region": {
+        "x": 0,
+        "y": 100,
+        "width": 700,
+        "height": 800
+      },
+      "meanAbsoluteChannelDifference": 75.65265297619048,
+      "changedPixelFractionAboveThreshold": 0.9523375,
+      "exactlyEqual": false
+    },
+    {
+      "name": "race-four-returns",
+      "a": "second-baseline.png",
+      "b": "second-race-four-turns.png",
+      "expectation": "returned",
+      "region": {
+        "x": 0,
+        "y": 100,
+        "width": 700,
+        "height": 800
+      },
+      "meanAbsoluteChannelDifference": 0.0386875,
+      "changedPixelFractionAboveThreshold": 0.0005303571428571429,
+      "exactlyEqual": false
+    },
+    {
+      "name": "stationary-turns",
+      "a": "second-stationary-baseline.png",
+      "b": "second-stationary-one-turn.png",
+      "expectation": "turned",
+      "region": {
+        "x": 0,
+        "y": 100,
+        "width": 700,
+        "height": 800
+      },
+      "meanAbsoluteChannelDifference": 75.65237321428572,
+      "changedPixelFractionAboveThreshold": 0.9523339285714286,
+      "exactlyEqual": false
+    },
+    {
+      "name": "stationary-four-returns",
+      "a": "second-stationary-baseline.png",
+      "b": "second-stationary-four-turns.png",
+      "expectation": "returned",
+      "region": {
+        "x": 0,
+        "y": 100,
+        "width": 700,
+        "height": 800
+      },
+      "meanAbsoluteChannelDifference": 0.038670833333333335,
+      "changedPixelFractionAboveThreshold": 0.0005303571428571429,
+      "exactlyEqual": false
+    },
+    {
+      "name": "scroll-restores",
+      "a": "second-stationary-baseline.png",
+      "b": "second-scroll-restored.png",
+      "expectation": "returned",
+      "region": {
+        "x": 0,
+        "y": 100,
+        "width": 700,
+        "height": 800
+      },
+      "meanAbsoluteChannelDifference": 0,
+      "changedPixelFractionAboveThreshold": 0,
+      "exactlyEqual": true
+    },
+    {
+      "name": "baseline-repeatability",
+      "a": "second-baseline.png",
+      "b": "second-stationary-baseline.png",
+      "expectation": "repeatable",
+      "region": {
+        "x": 0,
+        "y": 100,
+        "width": 700,
+        "height": 800
+      },
+      "meanAbsoluteChannelDifference": 0,
+      "changedPixelFractionAboveThreshold": 0,
+      "exactlyEqual": true
+    }
+  ],
+  "status": "pass",
+  "limitations": "Headless Chrome at the stated viewport. Round trips allow small floating-point/antialiasing differences; exactlyEqual reports actual pixel identity. Real-device FPS, model aesthetics and other controls are outside this test.",
+  "finishedAt": "2026-09-08T02:55:05.224Z"
+}

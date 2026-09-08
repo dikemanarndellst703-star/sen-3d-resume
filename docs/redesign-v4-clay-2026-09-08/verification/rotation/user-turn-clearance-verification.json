@@ -1,0 +1,35 @@
+{
+  "url": "http://127.0.0.1:5175/",
+  "checkedAt": "2026-09-08T02:57:43.467Z",
+  "scope": "Targeted visual confirmation only for TARGET.x += .18 * macro * inspection. Existing 19-case rotation acceptance remains the control-regression evidence; it was not repeated.",
+  "modules": [
+    "http://127.0.0.1:5175/assets/Cinema-B_4gKtOM.js"
+  ],
+  "expectedModuleLoaded": true,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "descriptionBounds": {
+    "x": 777.609375,
+    "y": 554.4375,
+    "width": 576,
+    "height": 58.5
+  },
+  "chapter": "第2幕：看见",
+  "screenshot": "second-user-turn-clearance-final.png",
+  "errors": [],
+  "visualReview": {
+    "status": "pass",
+    "method": "Manual inspection of the final 1440×1000 screenshot after one explicit 90-degree turn in chapter two.",
+    "observations": [
+      "The first description character and both description lines are fully on the dark background.",
+      "A visible gap of approximately 35–40 pixels separates the cheek silhouette from the description start.",
+      "The glasses no longer sit beneath the left edge of the large heading.",
+      "No additional text mask is needed."
+    ],
+    "fullControlRegression": "The preceding 19-case suite in results.json remains the control evidence; this target-position-only check does not repeat it."
+  },
+  "screenshotSHA256": "2958b0a591395eb9aa4a77862008cfa9d51aad5198e36f1c2b2771c0fbe85001",
+  "status": "pass"
+}

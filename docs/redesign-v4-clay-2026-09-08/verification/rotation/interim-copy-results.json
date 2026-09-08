@@ -1,0 +1,459 @@
+{
+  "startedAt": "2026-09-08T02:49:10.043Z",
+  "url": "http://127.0.0.1:5175/",
+  "scope": "Independent rotation-control regression against the actual loaded model. This test does not establish model-design acceptance.",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "modelRegion": {
+    "x": 0,
+    "y": 100,
+    "width": 700,
+    "height": 800
+  },
+  "thresholds": {
+    "visiblyTurned": {
+      "minimumMeanDifference": 1,
+      "minimumChangedPixelFraction": 0.02
+    },
+    "returned": {
+      "maximumMeanDifference": 0.75,
+      "maximumChangedPixelFraction": 0.01
+    },
+    "repeatable": {
+      "maximumMeanDifference": 0.1,
+      "maximumChangedPixelFraction": 0.002
+    },
+    "changedPixelChannelThreshold": 5
+  },
+  "checks": [
+    {
+      "name": "One canvas, four chapters and no visible static fallback",
+      "status": "pass"
+    },
+    {
+      "name": "Actual GLB response fingerprint recorded",
+      "status": "pass",
+      "detail": [
+        {
+          "url": "http://127.0.0.1:5175/models/hamster-v4-clay.glb",
+          "status": 200,
+          "bytes": 29364716,
+          "sha256": "e3c5eeb1fa3534707fa45cf74848b2dea20f3997be894bfc787e3a2ceb548c76"
+        }
+      ]
+    },
+    {
+      "name": "second-baseline: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 2496
+      }
+    },
+    {
+      "name": "second-race-rotated: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 7282
+      }
+    },
+    {
+      "name": "second-race-four-turns: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 8669
+      }
+    },
+    {
+      "name": "second-stationary-baseline: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 13500
+      }
+    },
+    {
+      "name": "second-stationary-one-turn: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 14539
+      }
+    },
+    {
+      "name": "second-stationary-four-turns: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 15926
+      }
+    },
+    {
+      "name": "second-before-scroll-reset: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 16965
+      }
+    },
+    {
+      "name": "second-scroll-restored: second chapter reached",
+      "status": "pass",
+      "detail": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 20364
+      }
+    },
+    {
+      "name": "Settled scene performs zero additional draw calls over 700ms",
+      "status": "pass",
+      "detail": {
+        "before": 20364,
+        "after": 20364
+      }
+    },
+    {
+      "name": "race-preserves-turn: model-region pixel comparison",
+      "status": "pass",
+      "detail": {
+        "name": "race-preserves-turn",
+        "a": "second-baseline.png",
+        "b": "second-race-rotated.png",
+        "expectation": "turned",
+        "region": {
+          "x": 0,
+          "y": 100,
+          "width": 700,
+          "height": 800
+        },
+        "meanAbsoluteChannelDifference": 66.52685178571429,
+        "changedPixelFractionAboveThreshold": 0.9439875,
+        "exactlyEqual": false
+      }
+    },
+    {
+      "name": "race-four-returns: model-region pixel comparison",
+      "status": "pass",
+      "detail": {
+        "name": "race-four-returns",
+        "a": "second-baseline.png",
+        "b": "second-race-four-turns.png",
+        "expectation": "returned",
+        "region": {
+          "x": 0,
+          "y": 100,
+          "width": 700,
+          "height": 800
+        },
+        "meanAbsoluteChannelDifference": 0.04280059523809524,
+        "changedPixelFractionAboveThreshold": 0.0005839285714285714,
+        "exactlyEqual": false
+      }
+    },
+    {
+      "name": "stationary-turns: model-region pixel comparison",
+      "status": "pass",
+      "detail": {
+        "name": "stationary-turns",
+        "a": "second-stationary-baseline.png",
+        "b": "second-stationary-one-turn.png",
+        "expectation": "turned",
+        "region": {
+          "x": 0,
+          "y": 100,
+          "width": 700,
+          "height": 800
+        },
+        "meanAbsoluteChannelDifference": 66.52733630952382,
+        "changedPixelFractionAboveThreshold": 0.9439857142857143,
+        "exactlyEqual": false
+      }
+    },
+    {
+      "name": "stationary-four-returns: model-region pixel comparison",
+      "status": "pass",
+      "detail": {
+        "name": "stationary-four-returns",
+        "a": "second-stationary-baseline.png",
+        "b": "second-stationary-four-turns.png",
+        "expectation": "returned",
+        "region": {
+          "x": 0,
+          "y": 100,
+          "width": 700,
+          "height": 800
+        },
+        "meanAbsoluteChannelDifference": 0.04248988095238095,
+        "changedPixelFractionAboveThreshold": 0.0005785714285714286,
+        "exactlyEqual": false
+      }
+    },
+    {
+      "name": "scroll-restores: model-region pixel comparison",
+      "status": "pass",
+      "detail": {
+        "name": "scroll-restores",
+        "a": "second-stationary-baseline.png",
+        "b": "second-scroll-restored.png",
+        "expectation": "returned",
+        "region": {
+          "x": 0,
+          "y": 100,
+          "width": 700,
+          "height": 800
+        },
+        "meanAbsoluteChannelDifference": 0,
+        "changedPixelFractionAboveThreshold": 0,
+        "exactlyEqual": true
+      }
+    },
+    {
+      "name": "baseline-repeatability: model-region pixel comparison",
+      "status": "pass",
+      "detail": {
+        "name": "baseline-repeatability",
+        "a": "second-baseline.png",
+        "b": "second-stationary-baseline.png",
+        "expectation": "repeatable",
+        "region": {
+          "x": 0,
+          "y": 100,
+          "width": 700,
+          "height": 800
+        },
+        "meanAbsoluteChannelDifference": 0,
+        "changedPixelFractionAboveThreshold": 0,
+        "exactlyEqual": true
+      }
+    },
+    {
+      "name": "No browser or HTTP errors",
+      "status": "pass",
+      "detail": []
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "second-baseline.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 2496
+      },
+      "settled": {
+        "draws": 2496,
+        "waitedMs": 3539
+      }
+    },
+    {
+      "file": "second-race-rotated.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 7282
+      },
+      "settled": {
+        "draws": 7282,
+        "waitedMs": 3543
+      }
+    },
+    {
+      "file": "second-race-four-turns.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 8669
+      },
+      "settled": {
+        "draws": 8669,
+        "waitedMs": 2022
+      }
+    },
+    {
+      "file": "second-stationary-baseline.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 13500
+      },
+      "settled": {
+        "draws": 13500,
+        "waitedMs": 3562
+      }
+    },
+    {
+      "file": "second-stationary-one-turn.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 14539
+      },
+      "settled": {
+        "draws": 14539,
+        "waitedMs": 1771
+      }
+    },
+    {
+      "file": "second-stationary-four-turns.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 15926
+      },
+      "settled": {
+        "draws": 15926,
+        "waitedMs": 2021
+      }
+    },
+    {
+      "file": "second-before-scroll-reset.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 16965
+      },
+      "settled": {
+        "draws": 16965,
+        "waitedMs": 1770
+      }
+    },
+    {
+      "file": "second-scroll-restored.png",
+      "state": {
+        "scrollY": 1410,
+        "activeChapter": 1,
+        "draws": 20364
+      },
+      "settled": {
+        "draws": 20364,
+        "waitedMs": 2782
+      }
+    }
+  ],
+  "modelAssets": [
+    {
+      "url": "http://127.0.0.1:5175/models/hamster-v4-clay.glb",
+      "status": 200,
+      "bytes": 29364716,
+      "sha256": "e3c5eeb1fa3534707fa45cf74848b2dea20f3997be894bfc787e3a2ceb548c76"
+    }
+  ],
+  "errors": [],
+  "python": "/Users/lingze/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+  "browser": "152.0.7977.76",
+  "documentStatus": 200,
+  "modelFingerprintMethod": "Independent full HTTP GET to the actual GLB response URL observed in the browser; used because Chrome inspector cache evicted the 29MB response body. Screenshot and interaction checks still execute in the same real page.",
+  "rotationDuringScroll": {
+    "origin": 0,
+    "target": 1410,
+    "scrollYAtRotation": 2,
+    "elapsedMs": 26.80000001192093
+  },
+  "pixelComparisons": [
+    {
+      "name": "race-preserves-turn",
+      "a": "second-baseline.png",
+      "b": "second-race-rotated.png",
+      "expectation": "turned",
+      "region": {
+        "x": 0,
+        "y": 100,
+        "width": 700,
+        "height": 800
+      },
+      "meanAbsoluteChannelDifference": 66.52685178571429,
+      "changedPixelFractionAboveThreshold": 0.9439875,
+      "exactlyEqual": false
+    },
+    {
+      "name": "race-four-returns",
+      "a": "second-baseline.png",
+      "b": "second-race-four-turns.png",
+      "expectation": "returned",
+      "region": {
+        "x": 0,
+        "y": 100,
+        "width": 700,
+        "height": 800
+      },
+      "meanAbsoluteChannelDifference": 0.04280059523809524,
+      "changedPixelFractionAboveThreshold": 0.0005839285714285714,
+      "exactlyEqual": false
+    },
+    {
+      "name": "stationary-turns",
+      "a": "second-stationary-baseline.png",
+      "b": "second-stationary-one-turn.png",
+      "expectation": "turned",
+      "region": {
+        "x": 0,
+        "y": 100,
+        "width": 700,
+        "height": 800
+      },
+      "meanAbsoluteChannelDifference": 66.52733630952382,
+      "changedPixelFractionAboveThreshold": 0.9439857142857143,
+      "exactlyEqual": false
+    },
+    {
+      "name": "stationary-four-returns",
+      "a": "second-stationary-baseline.png",
+      "b": "second-stationary-four-turns.png",
+      "expectation": "returned",
+      "region": {
+        "x": 0,
+        "y": 100,
+        "width": 700,
+        "height": 800
+      },
+      "meanAbsoluteChannelDifference": 0.04248988095238095,
+      "changedPixelFractionAboveThreshold": 0.0005785714285714286,
+      "exactlyEqual": false
+    },
+    {
+      "name": "scroll-restores",
+      "a": "second-stationary-baseline.png",
+      "b": "second-scroll-restored.png",
+      "expectation": "returned",
+      "region": {
+        "x": 0,
+        "y": 100,
+        "width": 700,
+        "height": 800
+      },
+      "meanAbsoluteChannelDifference": 0,
+      "changedPixelFractionAboveThreshold": 0,
+      "exactlyEqual": true
+    },
+    {
+      "name": "baseline-repeatability",
+      "a": "second-baseline.png",
+      "b": "second-stationary-baseline.png",
+      "expectation": "repeatable",
+      "region": {
+        "x": 0,
+        "y": 100,
+        "width": 700,
+        "height": 800
+      },
+      "meanAbsoluteChannelDifference": 0,
+      "changedPixelFractionAboveThreshold": 0,
+      "exactlyEqual": true
+    }
+  ],
+  "status": "pass",
+  "limitations": "Headless Chrome at the stated viewport. Round trips allow small floating-point/antialiasing differences; exactlyEqual reports actual pixel identity. Real-device FPS, model aesthetics and other controls are outside this test.",
+  "finishedAt": "2026-09-08T02:49:46.565Z"
+}

@@ -1,0 +1,60 @@
+{
+  "source_file": "web/public/models/ai-hamster.glb",
+  "uploaded_filename": "tripo_convert_bfa920ab-ad7b-44e1-b2ac-2ceb65744036.glb",
+  "source_sha256": "f196abdedb71ff60ed22014b88551f9f4c4f244b3b53d0de821f667bae4ec94c",
+  "source_preserved": true,
+  "source_original": {
+    "vertices": 290841,
+    "faces": 501070
+  },
+  "open_edges_after_repair": 0,
+  "nonmanifold_edges_after_repair": 0,
+  "method": "Original source mesh, red-texture connected component seed, protected ear volumes, crown fit from original gold surface, continuous remesh, spatially protected smoothing",
+  "draft_only": false,
+  "color_region_vertices_before_budget": {
+    "clay_gold": 363665,
+    "clay_cream": 75619,
+    "clay_blush": 4741,
+    "clay_pink": 45955,
+    "clay_frame": 25092,
+    "clay_eye": 2201,
+    "clay_nose_mouth": 2913
+  },
+  "independent_backpack": true,
+  "runtime_nodes": [
+    "HamsterRoot",
+    "ClayBackpack"
+  ],
+  "animation_contract": "whole-character rotation; no fabricated separate head, eye or arm nodes",
+  "front": {
+    "blender": "-Y",
+    "gltf": "+Z"
+  },
+  "up": {
+    "blender": "+Z",
+    "gltf": "+Y"
+  },
+  "body_height": 3.6,
+  "textures": 0,
+  "triangles": 1025000,
+  "blender_polygons": 1025000,
+  "vertices": 512688,
+  "authoring_polygons": 995338,
+  "authoring_triangles": 1025000,
+  "backpack_triangles": 57828,
+  "glb_bytes": 29488660,
+  "glb_sha256": "8f272875012a22ca7d74a15d15985b0e57e489f112894d11a227dac3c598bd94",
+  "blender_version": "5.2.1 LTS",
+  "blender_bounds": {
+    "min": [
+      -1.2966262102127075,
+      -1.8152302503585815,
+      0.0
+    ],
+    "max": [
+      1.296286940574646,
+      1.8094838857650757,
+      3.6000003814697266
+    ]
+  }
+}

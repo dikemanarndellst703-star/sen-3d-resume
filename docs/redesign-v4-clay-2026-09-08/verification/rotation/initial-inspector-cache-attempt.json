@@ -1,0 +1,45 @@
+{
+  "startedAt": "2026-09-08T02:47:56.247Z",
+  "url": "http://127.0.0.1:5175/",
+  "scope": "Independent rotation-control regression against the actual loaded model. This test does not establish model-design acceptance.",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "modelRegion": {
+    "x": 0,
+    "y": 100,
+    "width": 700,
+    "height": 800
+  },
+  "thresholds": {
+    "visiblyTurned": {
+      "minimumMeanDifference": 1,
+      "minimumChangedPixelFraction": 0.02
+    },
+    "returned": {
+      "maximumMeanDifference": 0.75,
+      "maximumChangedPixelFraction": 0.01
+    },
+    "repeatable": {
+      "maximumMeanDifference": 0.1,
+      "maximumChangedPixelFraction": 0.002
+    },
+    "changedPixelChannelThreshold": 5
+  },
+  "checks": [
+    {
+      "name": "One canvas, four chapters and no visible static fallback",
+      "status": "pass"
+    }
+  ],
+  "screenshots": [],
+  "modelAssets": [],
+  "errors": [],
+  "python": "/Users/lingze/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+  "browser": "152.0.7977.76",
+  "documentStatus": 200,
+  "status": "fail",
+  "failure": "response.body: Protocol error (Network.getResponseBody): Request content was evicted from inspector cache\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation.\n    at /Users/lingze/Desktop/文件夹合集/大表哥站外引流/work/my-sen-3d-resume/scripts/verify-v4-rotation.cjs:199:39",
+  "finishedAt": "2026-09-08T02:47:59.763Z"
+}

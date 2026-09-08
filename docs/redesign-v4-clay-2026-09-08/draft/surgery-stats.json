@@ -1,0 +1,17 @@
+{
+  "source_sha256": "f196abdedb71ff60ed22014b88551f9f4c4f244b3b53d0de821f667bae4ec94c",
+  "source_preserved": true,
+  "source_original": {
+    "vertices": 290841,
+    "faces": 501070
+  },
+  "draft_vertices": 356690,
+  "draft_polygons": 356708,
+  "draft_triangles": 713416,
+  "open_edges_after_repair": 0,
+  "nonmanifold_edges_after_repair": 0,
+  "inspection_material": "uniform untextured clay to reveal actual geometry",
+  "new_crown_material_index": 1,
+  "method": "Original source mesh, red-texture connected component seed, protected ear volumes, removal of detached crayfish features, crown fit from original gold surface",
+  "draft_only": true
+}

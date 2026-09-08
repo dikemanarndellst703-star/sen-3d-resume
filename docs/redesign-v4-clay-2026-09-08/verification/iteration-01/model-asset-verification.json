@@ -1,0 +1,101 @@
+{
+  "status": "pass",
+  "method": "Independent GLB binary header, actual index values and positions; no external buffers/images; preserved source hash",
+  "triangles": 1025000,
+  "glb_bytes": 29488660,
+  "glb_sha256": "8f272875012a22ca7d74a15d15985b0e57e489f112894d11a227dac3c598bd94",
+  "mesh_count": 5,
+  "materials": 11,
+  "nodes": [
+    "Backpack · cocoa clay",
+    "Backpack · muted clay zipper",
+    "Backpack · pressed seam shadow",
+    "Backpack · shallow oat stitching",
+    "ClayBackpack",
+    "Source-derived seated clay hamster",
+    "HamsterRoot"
+  ],
+  "primitives": [
+    {
+      "mesh": "Backpack · front pocket",
+      "triangles": 38780,
+      "vertices": 19400
+    },
+    {
+      "mesh": "Backpack · little pull ring",
+      "triangles": 12088,
+      "vertices": 6152
+    },
+    {
+      "mesh": "Backpack · pocket pressed seam",
+      "triangles": 6160,
+      "vertices": 3088
+    },
+    {
+      "mesh": "Backpack · shallow stitch 0",
+      "triangles": 800,
+      "vertices": 480
+    },
+    {
+      "mesh": "tripo_mesh_bfa920ab-ad7b-44e1-b2ac-2ceb65744036",
+      "triangles": 669735,
+      "vertices": 338589
+    },
+    {
+      "mesh": "tripo_mesh_bfa920ab-ad7b-44e1-b2ac-2ceb65744036",
+      "triangles": 143052,
+      "vertices": 73961
+    },
+    {
+      "mesh": "tripo_mesh_bfa920ab-ad7b-44e1-b2ac-2ceb65744036",
+      "triangles": 9015,
+      "vertices": 4885
+    },
+    {
+      "mesh": "tripo_mesh_bfa920ab-ad7b-44e1-b2ac-2ceb65744036",
+      "triangles": 88553,
+      "vertices": 45466
+    },
+    {
+      "mesh": "tripo_mesh_bfa920ab-ad7b-44e1-b2ac-2ceb65744036",
+      "triangles": 47086,
+      "vertices": 24718
+    },
+    {
+      "mesh": "tripo_mesh_bfa920ab-ad7b-44e1-b2ac-2ceb65744036",
+      "triangles": 4168,
+      "vertices": 2345
+    },
+    {
+      "mesh": "tripo_mesh_bfa920ab-ad7b-44e1-b2ac-2ceb65744036",
+      "triangles": 5563,
+      "vertices": 3127
+    }
+  ],
+  "previous_assets": {
+    "web/public/models/ai-hamster.glb": {
+      "sha256": "f196abdedb71ff60ed22014b88551f9f4c4f244b3b53d0de821f667bae4ec94c",
+      "git_status": ""
+    },
+    "web/public/models/hamster-v2.glb": {
+      "sha256": "ba281b2dc178f79a4cb3b7e9c4c2c5abed128257eece2b54e62ef4f6b20a2eb9",
+      "git_status": ""
+    },
+    "web/public/models/hamster-v3.glb": {
+      "sha256": "1a1a2eb1bf9a1f82bcbe03ec3c05ca3615c46c457388ed63180e6abd725074af",
+      "git_status": ""
+    },
+    "blender/sen.blend": {
+      "sha256": "a1393122d09dd6297d918e15cffa13e902c3ae56e54686af4a161005b935cfe8",
+      "git_status": ""
+    },
+    "blender/hamster-v2.blend": {
+      "sha256": "9118269b37b4aa700e3f5bd300d551f8f46a48158161a034a4e9ea4cb965944d",
+      "git_status": ""
+    },
+    "blender/hamster-v3.blend": {
+      "sha256": "879cac24e2a3f1c4a5ab4bea064a4033dd27a498cda486782bbb940cac3b784a",
+      "git_status": ""
+    }
+  }
+}

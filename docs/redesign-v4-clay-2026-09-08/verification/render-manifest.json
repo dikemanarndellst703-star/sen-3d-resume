@@ -1,0 +1,43 @@
+{
+  "model_sha256": "e3c5eeb1fa3534707fa45cf74848b2dea20f3997be894bfc787e3a2ceb548c76",
+  "model_triangles": 1025000,
+  "renderer": "Blender 5.2.1 LTS / Cycles",
+  "resolution": [
+    1400,
+    1600
+  ],
+  "samples": 40,
+  "transparent": true,
+  "views": {
+    "model-front.png": {
+      "bytes": 1726913,
+      "sha256": "dc5afe70c5861c0c8cfddfb75665cb022db9a3d954a74bf76096b6158f32b3af"
+    },
+    "model-back.png": {
+      "bytes": 1671924,
+      "sha256": "762c2e8c700e2f116d9fb2c1af12f6ccb5153323bbd3944d90dd05c569eb7cb5"
+    },
+    "model-side.png": {
+      "bytes": 1666646,
+      "sha256": "6237f804e0ba0a0bc2f82af4dc4982bfe9a770ef4061171b38b0114e53fb86cf"
+    },
+    "model-three-quarter.png": {
+      "bytes": 1748640,
+      "sha256": "c9c1e714cf99d2acc6a9fb7dc97da74a9ba82b7da7a5ad28aa96e6af87dbcaeb"
+    },
+    "model-detail.png": {
+      "bytes": 1767067,
+      "sha256": "879dfd65e822513e532a0022672261648c2e9fbe649eba02b2079e5e285fa6fb"
+    },
+    "model-head-top.png": {
+      "bytes": 1632329,
+      "sha256": "4a65c09d97f937cae89b25aecfd5a1f6c5325b19e67e5132a69a30dc7e8aa294"
+    },
+    "model-backpack-detail.png": {
+      "bytes": 2219432,
+      "sha256": "0df279fa1b14a005ae215af12b0369ef9b2d6a87d0bf3c6f2ccfae3882a1be5c"
+    }
+  },
+  "poster_matches": "model-three-quarter.png",
+  "after_copies_match": true
+}
