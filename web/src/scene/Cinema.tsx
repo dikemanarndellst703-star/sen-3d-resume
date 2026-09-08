@@ -8,7 +8,7 @@ import CinematicWorld from './CinematicWorld'
 import { CHAPTERS } from './cinematicTimeline'
 
 const DESTINATION = 'https://ai.alexdbg.com/'
-const POSTER = `${import.meta.env.BASE_URL}brand/hamster-v3-poster.png`
+const POSTER = `${import.meta.env.BASE_URL}brand/hamster-v4-clay-poster.png`
 
 class CinemaBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false }
@@ -69,7 +69,7 @@ export default function Cinema({ onDarkChange }: { onDarkChange: (dark: boolean)
     <motion.div ref={viewport} className={`cinema-viewport${dark ? ' is-dark' : ''}`} style={{ background: reduced ? '#f3f3f0' : background }}>
       <div className="cinema-backdrop-word" aria-hidden="true">{active < 2 ? 'POSSIBLE.' : 'BE CURIOUS.'}</div>
       <div className="cinema-canvas" role="img" aria-label="百万面三维仓鼠，滚动可从完整角色进入面部近景并环绕查看背包。可拖动角色观察角度。">
-        <CinemaBoundary><Canvas onCreated={() => setCanvasReady(true)} camera={{ position: [2.3, 2.65, 7.6], fov: 30, near: .05, far: 70 }} dpr={compact ? 1 : [1, 1.5]} frameloop={visible ? (reduced ? 'demand' : 'always') : 'never'} gl={{ antialias: true, alpha: true, toneMapping: THREE.ACESFilmicToneMapping }} fallback={<div className="cinema-fallback"><img src={POSTER} alt="仓鼠向导静态展示" /></div>}><Suspense fallback={null}><CinematicWorld progress={progress} reduced={reduced} compact={compact} turn={turn} onDrag={() => setDragged(true)} /></Suspense></Canvas>{canvasReady && <ModelLoading />}</CinemaBoundary>
+        <CinemaBoundary><Canvas onCreated={() => setCanvasReady(true)} camera={{ position: [1.8, 2.7, 9.4], fov: 30, near: .05, far: 70 }} dpr={compact ? 1 : [1, 1.5]} frameloop={visible ? 'demand' : 'never'} gl={{ antialias: true, alpha: true, toneMapping: THREE.ACESFilmicToneMapping }} fallback={<div className="cinema-fallback"><img src={POSTER} alt="仓鼠向导静态展示" /></div>}><Suspense fallback={null}><CinematicWorld progress={progress} reduced={reduced} compact={compact} turn={turn} onDrag={() => setDragged(true)} /></Suspense></Canvas>{canvasReady && <ModelLoading />}</CinemaBoundary>
       </div>
       {reduced ? <div className="cinema-copy copy-0"><p className="cinema-eyebrow">AI HAMSTER HOLE</p><h1>让 AI，<br />为你所用。</h1><p className="cinema-description">从第一个问题，到第一个作品。<br />让好奇心，成为你的新能力。</p><a className="cinema-cta" href={DESTINATION} target="_blank" rel="noopener noreferrer">开启你的 AI 旅程 <span aria-hidden="true">↗</span></a></div> : <>
         <Copy progress={progress} index={0}><p className="cinema-eyebrow">AI HAMSTER HOLE</p><h1>让 AI，<br />为你所用。</h1><p className="cinema-description">从第一个问题，到第一个作品。<br />让好奇心，成为你的新能力。</p><a className="cinema-cta" href={DESTINATION} target="_blank" rel="noopener noreferrer">开启你的 AI 旅程 <span aria-hidden="true">↗</span></a><span className="cinema-byline">ALEX 大表哥的 AI 新手学习入口</span></Copy>

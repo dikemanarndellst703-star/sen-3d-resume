@@ -7,6 +7,7 @@ const root = fileURLToPath(new URL('../..', import.meta.url))
 for (const [folder, route, version] of [
   ['redesign-2026-09-08', 'update-report', 'v2.0.0'],
   ['redesign-v3-2026-09-08', 'update-report-v3', 'v3.0.0'],
+  ['redesign-v4-clay-2026-09-08', 'update-report-v4', 'v4.0.0'],
 ]) {
   const source = path.join(root, 'docs', folder)
   const target = path.join(root, 'web/dist', route)

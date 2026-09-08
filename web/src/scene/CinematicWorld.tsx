@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
 import { useFrame, useThree, type ThreeEvent } from '@react-three/fiber'
 import { ContactShadows, Environment, Lightformer, useGLTF } from '@react-three/drei'
 import type { MotionValue } from 'framer-motion'
 import * as THREE from 'three'
 import { CAMERA_POSES } from './cinematicTimeline'
 
-const MODEL_URL = `${import.meta.env.BASE_URL}models/hamster-v3.glb`
+const MODEL_URL = `${import.meta.env.BASE_URL}models/hamster-v4-clay.glb`
 const POSITION = new THREE.Vector3()
 const TARGET = new THREE.Vector3()
 const POSITION_A = new THREE.Vector3()
@@ -30,10 +30,17 @@ export default function CinematicWorld({ progress, reduced, compact, turn, onDra
   const key = useRef<THREE.DirectionalLight>(null)
   const rim = useRef<THREE.DirectionalLight>(null)
   const fill = useRef<THREE.HemisphereLight>(null)
-  const gesture = useRef({ active: false, start: 0, yaw: 0, current: 0, lastProgress: 0, turn: 0 })
+  const gesture = useRef({ active: false, start: 0, yaw: 0, current: 0, lastProgress: 0, turn: 0, resumeOnScroll: true })
+  const resumeTimer = useRef<ReturnType<typeof setTimeout>>()
+  const holdUserView = useCallback(() => {
+    gesture.current.resumeOnScroll = false
+    clearTimeout(resumeTimer.current)
+    resumeTimer.current = setTimeout(() => { gesture.current.resumeOnScroll = true }, 180)
+  }, [])
+  useEffect(() => () => clearTimeout(resumeTimer.current), [])
   const pointer = useRef({ x: 0, y: 0 })
   const { camera, invalidate, gl } = useThree()
-  const { model, head, eyes } = useMemo(() => {
+  const model = useMemo(() => {
     const model = scene.clone(true)
     model.traverse(o => {
       if (!(o instanceof THREE.Mesh)) return
@@ -43,7 +50,7 @@ export default function CinematicWorld({ progress, reduced, compact, turn, onDra
       const materials = Array.isArray(o.material) ? o.material : [o.material]
       for (const material of materials) if (material instanceof THREE.MeshStandardMaterial) material.envMapIntensity = .8
     })
-    return { model, head: model.getObjectByName('Head'), eyes: [model.getObjectByName('Eye_L'), model.getObjectByName('Eye_R')] }
+    return model
   }, [scene])
   useEffect(() => {
     if (camera instanceof THREE.PerspectiveCamera) { camera.fov = compact ? 36 : 30; camera.updateProjectionMatrix() }
@@ -51,15 +58,28 @@ export default function CinematicWorld({ progress, reduced, compact, turn, onDra
   }, [camera, compact, reduced, invalidate])
   useEffect(() => {
     const state = gesture.current
+    if (turn !== state.turn) holdUserView()
     state.yaw += (turn - state.turn) * Math.PI / 2
     state.turn = turn
     invalidate()
-  }, [turn, invalidate])
+  }, [turn, invalidate, holdUserView])
   useEffect(() => {
-    const onPointer = (e: PointerEvent) => { pointer.current.x = e.clientX / window.innerWidth * 2 - 1; pointer.current.y = e.clientY / window.innerHeight * 2 - 1 }
+    const onPointer = (e: PointerEvent) => {
+      pointer.current.x = e.clientX / window.innerWidth * 2 - 1
+      pointer.current.y = e.clientY / window.innerHeight * 2 - 1
+      if (!reduced && !compact) invalidate()
+    }
     window.addEventListener('pointermove', onPointer, { passive: true })
     return () => { window.removeEventListener('pointermove', onPointer); document.body.style.cursor = '' }
-  }, [])
+  }, [compact, reduced, invalidate])
+  useEffect(() => progress.on('change', p => {
+    const state = gesture.current
+    // Let the current scroll settle after a user turn; the next scroll resumes the authored view.
+    if (state.resumeOnScroll && Math.abs(p - state.lastProgress) > .0003 && !state.active) state.yaw = 0
+    state.lastProgress = p
+    if (!state.resumeOnScroll) holdUserView()
+    if (!reduced) invalidate()
+  }), [progress, reduced, invalidate, holdUserView])
   useEffect(() => {
     // R3F v8 clears internal capture on cancellation without forwarding onPointerCancel.
     const reset = () => { gesture.current.active = false; document.body.style.cursor = '' }
@@ -74,21 +94,18 @@ export default function CinematicWorld({ progress, reduced, compact, turn, onDra
       reset()
     }
   }, [gl])
-  const time = useRef(0)
   useFrame((_, delta) => {
-    time.current += Math.min(delta, .05)
     const p = reduced ? 0 : THREE.MathUtils.clamp(progress.get(), 0, 1)
     const yaw = sample(p)
     const state = gesture.current
-    // Scroll re-establishes authored framing gradually, never jumping back on pointer release.
-    if (Math.abs(p - state.lastProgress) > .0003 && !state.active) state.yaw *= 1 - damp(delta, 3)
-    state.lastProgress = p
     state.current = reduced ? state.yaw : THREE.MathUtils.lerp(state.current, state.yaw, damp(delta, 8))
     if (group.current) group.current.rotation.y = yaw + state.current
+    // The supplied model is one fused sculpture: redraw only while interaction settles.
+    if (!reduced && Math.abs(state.current - state.yaw) > .00005) invalidate()
     if (compact) {
       const close = THREE.MathUtils.smoothstep(p, .16, .29) * (1 - THREE.MathUtils.smoothstep(p, .42, .54))
-      POSITION.set(THREE.MathUtils.lerp(.9, -.4, close), THREE.MathUtils.lerp(3.2, 3.7, close), THREE.MathUtils.lerp(10.6, 6.4, close))
-      TARGET.set(0, THREE.MathUtils.lerp(3.10, 3.45, close), .1)
+      POSITION.set(THREE.MathUtils.lerp(.9, -.4, close), THREE.MathUtils.lerp(3.2, 3.7, close), THREE.MathUtils.lerp(12.5, 8.5, close))
+      TARGET.set(0, 3.25, .1)
     }
     if (!reduced && !compact) { POSITION.x += pointer.current.x * .025; POSITION.y -= pointer.current.y * .015 }
     camera.position.copy(POSITION)
@@ -97,17 +114,12 @@ export default function CinematicWorld({ progress, reduced, compact, turn, onDra
     if (key.current) key.current.intensity = THREE.MathUtils.lerp(2.2, .8, studioNight)
     if (rim.current) rim.current.intensity = THREE.MathUtils.lerp(.7, 3.6, studioNight)
     if (fill.current) fill.current.intensity = THREE.MathUtils.lerp(1.15, .28, studioNight)
-    if (head) {
-      head.rotation.y = reduced || state.active ? 0 : Math.sin(time.current * .35) * .012
-      head.rotation.x = 0
-    }
-    const phase = time.current % 6.2
-    const blink = !reduced && phase > 6.04 ? 1 - Math.sin((phase - 6.04) / .16 * Math.PI) * .94 : 1
-    for (const eye of eyes) if (eye) eye.scale.y = blink
+
   })
   function start(event: ThreeEvent<PointerEvent>) {
     if (event.pointerType === 'touch') return
     event.stopPropagation()
+    holdUserView()
     gesture.current.active = true; gesture.current.start = event.clientX
     ;(event.target as HTMLElement).setPointerCapture(event.pointerId)
     document.body.style.cursor = 'grabbing'
@@ -117,10 +129,12 @@ export default function CinematicWorld({ progress, reduced, compact, turn, onDra
     event.stopPropagation()
     gesture.current.yaw += (event.clientX - gesture.current.start) * .009
     gesture.current.start = event.clientX
+    holdUserView()
     onDrag(); invalidate()
   }
   function stop(event: ThreeEvent<PointerEvent>) {
     gesture.current.active = false
+    holdUserView()
     if ((event.target as HTMLElement).hasPointerCapture?.(event.pointerId)) (event.target as HTMLElement).releasePointerCapture(event.pointerId)
     document.body.style.cursor = ''
   }
@@ -136,8 +150,8 @@ export default function CinematicWorld({ progress, reduced, compact, turn, onDra
     <directionalLight position={[-4, 2, -2]} intensity={.35} color="#d2ddf4" />
     <group ref={group} onPointerDown={start} onPointerMove={move} onPointerUp={stop} onPointerCancel={stop} onPointerOver={() => { if (!compact) document.body.style.cursor = 'grab' }} onPointerOut={() => { if (!gesture.current.active) document.body.style.cursor = '' }}>
       <primitive object={model} />
-      <mesh position={[0, 2.7, 0]} scale={[1.15, .85, .8]}><sphereGeometry args={[1, 16, 12]} /><meshBasicMaterial transparent opacity={0} depthWrite={false} colorWrite={false} /></mesh>
-      <mesh position={[0, 1.05, 0]} scale={[.8, 1, .65]}><sphereGeometry args={[1, 16, 12]} /><meshBasicMaterial transparent opacity={0} depthWrite={false} colorWrite={false} /></mesh>
+      <mesh position={[0, 2.5, .25]} scale={[1.4, 1.05, 1.3]}><sphereGeometry args={[1, 16, 12]} /><meshBasicMaterial transparent opacity={0} depthWrite={false} colorWrite={false} /></mesh>
+      <mesh position={[0, 1.05, -.05]} scale={[1.25, 1, 1.3]}><sphereGeometry args={[1, 16, 12]} /><meshBasicMaterial transparent opacity={0} depthWrite={false} colorWrite={false} /></mesh>
     </group>
     <ContactShadows position={[0, -.015, 0]} opacity={.28} scale={10} blur={2.8} far={5} resolution={256} frames={1} color="#292722" />
   </>
