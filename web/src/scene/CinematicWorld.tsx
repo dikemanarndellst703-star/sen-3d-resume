@@ -107,7 +107,15 @@ export default function CinematicWorld({ progress, reduced, compact, turn, onDra
       POSITION.set(THREE.MathUtils.lerp(.9, -.4, close), THREE.MathUtils.lerp(3.2, 3.7, close), THREE.MathUtils.lerp(12.5, 8.5, close))
       TARGET.set(0, 3.25, .1)
     }
-    if (!reduced && !compact) { POSITION.x += pointer.current.x * .025; POSITION.y -= pointer.current.y * .015 }
+    if (!reduced && !compact) {
+      // A side view of the deep seated sculpture needs room beside the macro copy.
+      const macro = THREE.MathUtils.smoothstep(p, .16, .29) * (1 - THREE.MathUtils.smoothstep(p, .42, .54))
+      const inspection = Math.min(1, (1 - Math.cos(state.current)) * 2)
+      POSITION.z += 2 * macro * inspection
+      TARGET.x += .18 * macro * inspection
+      POSITION.x += pointer.current.x * .025
+      POSITION.y -= pointer.current.y * .015
+    }
     camera.position.copy(POSITION)
     camera.lookAt(TARGET)
     const studioNight = THREE.MathUtils.smoothstep(p, .17, .28) * (1 - THREE.MathUtils.smoothstep(p, .69, .80))
