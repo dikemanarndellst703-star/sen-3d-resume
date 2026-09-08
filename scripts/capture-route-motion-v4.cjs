@@ -1,0 +1,17 @@
+/** Record each live artwork while the page is still, with native CDP timestamps. */
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),{spawnSync}=require('node:child_process');
+const{chromium}=require(process.env.PLAYWRIGHT_CORE||'/Users/lingze/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core');
+const output=path.resolve(process.env.ROUTE_CAPTURE_OUTPUT||'docs/redesign-v4-clay-2026-09-08/motion-after');
+const url=process.env.SITE_URL||'http://127.0.0.1:5175/';
+(async()=>{fs.mkdirSync(output,{recursive:true});const framesDir=fs.mkdtempSync(path.join(os.tmpdir(),'route-loop-v4-'));const report={date:new Date().toISOString(),url,errors:[],scenes:[]};
+ const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--enable-webgl','--ignore-gpu-blocklist','--enable-unsafe-swiftshader']});const page=await browser.newPage({viewport:{width:1440,height:1000},deviceScaleFactor:1});page.on('pageerror',e=>report.errors.push(e.message));await page.goto(url,{waitUntil:'networkidle'});
+ const to=async i=>{await page.evaluate(i=>{const e=document.querySelector('#learning-map');scrollTo({top:e.offsetTop+i/3*(e.offsetHeight-innerHeight),behavior:'instant'})},i);await page.waitForTimeout(400);await page.waitForFunction(i=>document.querySelector('.art-'+i).dataset.looping==='true',i)};
+ await to(0);const cdp=await page.context().newCDPSession(page),frames=[];
+ cdp.on('Page.screencastFrame',async e=>{const file=path.join(framesDir,'frame-'+String(frames.length).padStart(6,'0')+'.jpg');fs.writeFileSync(file,Buffer.from(e.data,'base64'));frames.push({file,time:e.metadata.timestamp});await cdp.send('Page.screencastFrameAck',{sessionId:e.sessionId}).catch(()=>{})});
+ await cdp.send('Page.startScreencast',{format:'jpeg',quality:92,maxWidth:1440,maxHeight:1000,everyNthFrame:2});const began=Date.now();
+ for(let i=0;i<4;i++){if(i)await to(i);report.scenes.push({index:i,startsAtSeconds:(Date.now()-began)/1000,holdSeconds:9.5});await page.screenshot({path:path.join(output,`route-${i}.png`)});await page.waitForTimeout(9500);console.log('RECORDED route',i)}
+ const stopped=Date.now()/1000;await cdp.send('Page.stopScreencast');await page.waitForTimeout(300);if(!frames.length)throw Error('No real browser frames captured');
+ const concat=frames.map((f,i)=>`file '${f.file}'\nduration ${Math.max(.01,(frames[i+1]?.time||stopped)-f.time).toFixed(6)}`).join('\n')+`\nfile '${frames.at(-1).file}'\n`;fs.writeFileSync(path.join(framesDir,'frames.txt'),concat);
+ const ffmpeg=spawnSync(process.env.FFMPEG_PATH||'/opt/homebrew/bin/ffmpeg',['-y','-f','concat','-safe','0','-i',path.join(framesDir,'frames.txt'),'-vf','fps=30,format=yuv420p','-c:v','libx264','-preset','medium','-crf','21','-movflags','+faststart','-t',String(stopped-frames[0].time),path.join(output,'loops.mp4')],{encoding:'utf8'});if(ffmpeg.status!==0)throw Error(ffmpeg.stderr);
+ report.video={sourceFrames:frames.length,nativeDurationSeconds:stopped-frames[0].time,encodedFps:30,method:'Actual Chrome frames with original timestamps. Four still-page holds; no speed-up or synthetic animation.'};report.status=report.errors.length?'fail':'pass';fs.writeFileSync(path.join(output,'capture-metadata.json'),JSON.stringify(report,null,2)+'\n');await browser.close();fs.rmSync(framesDir,{recursive:true,force:true});console.log(report.video);if(report.errors.length)process.exitCode=1;
+})().catch(e=>{console.error(e);process.exit(1)});
