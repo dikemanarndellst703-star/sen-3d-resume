@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-08T01:13:52.808Z",
+  "status": "pass",
+  "checks": [
+    "report images and videos loaded",
+    "comparison clipping preserves full image size",
+    "all three scene comparisons",
+    "both videos play and pause",
+    "report mobile no overflow",
+    "mobile interaction buttons >=44 CSS pixels"
+  ],
+  "buttonHeights": [
+    44,
+    44,
+    44
+  ],
+  "errors": []
+}

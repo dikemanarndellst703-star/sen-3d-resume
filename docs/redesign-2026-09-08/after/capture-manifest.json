@@ -1,0 +1,51 @@
+{
+  "captured_from": "http://127.0.0.1:5175/",
+  "capture_date": "2026-09-08T01:13:05.383Z",
+  "files": [
+    {
+      "path": "capture-metadata.json",
+      "bytes": 5486,
+      "sha256": "8f572e52636a9241477975eb4ffb64d48a49478d2abcb8a1151654d9a47e918a"
+    },
+    {
+      "path": "closing-desktop.png",
+      "bytes": 126545,
+      "sha256": "96324bd60b0fb79317661b7b9544897bb34fd732974dfdcc63a68c37972c7a40"
+    },
+    {
+      "path": "hero-desktop.png",
+      "bytes": 440477,
+      "sha256": "3b0aebbe4638c479d721c7d39df0055c59eea7f836905eaf415567a7a4f48085"
+    },
+    {
+      "path": "hero-mobile.png",
+      "bytes": 128236,
+      "sha256": "3a0281e5f492217d9c320fc90a7ef169d9cc3208a1229bb4bb72416c4906d2af"
+    },
+    {
+      "path": "mobile-stage.png",
+      "bytes": 142953,
+      "sha256": "a19f139341eb327322c246d74fb478952b0694963d75f970f4f1c223d02b011f"
+    },
+    {
+      "path": "night-desktop.png",
+      "bytes": 450606,
+      "sha256": "d7ad1107fe9018a915d06111ef238b14ccca278ab3da0ff775e3f7ca3287cfca"
+    },
+    {
+      "path": "routes-desktop.png",
+      "bytes": 123276,
+      "sha256": "80005334b0c7c43c900795c5b168373d14a767e482b5776b562fb9a9fb3951b9"
+    },
+    {
+      "path": "story-desktop.png",
+      "bytes": 438401,
+      "sha256": "55a574129377e01428388f6b960cc09c42809382850d178341131149d0a357b7"
+    },
+    {
+      "path": "walkthrough.mp4",
+      "bytes": 3816179,
+      "sha256": "85cc4a30c8ad986ab0c7b2cd4a895849059dbd173a5b0085556a058285f2b356"
+    }
+  ]
+}

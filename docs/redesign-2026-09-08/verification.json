@@ -1,0 +1,113 @@
+{
+  "date": "2026-09-08T01:10:02.633Z",
+  "url": "http://127.0.0.1:5175/",
+  "checks": [
+    {
+      "name": "Live WebGL scene and semantic hero load",
+      "status": "pass"
+    },
+    {
+      "name": "All conversion links retain destination and safe new-window attributes",
+      "status": "pass",
+      "detail": 8
+    },
+    {
+      "name": "Pet feedback and rapid-click cooldown",
+      "status": "pass"
+    },
+    {
+      "name": "Spin interaction completes after repeated input",
+      "status": "pass"
+    },
+    {
+      "name": "Day/night switch and pressed state",
+      "status": "pass"
+    },
+    {
+      "name": "Five story entries, fifteen original points and teaching credentials",
+      "status": "pass"
+    },
+    {
+      "name": "All four learning routes expose sixteen original lesson links",
+      "status": "pass"
+    },
+    {
+      "name": "Arrow, Home, End and rapid Tab preserve keyboard focus",
+      "status": "pass"
+    },
+    {
+      "name": "Live reduced-motion preference stops continuous rendering; explicit turn remains available",
+      "status": "pass"
+    },
+    {
+      "name": "Scene resumes after leaving and returning to exploration area",
+      "status": "pass"
+    },
+    {
+      "name": "1440, 1024, 390 and 320 pixel layouts have no horizontal overflow",
+      "status": "pass"
+    },
+    {
+      "name": "Model network failure displays real poster and keeps CTA usable",
+      "status": "pass"
+    }
+  ],
+  "errors": [],
+  "viewports": [
+    {
+      "viewport": [
+        1440,
+        1000
+      ],
+      "scrollWidth": 1440,
+      "pageHeight": 3608,
+      "title": {
+        "left": 80.625,
+        "right": 590.625
+      },
+      "ctaCount": 8
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "scrollWidth": 1024,
+      "pageHeight": 3300,
+      "title": {
+        "left": 57.34375,
+        "right": 475.625
+      },
+      "ctaCount": 8
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "scrollWidth": 390,
+      "pageHeight": 3598,
+      "title": {
+        "left": 27.296875,
+        "right": 362.703125
+      },
+      "ctaCount": 8
+    },
+    {
+      "viewport": [
+        320,
+        740
+      ],
+      "scrollWidth": 320,
+      "pageHeight": 3636,
+      "title": {
+        "left": 22.390625,
+        "right": 297.609375
+      },
+      "ctaCount": 8
+    }
+  ],
+  "browser": "152.0.7977.76",
+  "status": "pass",
+  "scope": "Production build in desktop Chrome, mobile viewport and touch-size layouts. No real-device FPS claim; reduced-motion and GLB-network-failure paths tested."
+}

@@ -1,0 +1,247 @@
+{
+  "title": "AI 仓鼠洞｜Alex 大表哥的 AI 新手学习入口",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "pageHeight": 3608,
+  "sections": [
+    {
+      "className": "hero",
+      "id": "top",
+      "y": 0,
+      "height": 1000
+    },
+    {
+      "className": "resume",
+      "id": "alex-story",
+      "y": 1000,
+      "height": 1049.625
+    },
+    {
+      "className": "learning-section",
+      "id": "learning-map",
+      "y": 2049.625,
+      "height": 1007.25
+    },
+    {
+      "className": "closing-cta",
+      "id": "",
+      "y": 3056.875,
+      "height": 459.796875
+    }
+  ],
+  "canvas": [
+    {
+      "width": 895,
+      "height": 770
+    }
+  ],
+  "scripts": [
+    "http://127.0.0.1:5175/assets/index-CBfST7d3.js"
+  ],
+  "routesBounds": {
+    "top": -0.375,
+    "height": 1007.25,
+    "panel": {
+      "top": 418.984375,
+      "bottom": 898.078125,
+      "height": 479.09375
+    }
+  },
+  "mobile": {
+    "width": 390,
+    "height": 844,
+    "scrollWidth": 390,
+    "pageHeight": 3598,
+    "controls": [
+      {
+        "label": "♡摸摸仓鼠",
+        "top": 458,
+        "bottom": 502,
+        "height": 44
+      },
+      {
+        "label": "⟳转一圈",
+        "top": 458,
+        "bottom": 502,
+        "height": 44
+      },
+      {
+        "label": "☾夜间",
+        "top": 458,
+        "bottom": 502,
+        "height": 44
+      }
+    ]
+  },
+  "model": {
+    "file": "web/public/models/hamster-v2.glb",
+    "bytes": 1895128,
+    "sha256": "ba281b2dc178f79a4cb3b7e9c4c2c5abed128257eece2b54e62ef4f6b20a2eb9"
+  },
+  "capture": {
+    "date": "2026-09-08T01:13:05.383Z",
+    "url": "http://127.0.0.1:5175/",
+    "browser": "152.0.7977.76",
+    "sourceFrames": 618,
+    "videoNativeDurationSeconds": 25.630921125411987,
+    "lastStaticHoldSeconds": 1.7312791347503662,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "encodedVideo": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000,
+          "avg_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "25.633008",
+        "size": "3816179"
+      }
+    }
+  },
+  "screenshots": [
+    {
+      "name": "hero-desktop.png",
+      "note": "Default daytime hero, 1440 × 1000.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scrollY": 0,
+      "night": "false",
+      "selectedRoute": "✳AI 入门↗"
+    },
+    {
+      "name": "story-desktop.png",
+      "note": "Story section anchored to its actual document position, first item expanded.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scrollY": 1000,
+      "night": "false",
+      "selectedRoute": "✳AI 入门↗"
+    },
+    {
+      "name": "routes-desktop.png",
+      "note": "Learning route section anchored to actual section top, initial route selected.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scrollY": 2050,
+      "night": "false",
+      "selectedRoute": "✳AI 入门↗"
+    },
+    {
+      "name": "closing-desktop.png",
+      "note": "Closing CTA, with native end-of-page scroll clamping.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scrollY": 2608,
+      "night": "false",
+      "selectedRoute": "✳AI 入门↗"
+    },
+    {
+      "name": "night-desktop.png",
+      "note": "Actual night toggle, after lighting transition settled.",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scrollY": 0,
+      "night": "true",
+      "selectedRoute": "✳AI 入门↗"
+    },
+    {
+      "name": "hero-mobile.png",
+      "note": "Actual 390 × 844 mobile hero, top of page.",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scrollY": 0,
+      "night": "false",
+      "selectedRoute": "✳AI 入门↗"
+    },
+    {
+      "name": "mobile-stage.png",
+      "note": "Mobile interaction area, at its actual position with control buttons visible.",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scrollY": 500,
+      "night": "false",
+      "selectedRoute": "✳AI 入门↗"
+    }
+  ],
+  "videoActions": [
+    {
+      "atSeconds": 0,
+      "action": "Daytime hero, natural idle and blink"
+    },
+    {
+      "atSeconds": 1.3,
+      "action": "Pointer movement across character and scene"
+    },
+    {
+      "atSeconds": 4.16,
+      "action": "Click pet button, wait for full hop and arm response"
+    },
+    {
+      "atSeconds": 6.05,
+      "action": "Click full-turn button, wait until spin completes"
+    },
+    {
+      "atSeconds": 8.93,
+      "action": "Switch to night, allow lighting transition"
+    },
+    {
+      "atSeconds": 10.67,
+      "action": "Return to daytime"
+    },
+    {
+      "atSeconds": 11.7,
+      "action": "Scroll to Alex story"
+    },
+    {
+      "atSeconds": 14.46,
+      "action": "Expand teaching credentials"
+    },
+    {
+      "atSeconds": 16.2,
+      "action": "Scroll to learning routes"
+    },
+    {
+      "atSeconds": 18.86,
+      "action": "Select route 1"
+    },
+    {
+      "atSeconds": 19.73,
+      "action": "Select route 2"
+    },
+    {
+      "atSeconds": 20.6,
+      "action": "Select route 3"
+    },
+    {
+      "atSeconds": 21.47,
+      "action": "Select route 4"
+    },
+    {
+      "atSeconds": 22.35,
+      "action": "Scroll to final CTA without opening external destination"
+    }
+  ]
+}
