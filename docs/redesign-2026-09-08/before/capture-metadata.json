@@ -1,0 +1,62 @@
+{
+  "title": "AI 仓鼠洞｜Alex 大表哥的 AI 新手学习入口",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "pageHeight": 10702,
+  "sections": [
+    {
+      "className": "hero",
+      "id": "",
+      "y": 0,
+      "height": 1000
+    },
+    {
+      "className": "resume",
+      "id": "alex-story",
+      "y": 1000,
+      "height": 4422
+    },
+    {
+      "className": "works",
+      "id": "",
+      "y": 5422,
+      "height": 5280
+    },
+    {
+      "className": "closing-cta",
+      "id": "",
+      "y": 9702,
+      "height": 1000
+    }
+  ],
+  "h1": "让 AI开始替你工作",
+  "font": "\"Helvetica Neue\", \"Chiron GoRound TC\", \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+  "routeCardCount": 4,
+  "canvas": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 1440,
+      "height": 1000
+    }
+  ],
+  "mobile": {
+    "width": 390,
+    "height": 844,
+    "scrollWidth": 390,
+    "pageHeight": 8494
+  },
+  "capture": {
+    "date": "2026-09-08T00:54:54.812Z",
+    "url": "http://127.0.0.1:5174/",
+    "commit": "d44d71ee9809357a1be50da1c42d989d36d7df4a",
+    "browser": "152.0.7977.76",
+    "frames": 787,
+    "consoleErrors": [],
+    "failedRequests": []
+  }
+}

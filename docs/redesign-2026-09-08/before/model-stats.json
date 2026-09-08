@@ -1,0 +1,26 @@
+{
+  "file": "/tmp/hamster-v1-baseline/web/public/models/ai-hamster.glb",
+  "bytes": 16039824,
+  "sha256": "f196abdedb71ff60ed22014b88551f9f4c4f244b3b53d0de821f667bae4ec94c",
+  "gltfVersion": {
+    "generator": "Tripo",
+    "version": "2.0"
+  },
+  "scenes": 1,
+  "nodes": 1,
+  "meshes": 1,
+  "primitives": 1,
+  "materials": 1,
+  "textures": 1,
+  "images": 1,
+  "animations": 0,
+  "skins": 0,
+  "vertices": 290841,
+  "triangles": 501070,
+  "meshNames": [
+    "tripo_mesh_bfa920ab-ad7b-44e1-b2ac-2ceb65744036"
+  ],
+  "materialNames": [
+    "tripo_mat_bfa920ab-ad7b-44e1-b2ac-2ceb65744036"
+  ]
+}
