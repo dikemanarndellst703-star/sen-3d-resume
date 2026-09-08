@@ -1,0 +1,67 @@
+{
+  "name": "AI Hamster Guide V2",
+  "generated_at": "2026-09-08",
+  "blender_version": "5.2.1 LTS",
+  "source_script": "blender/build_hamster_v2.py",
+  "triangles": 93696,
+  "vertices": 46978,
+  "mesh_objects": 20,
+  "materials": 11,
+  "glb_bytes": 1895128,
+  "blender_bounds": {
+    "min": [
+      -1.125,
+      -0.9089999794960022,
+      6.706396327160746e-09
+    ],
+    "max": [
+      1.125,
+      0.8619999885559082,
+      3.5899999141693115
+    ]
+  },
+  "height": 3.589999907462915,
+  "runtime_nodes": {
+    "HamsterRoot": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Head": [
+      0.0,
+      0.0,
+      1.9800000190734863
+    ],
+    "Eye_L": [
+      0.38999998569488525,
+      -0.6840000152587891,
+      0.7000000476837158
+    ],
+    "Eye_R": [
+      -0.38999998569488525,
+      -0.6840000152587891,
+      0.7000000476837158
+    ],
+    "Arm_L": [
+      0.7099999785423279,
+      0.004999999888241291,
+      1.659999966621399
+    ],
+    "Arm_R": [
+      -0.7099999785423279,
+      0.004999999888241291,
+      1.659999966621399
+    ]
+  },
+  "front": {
+    "blender": "-Y",
+    "gltf": "+Z"
+  },
+  "up": {
+    "blender": "+Z",
+    "gltf": "+Y"
+  },
+  "textures": 0,
+  "animations": "runtime-procedural; independent shoulder, head and eye pivots",
+  "old_assets_preserved": true
+}

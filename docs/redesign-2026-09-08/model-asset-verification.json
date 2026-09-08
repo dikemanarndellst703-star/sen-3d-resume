@@ -1,0 +1,30 @@
+{
+  "verified_at": "2026-09-08",
+  "preserved_assets": {
+    "web/public/models/ai-hamster.glb": {
+      "git_blob": "3f52da9b2f38f7f3e64e8d5d52daeb65d098dd09",
+      "baseline_git_blob": "3f52da9b2f38f7f3e64e8d5d52daeb65d098dd09",
+      "unchanged": true
+    },
+    "blender/sen.blend": {
+      "git_blob": "7e5cb6a52763c28fce84634b52ffa2ab7ecf6d2c",
+      "baseline_git_blob": "7e5cb6a52763c28fce84634b52ffa2ab7ecf6d2c",
+      "unchanged": true
+    }
+  },
+  "new_glb": {
+    "bytes": 1895128,
+    "triangles": 93696,
+    "sha256": "ba281b2dc178f79a4cb3b7e9c4c2c5abed128257eece2b54e62ef4f6b20a2eb9",
+    "required_nodes_present": [
+      "HamsterRoot",
+      "Head",
+      "Eye_L",
+      "Eye_R",
+      "Arm_L",
+      "Arm_R"
+    ],
+    "textures": 0
+  },
+  "checks": "GLB header, declared length, required nodes, triangle and file budgets, exact Git blob preservation: PASS"
+}
