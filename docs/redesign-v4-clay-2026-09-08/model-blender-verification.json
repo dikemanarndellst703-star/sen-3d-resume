@@ -1,0 +1,122 @@
+{
+  "status": "pass",
+  "method": "Saved Blender actual polygons and independent GLB reimport; largest sculpture mesh checked for boundary/non-manifold edges",
+  "saved_blend": {
+    "polygons": 1025000,
+    "triangles": 1025000,
+    "blender_bounds": {
+      "min": [
+        -1.2966262102127075,
+        -1.8152302503585815,
+        0.0
+      ],
+      "max": [
+        1.295371413230896,
+        1.799744963645935,
+        3.6000003814697266
+      ]
+    },
+    "height": 3.6000003814697266,
+    "meshes": [
+      {
+        "name": "Source-derived seated clay hamster",
+        "polygons": 965700,
+        "triangles": 965700,
+        "vertices": 482832,
+        "open_edges": 0,
+        "non_manifold_edges": 0
+      },
+      {
+        "name": "Backpack · cocoa clay",
+        "polygons": 40060,
+        "triangles": 40060,
+        "vertices": 20040,
+        "open_edges": 0,
+        "non_manifold_edges": 0
+      },
+      {
+        "name": "Backpack · shallow oat stitching",
+        "polygons": 800,
+        "triangles": 800,
+        "vertices": 480,
+        "open_edges": 0,
+        "non_manifold_edges": 0
+      },
+      {
+        "name": "Backpack · pressed seam shadow",
+        "polygons": 6352,
+        "triangles": 6352,
+        "vertices": 3184,
+        "open_edges": 0,
+        "non_manifold_edges": 0
+      },
+      {
+        "name": "Backpack · muted clay zipper",
+        "polygons": 12088,
+        "triangles": 12088,
+        "vertices": 6152,
+        "open_edges": 0,
+        "non_manifold_edges": 0
+      }
+    ]
+  },
+  "reimported_glb": {
+    "polygons": 1025000,
+    "triangles": 1025000,
+    "blender_bounds": {
+      "min": [
+        -1.2966264486312866,
+        -1.815230369567871,
+        0.0
+      ],
+      "max": [
+        1.2953715324401855,
+        1.7997450828552246,
+        3.6000003814697266
+      ]
+    },
+    "height": 3.6000003814697266,
+    "meshes": [
+      {
+        "name": "Backpack · cocoa clay",
+        "polygons": 40060,
+        "triangles": 40060,
+        "vertices": 20040,
+        "open_edges": 0,
+        "non_manifold_edges": 0
+      },
+      {
+        "name": "Backpack · muted clay zipper",
+        "polygons": 12088,
+        "triangles": 12088,
+        "vertices": 6152,
+        "open_edges": 0,
+        "non_manifold_edges": 0
+      },
+      {
+        "name": "Backpack · pressed seam shadow",
+        "polygons": 6352,
+        "triangles": 6352,
+        "vertices": 3184,
+        "open_edges": 0,
+        "non_manifold_edges": 0
+      },
+      {
+        "name": "Backpack · shallow oat stitching",
+        "polygons": 800,
+        "triangles": 800,
+        "vertices": 480,
+        "open_edges": 0,
+        "non_manifold_edges": 0
+      },
+      {
+        "name": "Source-derived seated clay hamster",
+        "polygons": 965700,
+        "triangles": 965700,
+        "vertices": 488811,
+        "open_edges": 11946,
+        "non_manifold_edges": 11946
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "provided_filename": "tripo_convert_bfa920ab-ad7b-44e1-b2ac-2ceb65744036.glb",
+  "original_sha256": "f196abdedb71ff60ed22014b88551f9f4c4f244b3b53d0de821f667bae4ec94c",
+  "bytes": 16039824,
+  "identical_repo_asset": "web/public/models/ai-hamster.glb",
+  "previous_version": "v3.0.0",
+  "previous_commit": "c8784bc7fa07be203f441576305f0eda16df6913",
+  "reference_images": [
+    "96a3c5b1152596bdcb6b169bb8a2eccc.png",
+    "2f5f0c670a205792031d63c7ad619413.png"
+  ],
+  "preservation": "User source and all previous version assets remain unchanged.",
+  "archived_reference_images": [
+    {
+      "original_filename": "96a3c5b1152596bdcb6b169bb8a2eccc.png",
+      "archived_path": "references/clay-seated-reference.png",
+      "sha256": "ae670a539ef7a325ab226a57b96dfa08f5b0bbd03c25f645c0541556ef462d16"
+    },
+    {
+      "original_filename": "2f5f0c670a205792031d63c7ad619413.png",
+      "archived_path": "references/clay-standing-reference.png",
+      "sha256": "419d55ccb9c7269b558baf37d4ae8427d6bfa08d279621eae02bd79aba4bfeaa"
+    }
+  ]
+}
