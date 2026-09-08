@@ -1,69 +1,91 @@
-# CLAUDE.md
+# Project conventions · AI Hamster Hole V2
 
-Conventions for **AI coding assistants** (Claude Code / Cursor / Copilot, etc.) working in this repo. This is a **scroll-driven personal 3D résumé** built on **React Three Fiber + TypeScript**: a fixed 3D background (a character model that reacts to scroll) plus scrollable HTML content in front (About → résumé → works). `README.md` explains the concept and usage for humans; this file adds the collaboration gotchas without repeating it.
+Read this file before changing the project. `AGENTS.md` points here. This repository is now Alex's AI learning gateway with an interactive 3D exploration pod. The original Sen résumé source, notices and selected assets remain as project history.
 
-## Repo layout (read this first)
+## Repository and commands
 
-The repo has three parts:
+- `web/`: React 18, TypeScript, React Three Fiber, Three.js, Framer Motion, Zustand and Vite application.
+- `blender/`: editable V2 model and reproducible scripts; preserved original `sen.blend`.
+- `docs/redesign-2026-09-08/`: baseline, research, design, model evidence and the before/after report `index.html`.
+- `tutor/`: retained original tutorials; their old camera-animation contract does not describe V2.
 
-- **[`web/`](web)** — the front-end app (every code convention in this file lives here).
-- **[`blender/`](blender)** — the 3D scene source `sen.blend` (character + camera animation + focus-anchor empties). The source you edit before exporting the glb.
-- **[`tutor/`](tutor)** — fork-it-yourself tutorials for users (deployment, stickers, …; more coming).
+Run npm commands from `web/`:
 
-**Every code / asset path below is relative to `web/`** (e.g. `src/App.tsx` means `web/src/App.tsx`), and npm commands run inside `web/`; docs like `LICENSE` / `NOTICE` / `CLAUDE.md` sit at the repo root.
-
-## Commands
-
-```bash
-cd web             # all front-end commands run inside web/
-npm install
-npm run dev        # dev server at http://localhost:5173 (vite)
-npm run build      # type-check + bundle to dist/
-npm run preview    # preview the build output
-npm run typecheck  # type-check only (tsc -b)
-npm run lint       # ESLint (lightweight; `any` in the scene is allowed)
+```sh
+npm ci
+npm run dev
+npm run typecheck
+npm run lint
+npm run build
+npm run preview
 ```
 
-No tests. Linting is `npm run lint` (lightweight ESLint, `no-explicit-any` disabled to fit the scene code), type-checking is `npm run typecheck`; after editing, verify visually in the browser via `npm run dev`.
+The installed ESLint requires Node `^20.19.0 || ^22.13.0 || >=24`; the Pages workflow uses Node 20. TypeScript is strict. Build runs `tsc -b && vite build && node scripts/copy-report.mjs`; output is `web/dist/`. There is no separate automated test command. Run typecheck, lint and build, then verify the affected visual or interactive behavior in the browser.
 
-## Architecture
+## Current architecture
 
-- **Pure front-end SPA**: `index.html` → `src/main.tsx` → `src/App.tsx` (one fixed `<Canvas>` 3D background + a scrollable HTML overlay). No backend, no router.
-- **3D background**: `src/scene/Scene.tsx` — loads `public/models/me.glb` and, using the glb's own camera animation, wipes through it in 5 scroll-driven segments, layering auto-focus depth-of-field and eye-follows-cursor on top. Lighting comes from `src/scene/Env.tsx` (`public/textures/env.hdr` as IBL).
-- **Scroll content**: `Hero` in `App.tsx` (About copy lives in `COPY`) → `src/ui/Resume.tsx` (résumé timeline) → `src/ui/Works.tsx` (works gallery + detail modal).
-- **Overlays**: `LoadingScreen` (masks the screen until the model finishes loading), `NoiseOverlay` (film grain), scroll-darken / frosted right rail / hero decorative frame (all in `App.tsx`).
-- **Global state**: `src/store.ts` (zustand, lightweight).
+Paths in this section are relative to `web/`.
 
-## TypeScript conventions
+- `src/main.tsx` → `src/App.tsx`: static SPA entry, header, hero, stage shell, Alex story, route section and footer. Main learning destination is `https://ai.alexdbg.com/`.
+- `App.tsx` loads `src/scene/Stage.tsx` via `React.lazy` and `Suspense`; text and links do not wait for the 3D module.
+- `Stage.tsx`: Canvas, model loading progress, scene error boundary and poster fallback; pet, spin and day/night buttons with accessible status feedback. IntersectionObserver and document visibility pause rendering when the stage is not visible. Mobile DPR is capped below desktop DPR.
+- `Scene.tsx`: loads `public/models/hamster-v2.glb`; owns the hamster's procedural animation, ring-shaped pod, pedestal, three satellite icons, lights and camera. Scrolling changes the desktop camera gently; the browser retains native scrolling. Character nodes supply eye tracking, blinking, pet/wave and spin actions.
+- `src/ui/Resume.tsx`: five `STORY` entries rendered as an accordion with button/region relationships. Store `chapter` chooses the expanded entry and subtly changes character orientation.
+- `src/ui/Works.tsx`: four accessible tabs, one route panel, CSS illustrations and final learning CTA. Arrow keys, Home and End update both selection and focus.
+- `src/data/works.ts`: learning route titles, descriptions, course names and external links. The current UI is Chinese; some data retains an English variant.
+- `src/store.ts`: active runtime fields are `night`, `pet`, `spin`, `chapter`, and `route`; action counts trigger character responses. Older fields remain for compatibility.
+- `src/styles.css`: palette, layout, typography, responsive rules and CSS transitions. Desktop uses a sticky exploration stage; mobile uses a single-column flow.
 
-This project is TypeScript (`strict` on). `App` / `ui` / `data` / `store` are fully typed (data shapes and component props are annotated); the imperative Three.js code in `Scene.tsx` (the `traverse` callback, glb camera / eye objects, DOM refs, etc.) is loosened with a few `any`s — follow that style, don't hard-type the 3D internals just to eliminate `any`. Make sure `npm run typecheck` passes after edits.
+### Motion and accessibility
 
-## Scene parameters (look here to change the look)
+`MotionConfig reducedMotion="user"`, `useReducedMotion`, and CSS media rules follow system `prefers-reduced-motion`. In reduced mode the scene uses demand rendering, continuous character/decoration animation stops, and spin becomes an immediate half-turn. Pet buttons still provide text feedback. Theme changes invalidate the scene. Preserve pause/resume behavior for off-screen and hidden-tab states.
 
-Every tunable in the scene (lights, camera, depth-of-field, Bloom, character position, background gradient, etc.) is a **plain constant** at the top of the relevant component in `Scene.tsx` (e.g. `const cam = { damping: 0.1, ... }`, `const top = '#6f906f'`). To change the default look, edit those constant values directly — there is no tweak panel or extra config file.
+Maintain visible keyboard focus, skip navigation, semantic links/buttons, tab keyboard support, accordion `aria-expanded`/panel IDs and polite status messages. Main learning links use `target="_blank"` and `rel="noopener noreferrer"`. Touch interactions must work without hover.
 
-## Works content system (look here to change content)
+### Removed architectural assumptions
 
-- **List**: `src/data/works.ts` — section / work titles, meta, tags, external links, and cover mapping (`SECTION_COVERS`). Pure data; `Works.tsx` only renders it.
-- **Detail**: one `src/content/works/<slug>.md` per work (frontmatter + markdown, spec in `src/data/workDocs.ts`), linked via the `slug` on each item in works.ts.
-  - **This repo ships without concrete work details**: `content/works/` has only an `example.md` template (its slug matches no work, so it never renders); opening a detail falls back to a **shared placeholder** (intro text + image/video placeholder + empty jump button, copy in `works.ts`'s `detailPlaceholder / phImageLabel / phButtonLabel`). Drop in a `<slug>.md` following `example.md` to render a full detail.
-- **Media**: put images / videos in `public/works/<slug>/` and reference them from the md with `/works/...` absolute paths. `public/works/` is gitignored by default (only the 4 section `covers/` are kept), see `.gitignore`.
+V2 does not read `CameraAction`, a GLB camera, or `focus-*` empties. There is no active autofocus/DepthOfField/Bloom pipeline and no markdown work-detail modal. `FOCUS_POINTS` is currently used by the story's `data-point` attributes, not by the camera. Some original utility files or dependencies remain; inspect imports before treating them as active features.
 
-## Rendering pipeline notes
+## Model contract and authoring
 
-- Post-processing is in `Scene.tsx`'s `<EffectComposer>`: order is DepthOfField → Bloom → SMAA; mind the order when changing effects, it affects compositing.
-- Shadows: the `App.tsx` Canvas uses `shadows={PCFShadowMap}`, the character has `castShadow / receiveShadow`; camera motion is driven mainly by me.glb's glb animation + scroll.
-- `base: './'` (`vite.config.ts`): output uses relative paths, deployable to any subdirectory; at runtime public assets are joined with `import.meta.env.BASE_URL`.
+Repository-relative assets:
 
-## Making it yours after a fork
+| File | Purpose |
+| --- | --- |
+| `blender/hamster-v2.blend` | Editable model, PBR materials and studio setup |
+| `blender/build_hamster_v2.py` | Original mesh construction, GLB export, poster and stats |
+| `blender/render_model_comparison.py` | Same-studio V1/V2 comparison renders |
+| `web/public/models/hamster-v2.glb` | Runtime character |
+| `web/public/brand/hamster-v2-poster.png` | Static fallback and model preview |
+| `docs/redesign-2026-09-08/model-delivery.md` | Detailed model and coordinate notes |
 
-- Swap the 3D character: replace `public/models/me.glb` (its source is `blender/sen.blend` at the repo root — edit it in Blender and export the glb), or rewrite `Scene.tsx` to use your own scene. The code looks these up in the glb **by object name**; whatever is missing, that feature breaks:
-  - **Camera + camera-animation clip named `CameraAction`** — the scroll-driven camera path (played by wiping frame-by-frame through `useGLTF`'s `animations`). Its total frame count is read at runtime (24fps), not hardcoded.
-  - **`focus-start`** (or `focus-0`) — the hero's starting focus anchor (an empty); both names are accepted.
-  - **The timeline focus anchors** (empties) — one per résumé entry, listed in order in **`src/data/focusPoints.ts`** (`FOCUS_POINTS`, the single source of truth shared by `Scene.tsx` and `Resume.tsx`). The count is dynamic: change the list + `Resume.tsx`'s entries together and everything (node count, frame ranges) adapts. This repo ships `focus-1 / focus-2 / focus-3 / focus-4 / focus-5` (the hero anchor uses `focus-0`).
-  - **`focus-works`** — the works-section focus anchor (an empty); optional — if absent, the works section reuses the last timeline anchor.
-  - **A mesh whose name contains `eye`** — the eyes, used for eye-follows-cursor.
-  - (Note: wind sway was removed, so a mesh named `man` is no longer needed.)
-  - **Camera frame convention** (for authoring the `CameraAction` clip): frame `0` = hero (`focus-start`); frame `50·k` = the k-th timeline node; the **last frame** = works (`focus-works`). So each node is 50 frames apart, and the tail from the last node to the last frame is the works segment (any length).
-- Edit the résumé in `src/ui/Resume.tsx`; works in `src/data/works.ts` + `src/content/works/*.md`; About in `App.tsx`'s `COPY`.
-- Personal content / assets / the character model are copyright of the original author and **not covered by MIT** (see `NOTICE`) — after forking, be sure to replace them with your own.
+Blender is Z-up and faces -Y. Exported glTF is Y-up and faces +Z. Its origin is on the floor; height is approximately 3.59 units. Keep `HamsterRoot`, `Head`, `Eye_L`, `Eye_R`, `Arm_L` and `Arm_R` names stable. `Head` is the neck pivot; eyes are child meshes with child catchlights; arms use shoulder pivots. Eye `scale.y` controls blinking. Positive `Arm_L.rotation.z` and negative `Arm_R.rotation.z` raise the arms outwards. Runtime movement is implemented in `Scene.tsx`, without mandatory animation clips.
+
+The model uses vertex colors and PBR materials, with no external texture dependency. Static parts are merged per material and parent pivot. Current measurement: 93,696 triangles, 20 meshes, 11 materials, 1,895,128 bytes. The build script checks a budget below 120,000 triangles and 8 MB. Do not interpret file-size savings as measured frame-rate improvements.
+
+From the repository root:
+
+```sh
+/Applications/Blender.app/Contents/MacOS/Blender --background --python blender/build_hamster_v2.py
+/Applications/Blender.app/Contents/MacOS/Blender --background --python blender/render_model_comparison.py
+```
+
+Replace the executable path with the user's local Blender binary as needed. Use Blender's bundled Python, not plain system Python, to run scripts requiring `bpy`. The generator writes the V2 `.blend`, GLB, poster and model statistics; rerun the comparison script when the final model changes. Visually inspect exports and retain interactive node names.
+
+## Validation and history
+
+After relevant changes, verify desktop and mobile layouts; pet/wave/spin, night/day, all five accordion entries, all four route panels, keyboard navigation, reduced motion and fallback behavior. Check console errors and asset loading through the app's actual base URL. Code or asset changes require the standard npm checks above; documentation-only changes require checking paths and claims against source.
+
+Preserve the baseline under `docs/redesign-2026-09-08/before/` and original `web/public/models/ai-hamster.glb` / `blender/sen.blend`. Add evidence for new work rather than overwriting those assets. `model-asset-verification.json` records exact Git blob preservation and the V2 GLB checksum. The report entry point is `docs/redesign-2026-09-08/index.html`; keep screenshots, recordings, source changes and actual deployment evidence traceable.
+
+## Hosting
+
+`.github/workflows/deploy.yml` runs on pushes to `main` or manual dispatch, builds inside `web/`, uploads `web/dist/` and deploys with GitHub Pages. Its success and the live result establish publication status. The report-copy build step publishes `docs/redesign-2026-09-08/` at `web/dist/update-report/`. Local report links stay relative; published source links target the GitHub version tag.
+
+`web/vite.config.ts` uses `base: './'`. Construct public asset URLs with `import.meta.env.BASE_URL` so deployments under a repository subpath work. Preview with an HTTP server or `npm run preview`; do not rely on opening built files through `file://`.
+
+## Attribution and content boundaries
+
+Preserve `LICENSE` and `NOTICE`, including Sen Zheng (SEN)'s original copyright and MIT code attribution. Original personal content and assets are excluded from MIT. Alex / AI Hamster Hole branding, content and character assets are project-specific and are not automatically licensed for redistribution by the source-code license. Third-party assets retain their own licenses. Do not overwrite these boundaries when updating documentation.
+
+Browser regression and artifact capture scripts live under `scripts/`: `verify-upgrade.cjs`, `capture-baseline.cjs`, and `capture-upgrade.cjs`. Run them from the repo root against a production preview. They support `PLAYWRIGHT_CORE` and `CHROME_PATH` overrides.

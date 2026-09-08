@@ -1,28 +1,42 @@
 import { create } from 'zustand'
 
-// 全站交互状态：当前展开的领域 / 悬停的领域 / 是否已进入
 interface StoreState {
-  active: string | null // 当前展开的 domain id（null = 总览）
-  hovered: string | null // 悬停的 domain id
-  entered: boolean // 是否已通过入场
+  active: string | null
+  hovered: string | null
+  entered: boolean
+  night: boolean
+  pet: number
+  spin: number
+  chapter: number
+  route: number
   setActive: (id: string | null) => void
   setHovered: (id: string | null) => void
   enter: () => void
+  toggleNight: () => void
+  petHamster: () => void
+  spinHamster: () => void
+  setChapter: (chapter: number) => void
+  setRoute: (route: number) => void
 }
+
+let lastPetAt = -Infinity
+let lastSpinAt = -Infinity
 
 export const useStore = create<StoreState>((set) => ({
-  active: null,
-  hovered: null,
-  entered: false,
-  setActive: (id) => set({ active: id }),
-  setHovered: (id) => set({ hovered: id }),
-  enter: () => set({ entered: true }),
+  active: null, hovered: null, entered: false, night: false, pet: 0, spin: 0, chapter: 0, route: 0,
+  setActive: (active) => set({ active }), setHovered: (hovered) => set({ hovered }), enter: () => set({ entered: true }),
+  toggleNight: () => set((state) => ({ night: !state.night })),
+  petHamster: () => {
+    const now = performance.now()
+    if (now - lastPetAt < 1400) return
+    lastPetAt = now
+    set((state) => ({ pet: state.pet + 1 }))
+  },
+  spinHamster: () => {
+    const now = performance.now()
+    if (now - lastSpinAt < 2500) return
+    lastSpinAt = now
+    set((state) => ({ spin: state.spin + 1 }))
+  },
+  setChapter: (chapter) => set({ chapter }), setRoute: (route) => set({ route }),
 }))
-
-// 开发期调试钩子：可在 console 用 __store.getState().setActive('ads')
-declare global {
-  interface Window {
-    __store?: typeof useStore
-  }
-}
-if (import.meta.env.DEV) window.__store = useStore
