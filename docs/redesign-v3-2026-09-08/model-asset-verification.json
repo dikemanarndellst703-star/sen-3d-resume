@@ -1,0 +1,180 @@
+{
+  "verified_at": "2026-09-08",
+  "method": "independent GLB binary header + JSON accessor index counts",
+  "triangles": 1018268,
+  "blender_polygons": 1018268,
+  "glb_bytes": 26347280,
+  "glb_sha256": "1a1a2eb1bf9a1f82bcbe03ec3c05ca3615c46c457388ed63180e6abd725074af",
+  "required_nodes_present": [
+    "HamsterRoot",
+    "Head",
+    "Eye_L",
+    "Eye_R",
+    "Arm_L",
+    "Arm_R"
+  ],
+  "nodes": 32,
+  "mesh_count": 28,
+  "materials": 14,
+  "external_buffers": 0,
+  "primitives": [
+    {
+      "mesh": "Arm L · tapered sculpt · mesh",
+      "triangles": 38316,
+      "vertices": 19168
+    },
+    {
+      "mesh": "Paw L · fingernail 0 · mesh",
+      "triangles": 4788,
+      "vertices": 2400
+    },
+    {
+      "mesh": "Paw crease L0 · mesh",
+      "triangles": 948,
+      "vertices": 480
+    },
+    {
+      "mesh": "Arm R · tapered sculpt · mesh",
+      "triangles": 38316,
+      "vertices": 19168
+    },
+    {
+      "mesh": "Paw R · fingernail 0 · mesh",
+      "triangles": 4788,
+      "vertices": 2400
+    },
+    {
+      "mesh": "Paw crease R0 · mesh",
+      "triangles": 948,
+      "vertices": 480
+    },
+    {
+      "mesh": "Backpack · padded shell · mesh",
+      "triangles": 43372,
+      "vertices": 21696
+    },
+    {
+      "mesh": "Backpack · saddle stitch 0 · mesh",
+      "triangles": 3584,
+      "vertices": 2048
+    },
+    {
+      "mesh": "Foot L · nail 0 · mesh",
+      "triangles": 9584,
+      "vertices": 4810
+    },
+    {
+      "mesh": "Backpack buckle 1 · mesh",
+      "triangles": 17424,
+      "vertices": 8856
+    },
+    {
+      "mesh": "Foot L · soft pad · mesh",
+      "triangles": 64028,
+      "vertices": 32032
+    },
+    {
+      "mesh": "Eye L · chocolate pupil · mesh",
+      "triangles": 12476,
+      "vertices": 6240
+    },
+    {
+      "mesh": "Eye L · secondary glint · mesh",
+      "triangles": 1172,
+      "vertices": 588
+    },
+    {
+      "mesh": "Eye L · softbox highlight · mesh",
+      "triangles": 1796,
+      "vertices": 900
+    },
+    {
+      "mesh": "Eye_L · mesh",
+      "triangles": 21724,
+      "vertices": 10864
+    },
+    {
+      "mesh": "Eye R · chocolate pupil · mesh",
+      "triangles": 12476,
+      "vertices": 6240
+    },
+    {
+      "mesh": "Eye R · secondary glint · mesh",
+      "triangles": 1172,
+      "vertices": 588
+    },
+    {
+      "mesh": "Eye R · softbox highlight · mesh",
+      "triangles": 1796,
+      "vertices": 900
+    },
+    {
+      "mesh": "Eye_R · mesh",
+      "triangles": 21724,
+      "vertices": 10864
+    },
+    {
+      "mesh": "Sculpted head · cheeks sockets muzzle and short-plush relief · mesh",
+      "triangles": 378816,
+      "vertices": 189768
+    },
+    {
+      "mesh": "Glasses L · rounded acetate frame · mesh",
+      "triangles": 37988,
+      "vertices": 19008
+    },
+    {
+      "mesh": "Glasses L · chamfer highlight · mesh",
+      "triangles": 6144,
+      "vertices": 3072
+    },
+    {
+      "mesh": "Glasses L · hinge · mesh",
+      "triangles": 10120,
+      "vertices": 5072
+    },
+    {
+      "mesh": "Nose · tiny soft heart · mesh",
+      "triangles": 15920,
+      "vertices": 7968
+    },
+    {
+      "mesh": "Ear L · inner cartilage · mesh",
+      "triangles": 4088,
+      "vertices": 2048
+    },
+    {
+      "mesh": "Whisker 1 0 · mesh",
+      "triangles": 3824,
+      "vertices": 1920
+    },
+    {
+      "mesh": "Learning badge · coral disc · mesh",
+      "triangles": 1996,
+      "vertices": 1000
+    },
+    {
+      "mesh": "Sculpted pear body · cream belly · mesh",
+      "triangles": 258940,
+      "vertices": 129472
+    }
+  ],
+  "previous_assets": {
+    "web/public/models/hamster-v2.glb": {
+      "working_sha256": "ba281b2dc178f79a4cb3b7e9c4c2c5abed128257eece2b54e62ef4f6b20a2eb9",
+      "git_status": ""
+    },
+    "web/public/models/ai-hamster.glb": {
+      "working_sha256": "f196abdedb71ff60ed22014b88551f9f4c4f244b3b53d0de821f667bae4ec94c",
+      "git_status": ""
+    },
+    "blender/hamster-v2.blend": {
+      "working_sha256": "9118269b37b4aa700e3f5bd300d551f8f46a48158161a034a4e9ea4cb965944d",
+      "git_status": ""
+    },
+    "blender/sen.blend": {
+      "working_sha256": "a1393122d09dd6297d918e15cffa13e902c3ae56e54686af4a161005b935cfe8",
+      "git_status": ""
+    }
+  }
+}

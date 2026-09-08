@@ -1,0 +1,71 @@
+{
+  "name": "AI Hamster Guide V3",
+  "generated_at": "2026-09-08",
+  "blender_version": "5.2.1 LTS",
+  "source_script": "blender/build_hamster_v3.py",
+  "triangles": 1018268,
+  "vertices": 510050,
+  "blender_polygons": 1018268,
+  "authoring_polygons_before_triangulation": 503769,
+  "geometry_requirement": "1,000,000 to 1,050,000 real exported triangles",
+  "mesh_objects": 28,
+  "materials": 14,
+  "glb_bytes": 26347280,
+  "glb_sha256": "1a1a2eb1bf9a1f82bcbe03ec3c05ca3615c46c457388ed63180e6abd725074af",
+  "blender_bounds": {
+    "min": [
+      -1.1499768495559692,
+      -1.0162967443466187,
+      0.0
+    ],
+    "max": [
+      1.1499768495559692,
+      0.8631013035774231,
+      3.6000001430511475
+    ]
+  },
+  "height": 3.6000001430511475,
+  "runtime_nodes": {
+    "HamsterRoot": [
+      0.0,
+      0.0,
+      -7.0134071883387605e-09
+    ],
+    "Head": [
+      0.0,
+      0.0,
+      1.940000057220459
+    ],
+    "Eye_L": [
+      0.4050000011920929,
+      -0.7559999823570251,
+      0.75
+    ],
+    "Eye_R": [
+      -0.4050000011920929,
+      -0.7559999823570251,
+      0.75
+    ],
+    "Arm_L": [
+      0.6399999856948853,
+      0.004999999888241291,
+      1.600000023841858
+    ],
+    "Arm_R": [
+      -0.6399999856948853,
+      0.004999999888241291,
+      1.600000023841858
+    ]
+  },
+  "front": {
+    "blender": "-Y",
+    "gltf": "+Z"
+  },
+  "up": {
+    "blender": "+Z",
+    "gltf": "+Y"
+  },
+  "textures": 0,
+  "animations": "runtime-procedural; independent shoulder, head and eye pivots",
+  "old_assets_preserved": true
+}
